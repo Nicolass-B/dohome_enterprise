@@ -1,0 +1,112 @@
+
+section {
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding-left: 15px;
+    padding-bottom: 1%;
+    width: 85%;
+    border: 2px white solid;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0);
+
+}
+
+
+.menusec li {
+    padding: 6px;
+}
+
+
+
+.menusec {
+    display: flex;
+    font-family: PT sans;
+    font-size: 1.5em;
+}
+
+.menusec a {
+    color: white;
+}
+
+
+
+
+.imagepp {
+    margin: 30px 10px;
+
+}
+
+.placement {
+    display: flex;
+}
+
+.placement p {
+    margin: auto 20px;
+    font-family: PT sans;
+    font-size: 2em;
+
+}
+
+.placement .bouton1 {
+    margin-top: 40px;
+    margin-left: 100px;
+
+}
+
+.placement #bouton1 {
+    width: auto;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}
+
+.placement .bouton2 {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.placement #bouton2 {
+    width: auto;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}
+
+#bouton3 {
+    width: auto;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}
+
+.placement .boutton {
+    flex-direction: column;
+}
+
+.bouton3 {
+    margin-left: 70%;
+    margin-bottom: 30px;
+}
+
+.formulaire li {
+    padding-bottom: 20px;
+}
+
+
+

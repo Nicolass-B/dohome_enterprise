@@ -20,14 +20,14 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
 
         $repUtilisateur=takeUtilisateurs($dbh,$loginMail);
         if($repUtilisateur['nb_ocu']==0){//utilisateur non trouvé dans la base de donnée
-            $messageError=  'Utilisateur non trouvé';
+            $messageError=  'Utilisateur non trouvé ou Mauvais mot de passe';
             include ('../Vue/home.php');
         }
 
         else{// utilisateur trouvé
             $repMdp=takeMdp($dbh,$loginMail);
             if($_POST['pass']!=$repMdp['mot_de_passe']){//mot de passe non trouvé dans la base de donnée
-                $messageError= 'Mauvais mot de passe';
+                $messageError= 'Utilisateur non trouvé ou Mauvais mot de passe';
                 include ('../Vue/home.php');
             }
             elseif (isAdmin($dbh,$loginMail) && $repUtilisateur['nb_ocu']==1){
@@ -35,6 +35,10 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
             }
 
             else{//mdp OK
+                session_start();
+                $_SESSION['Mail']=$loginMail;
+                $_SESSION['MDP']=$pass;
+
               include('../Vue/dashboard.php');
             }
         }

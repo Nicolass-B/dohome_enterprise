@@ -3,7 +3,7 @@
 $titre = "capteur";
 
 
-require_once '../Modele/initConnexionBDD.php';
+require_once '../Modele/init_connexion_bdd.php';
 require_once '../Modele/capteur.php';
 require_once '../Modele/ajouts.php';
 require_once '../Modele/piece.php';

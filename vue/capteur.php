@@ -1,6 +1,6 @@
 <?php
 $titre = 'Mes Capteurs';
-include('Haut-de-Page.php');
+include('haut_de_page.php');
 
 
 ?>
@@ -74,4 +74,4 @@ include('Haut-de-Page.php');
 
     </body>
 
-<?php include 'BasDePage.php'; ?>
+<?php include 'bas_de_page.php'; ?>

@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+?>
+
+
 <!DOCTYPE html>
 <html xmlns:justify xmlns:text-justify="http://www.w3.org/1999/xhtml">
 

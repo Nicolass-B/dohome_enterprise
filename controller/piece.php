@@ -7,7 +7,7 @@
  */
 
 $titre = "Mes pièces";
-require_once '../Modele/initConnexionBDD.php';
+require_once '../Modele/init_connexion_bdd.php';
 require_once '../Modele/piece.php';
 require_once '../Modele/ajouts.php';
 

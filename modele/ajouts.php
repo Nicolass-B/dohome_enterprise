@@ -7,7 +7,7 @@
  */
 //TODO RAJOUTER LES SESSIONS AUX AJOUTS
 
-include('initConnexionBDD.php');
+include('init_connexion_bdd.php');
 
 function ajoutCapteur(PDO $bdd, $type, $idpiece)
 {

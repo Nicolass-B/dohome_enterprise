@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+var_dump($infoUser);
+?>
+
+//si modif mail ==> délogue
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,24 +26,28 @@
             </div>
         </ul>
     </div>
+
+<form method="POST" action="../controller/edit_profil.php">
     <p>
     <div class="formulaire">
         <div class="information">
             <ul>
                 Nom
-                <li><input type="text" name="pseudo" value="Nom" disabled="disabled"/></li>
+                <li><input type="text" name="nom" value="<?php echo $infoUser['Nom']; ?>" /></li>
                 Prénom
-                <li><input type="text" name="pseudo" value="Prénom" disabled="disabled"/></li>
+                <li><input type="text" name="prenom" value="Prénom" /></li>
                 E-mail
-                <li><input type="text" name="pseudo" value="Adresse mail"/></li>
+                <li><input type="text" name="mail" value="Adresse mail"/></li>
                 Mot de passe
-                <li><input type="text" name="pseudo" value="********" disabled="disabled"/></li>
+                <li><input type="text" name="mdp" value="" /></li>
                 Adresse
-                <li><input type="text" name="pseudo" value="Adresse"/></li>
+                <li><input type="text" name="adresse" value="Adresse"/></li>
                 Date de naissance
-                <li><input type="date" value="JJ/MM/AAAA"/></li>
+                <li><input type="date"  name="dateNaissance" value="JJ/MM/AAAA"/></li>
                 Numéro de téléphone
-                <li><input type="text" name="pseudo" value="Numéro"/></li>
+                <li><input type="text" name="tel" value="Numéro"/></li>
+
+                <input type="submit" name="envoiProfil">
 
 
             </ul>
@@ -44,6 +55,7 @@
     </div>
 
     </p>
+</form>
 
 </section>
 </body>

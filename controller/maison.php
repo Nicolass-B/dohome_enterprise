@@ -3,7 +3,7 @@
 $titre = "Mes Maisons";
 
 
-require_once '../Modele/initConnexionBDD.php';
+require_once '../Modele/init_connexion_bdd.php';
 require_once '../Modele/ajouts.php';
 require_once '../Modele/maison.php';
 

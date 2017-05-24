@@ -1,0 +1,36 @@
+
+.logo {
+    margin: 3%;
+    width: 2%;
+    display: flex;
+
+}
+
+#maison{
+    color: #00c555;
+}
+
+.piece {
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+
+.x {
+     display: flex;
+ }
+
+.ajout {
+    margin: 25%;
+    text-align: center;
+    color: white;
+}
+
+
+
+

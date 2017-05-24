@@ -31,7 +31,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 include ('../Vue/home.php');
             }
             elseif (isAdmin($dbh,$loginMail) && $repUtilisateur['nb_ocu']==1){
-                include('../Vue/dashboard_back_office.php');
+                include('../Vue/dashboard_backoffice.php');
             }
 
             else{//mdp OK

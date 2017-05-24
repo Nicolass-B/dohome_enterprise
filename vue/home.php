@@ -49,7 +49,7 @@
     </div>
 
     <div class="connexion-inscription">
-        <form method="POST" action="../controller/traitementConnexion.php">
+        <form method="POST" action="../controller/traitement_connexion.php">
 
             <input type="text" name="loginMail" " placeholder="Login" required/>
             <input type="password" name="pass" placeholder="Mot de passe" required/>
@@ -59,7 +59,7 @@
             <input type="checkbox" name="memo" id="memo"/>
             <label for="memo">Se souvenir de moi</label>
             <p>
-                <a id="t" href="../Vue/signUp.php">S'inscrire</a>
+                <a id="t" href="../vue/sign_up.php">S'inscrire</a>
                 <a id="t" href="">Mdp oublié ?</a>
             </p>
 

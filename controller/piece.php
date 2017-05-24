@@ -22,7 +22,7 @@ if (isset($_GET['piece'])) {
 } else {
     // ici la piece n'est pas précisé dans le formulaire
     // on renvoie a l'accueil des pieces
-    include('../Vue/mespieces.php');
+    include('../Vue/mes_pieces.php');
 
 
     if (isset($_POST['envoi'])) {

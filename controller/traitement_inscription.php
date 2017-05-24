@@ -55,17 +55,17 @@ if(isset($_POST['envoi'])){//envoi du formulaire
 
             else {
                 $error= 'le mail est déja utilisé';
-                include ('../Vue/signUp.php');
+                include('../Vue/sign_up.php');
             }
         }
         else{
             $error= 'mdp différent';
-            include ('../Vue/signUp.php');
+            include('../Vue/sign_up.php');
         }
     }
     else {
         $error= 'les champs ne sont pas tous rempli';
-        include ('../Vue/signUp.php');
+        include('../Vue/sign_up.php');
     }
 
 }
@@ -79,7 +79,7 @@ else{
 
 
 /*    $titre="inscription";
-    require_once("views/signUp.php");
+    require_once("views/sign_up.php");
 
     if (isset($_POST['email']))
     {

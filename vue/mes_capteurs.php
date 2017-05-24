@@ -6,7 +6,7 @@
  * Time: 16:08
  */
 
-include("Haut-de-Page.php");
+include("haut_de_page.php");
 ?>
     <div>
         <?php
@@ -14,5 +14,5 @@ include("Haut-de-Page.php");
         ?>
     </div>
 <?php
-include("BasDePage.php");
+include("bas_de_page.php");
 

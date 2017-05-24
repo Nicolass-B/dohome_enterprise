@@ -18,7 +18,7 @@ if (isset($_GET['maison'])) {
 } else {
     // ici la piece n'est pas précisé dans le formulaire
     // Affiche toutes les maisons du compte user
-    include('../Vue/mesmaisons.php');
+    include('../Vue/mes_maisons.php');
 
 
     if (isset($_POST['envoi'])) {

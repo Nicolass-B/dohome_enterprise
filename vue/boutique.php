@@ -5,10 +5,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/BoutiqueCSS.css"/>
     <title>DoHome|Boutique</title>
-    <?php include("Haut-de-Page.php"); ?>
 
 </head>
-
+<?php include("../vue/haut_de_page.php"); ?>
 
 <body>
 <a>
@@ -25,6 +24,6 @@
 </body>
 
 
-<?php include("BasDePage.php"); ?>
+<?php include("../vue/bas_de_page.php"); ?>
 
 </html>

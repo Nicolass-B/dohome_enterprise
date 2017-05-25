@@ -4,7 +4,7 @@ include ('../modele/utilisateurs.php');
 //var_dump($_SESSION['Mail']);
 $infoUser= takeInfoUser($dbh,$_SESSION['Mail']);
 //var_dump($infoUser);
-header('location: ../Vue/mon_profil.php');
+include ('../vue/mon_profil.php');
 
 
 

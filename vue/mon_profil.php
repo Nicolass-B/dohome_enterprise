@@ -22,7 +22,7 @@ var_dump($infoUser);
         <ul>
             <div class="menusec">
                 <li class="enCours"><a href="mon_profil.php">Mon profil</a></li>
-                <li><a href="compte_secondaire.php">Mes comptes secondaires</a></li>
+                <li><a href="../vue/compte_secondaire.php">Mes comptes secondaires</a></li>
             </div>
         </ul>
     </div>
@@ -33,21 +33,23 @@ var_dump($infoUser);
         <div class="information">
             <ul>
                 Nom
-                <li><input type="text" name="nom" value="<?php echo $infoUser['Nom']; ?>" /></li>
+                <li><input type="text" name="newnom" value="<?php echo $infoUser["Nom"]; ?>" /></li>
                 Prénom
-                <li><input type="text" name="prenom" value="Prénom" /></li>
+                <li><input type="text" name="newprenom" value="<?php echo $infoUser["Prenom"]; ?>" /></li>
                 E-mail
-                <li><input type="text" name="mail" value="Adresse mail"/></li>
+                <li><input type="email" name="newmail" value="<?php echo $_SESSION['Mail']; ?>"/></li>
                 Mot de passe
-                <li><input type="text" name="mdp" value="" /></li>
+                <li><input type="password" name="newmdp" value="" /></li>
+                Confirmation Mot de passe
+                <li><input type="password" name="newconfirmeMdp" value="" /></li>
                 Adresse
-                <li><input type="text" name="adresse" value="Adresse"/></li>
+                <li><input type="text" name="newadresse" value="<?php echo $infoUser["Adresse"]; ?>"/></li>
                 Date de naissance
-                <li><input type="date"  name="dateNaissance" value="JJ/MM/AAAA"/></li>
+                <li><input type="text"  name="newdateNaissance" value="<?php echo $infoUser["date_naissance"]; ?>"/></li>
                 Numéro de téléphone
-                <li><input type="text" name="tel" value="Numéro"/></li>
+                <li><input type="tel" name="newtel" value="<?php echo $infoUser["telephone"]; ?>"/></li>
 
-                <input type="submit" name="envoiProfil">
+                <input type="submit" name="envoiProfil" value="Modifier mon profil">
 
 
             </ul>

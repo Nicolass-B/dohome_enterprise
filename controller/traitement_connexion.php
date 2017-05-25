@@ -38,7 +38,6 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 session_start();
                 $_SESSION['Mail']=$loginMail;
                 $_SESSION['MDP']=$pass;
-
               include('../Vue/dashboard.php');
             }
         }

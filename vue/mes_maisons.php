@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Maison</title>
-    <link rel="stylesheet" href="../css/Maison.css"/>
+    <link rel="stylesheet" href="../css/maison.css"/>
     <link rel="stylesheet" href="../css/tableau.css"/>
 </head>
-<?php include("Haut-de-Page.php"); ?>
+<?php include("haut_de_page.php"); ?>
 
 <body>
 
@@ -30,7 +30,7 @@
                 <tr>
                     <td data-title="ID"><?php echo $row['Id'] ?></td>
                     <td data-title="Nom">
-                        <a href="../controller/maison.php?maison=<?php echo $row['Id'] ?>"> <?php echo $row['Nom'] ?> </a>
+                        <a href="../controller/piece.php?maison=<?php echo $row['Id'] ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
                 </tr>
 
@@ -43,6 +43,6 @@
 </body>
 
 
-<?php include("BasDePage.php"); ?>
+<?php include("bas_de_page.php"); ?>
 
 </html>

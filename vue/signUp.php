@@ -65,6 +65,8 @@
                             <select name="sexe" id="sexe"  >
                                 <option value="homme">Homme</option>
                                 <option value="femme">Femme</option>
+                                <option value="petit">Petit</option>
+                                <option value="grand">Grand</option>
                             </select>
                         </p>
 

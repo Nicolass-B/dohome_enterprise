@@ -1,9 +1,12 @@
 
-<?php include("haut_de_page.php"); ?>
-
+<?php $titre = "Messagerie"; include("haut_de_page.php"); ?>
+<link rel="stylesheet" href="../css/tableau.css">
+<link rel="stylesheet" href="../css/messagerie.css">
 <body>
 <div>
-    <H1> Rédiger un message</H1>
+    <h1>
+        <a href="../vue/messagerie.php" style="color: white"> Rédiger un message</a>
+    </h1>
 
 </div>
 <div>
@@ -11,21 +14,22 @@
         <table id="table" class="table table-hover table-mc-light-blue">
             <thead>
             <tr>
+                <th>Date</th>
                 <th>Expéditeur</th>
-                <th>Destinataire</th>
                 <th>Titre</th>
             <tr>
             </thead>
             <tbody>
             <?php
             //TODO quand on aura les POST bien mis, modifier le tableau pour aller taper dans un controleur piece qui présente les capteurs d'une pice si post et tout si rien
-            foreach ($messages as $row) {
-                var_dump($row);
+            foreach ($messagesUser as $row) {
+                //var_dump($row);
                 ?>
                 <tr>
-                    <td data-title="Expéditeur"><?php echo $row[''] ?></td>
+                    <td data-title="Date"><?php echo $row['Date'] ?></td>
+                    <td data-title="Expéditeur"><?php echo $row['ID_Expediteur'] ?></td>
                     <td data-title="Titre">
-                        <a href="../controller/messagerie.php?msg=<?php echo $row['ID_Message'] ?>"> <?php echo $row['Titre'] ?> </a>
+                        <a href="../controller/messagerie.php?msg=<?php echo $row['ID_Message'] ?>"><?php echo $row['Titre'] ?></a>
                     </td>
                 </tr>
 

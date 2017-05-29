@@ -17,7 +17,7 @@ include_once('bas_de_page.php');
 <div>
     <h1> <?php echo $message['Titre'] ?> </h1>
     <h2> <?php echo $message['Time_Stamp'] ?></h2>
-    <h2> <?php echo $message['ex'] ?>   </h2>
+    <h2> <?php echo $message['ID_expediteur'] ?>   </h2>
 </div>
 <div>
     <p> <?php echo $message['contenu'] ?> </p>

@@ -9,8 +9,8 @@
 require_once ('initConnexionBDD.php');
 
 function getMessageUser(PDO $dbh,int $iduser){
-    //renvoie les messages destinés à un utilisateur donné.
-    $query = "SELECT Titre, contenu, ID_Message FROM messagerie WHERE ID_Destinataire=:iduser ORDER BY Time_Stamp DESC ";
+    //renvoie les messages destinés à un utilisateur donné en entrée
+    $query = "SELECT Titre, contenu, ID_Message, ID_Expediteur, Time_Stamp AS 'Date' FROM messagerie WHERE ID_Destinataire=:iduser ORDER BY Time_Stamp DESC";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser'=> $iduser]);
     $data = $sql->fetchAll();
@@ -31,7 +31,7 @@ function sendMessageToUser (PDO $dbh, int $idexp, int $iddest, string $titre, st
     ]);
 }
 
-function getUserSentMessages (PDO $dbh,int $iduser){
+function getUserSentMessages (PDO $dbh, int $iduser){
     //renvoie les messages envoyés par l'utilisateur.
     $query = "SELECT Titre, contenu FROM messagerie WHERE ID_Expediteur=:iduser ORDER BY Time_Stamp DESC ";
     $sql = $dbh->prepare($query);
@@ -47,7 +47,7 @@ function getUserSentMessages (PDO $dbh,int $iduser){
  * @return mixed
  */
 function getUniqueMessage(PDO $dbh, $idmessage, $iduser){
-    $query = "SELECT Titre, contenu, Time_Stamp, ID_Expediteurx FROM messagerie WHERE ID_Expediteur=:iduser AND ID_Message=:idmessage";
+    $query = "SELECT Titre, contenu, Time_Stamp, ID_Expediteur FROM messagerie WHERE ID_Expediteur=:iduser AND ID_Message=:idmessage";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser'=> $iduser, 'idmessage' => $idmessage]);
     $data = $sql->fetch();

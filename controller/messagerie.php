@@ -13,25 +13,32 @@ require_once '../modele/messagerie.php';
  *  rattaché au modele et à la vue éponyme
  *
  */
+$_SESSION['idUser'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
 
 
-if(!isset($_SESSION['idUser'])){
+if(!isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])){
     try {
         http_redirect('../index.php');
         die("Vous n'êtes pas connecté, retour à la page d'accueil");
     }
     catch (Exception $e){
-        echo (' bonbon, y\'a pas windows c\'est problématique non ?');
+        echo (' bon, y\'a pas windows c\'est problématique non ?');
     }
 
 } else {
-    $messagesUser = getMessageUser($dbh, $_SESSION['idUser']);
-    $messageSent = getUserSentMessages($dbh, $_SESSION['idUser']);
-
     if(isset($_GET['msg']) && !empty($_GET['msg'])){
+        // Si l'utilisateur veut un message individuel
+
         $message = getUniqueMessage( $dbh, $_GET['msg'], $_SESSION['idUser']);
         $titre = 'Message';
         include ('../vue/message.php');
+    }else{
+        // Si on souhaite un affichage général
+
+        $messagesUser = getMessageUser($dbh, $_SESSION['idUser']);
+        $messageSent = getUserSentMessages($dbh, $_SESSION['idUser']);
+
+        include '../vue/messagerie.php';
     }
 
 }

@@ -1,76 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<header>
-    <meta charset="UTF-8">
-    <title>Ma Boutique</title>
-    <link rel="stylesheet" href="../css/Boutique.css"/>
+<html xmlns:justify xmlns:text-justify="http://www.w3.org/1999/xhtml">
 
-    <D>
-        <section>
-            <div class="container">
-                <img class="logo" src="../img/fond_transparent3.png" alt="logo de l'entreprise">
-                <nav>
-                    <ul class="menu">
-                        <li>Dashboard</li>
-                        <li>Mon profil</li>
-                        <li>Ma maison </li>
-                        <li><span id="boutique">Boutique</span> </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-
-        <section>
-            <div class="recherche">
-                <form action="/search" id="searchthis" method="get">
-                    <input id="search" name="q" type="text" placeholder="Rechercher" />
-                    <input id="search-btn" type="submit" value="Rechercher" />
-                </form>
-            </div>
-        </section>
-
-    </D>
-</header>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
+    <title>DoHome|Boutique</title>
+    <?php include("haut_de_page.php"); ?>
+</head>
 
 
 <body>
 <x>
-    <section1>
-        <a href="Maison.php" >
-            <div class="Offres">
+    <section3>
+
+        <div class="Offres">
+            <a href="">
+
                 <p>Nos Offrres</p>
-            </div>
-        </a>
+            </a>
+
+        </div>
 
 
-    </section1>
-
-    <section2>
-        <a href="Maison.php" >
-            <div class="Promotions">
-                 <p>Nos Promotions </p>
-
-
-             </div>
-        </a>
-
-    </section2>
+    </section3>
 
     <section3>
-        <a href="Maison.php" >
-            <div class="Produits">
-                <p>
-            Tous nos produits
-                </p>
+        <div class="Promotions">
+            <a href="">
+                <p>Nos Promotions </p>
+
+            </a>
+
         </div>
-        </a>
+
+    </section3>
+
+    <section3>
+        <div class="Produits">
+            <a href="">
+
+                <p>
+                    Tous nos produits
+                </p>
+            </a>
+
+        </div>
 
     </section3>
 
 </x>
 </body>
-<footer>
-    <div class="Powered">Powered By DoHome Enterprise™</div>
-    <div class="Mentions">Mentions Légales</div>
-</footer>
+
+
+<?php include("bas_de_page.php"); ?>
+
 </html>

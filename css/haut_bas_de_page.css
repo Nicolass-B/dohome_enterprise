@@ -81,10 +81,7 @@ a:focus {
 
 }
 
-.enCours a {
-    text-decoration: none;
-    color: #00c555
-}
+
 
 .recherche {
     display: flex;
@@ -179,4 +176,72 @@ footer {
 section2 p {
     text-align:center;
     color:white;
+}
+fieldset {
+
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 100px;
+    margin-right:100px;
+    padding-left: 15px;
+    padding-bottom: 1%;
+    border: 2px white solid;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0);
+
+}
+.test{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+
+}
+form li
+{
+    padding-bottom:20px;
+}
+fieldset input[type=text]
+{
+    width:190px;
+}
+fieldset textarea
+{
+    width:1000px;
+    height:300px;
+    max-width:1000px;
+    max-height:300px;
+}
+.bouton3 {
+    margin-left: 70%;
+    margin-bottom: 30px;
+}
+#bouton3 {
+    width: auto;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}
+.menusec li {
+    padding: 6px;
+}
+
+
+
+.menusec {
+    display: flex;
+    font-family: PT sans;
+    font-size: 1.5em;
+}
+
+.menusec a {
+    color: white;
+}
+.enCours a {
+    text-decoration: none;
+    color: #00c555
 }

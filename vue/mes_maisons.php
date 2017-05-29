@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/Maison.css"/>
     <link rel="stylesheet" href="../css/tableau.css"/>
 </head>
-<?php include("Haut-de-Page.php"); ?>
+<?php include("haut_de_page.php"); ?>
 
 <body>
 
@@ -43,6 +43,6 @@
 </body>
 
 
-<?php include("BasDePage.php"); ?>
+<?php include("bas_de_page.php"); ?>
 
 </html>

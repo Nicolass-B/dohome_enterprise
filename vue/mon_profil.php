@@ -23,19 +23,19 @@
     <div class="formulaire">
         <div class="information">
             <ul>
-                Nom
-                <li><input type="text" name="pseudo" value="Nom" disabled="disabled"/></li>
-                Prénom
-                <li><input type="text" name="pseudo" value="Prénom" disabled="disabled"/></li>
-                E-mail
-                <li><input type="text" name="pseudo" value="Adresse mail"/></li>
-                Mot de passe
+                <label>Nom</label>
+                <li><input type="text" name="pseudo" value="Nom"/></li>
+                <label>Prénom</label>
+                <li><input type="text" name="pseudo" value="Prénom"/></li>
+                <label>E-mail</label>
+                <li><input type="text" name="pseudo" value="Adresse mail" disabled="disabled"/></li>
+                <label>Mot de passe</label>
                 <li><input type="text" name="pseudo" value="********" disabled="disabled"/></li>
-                Adresse
+                <label>Adresse</label>
                 <li><input type="text" name="pseudo" value="Adresse"/></li>
-                Date de naissance
+                <label>Date de naissance</label>
                 <li><input type="date" value="JJ/MM/AAAA"/></li>
-                Numéro de téléphone
+                <label>Numéro de téléphone</label>
                 <li><input type="text" name="pseudo" value="Numéro"/></li>
 
 
@@ -44,6 +44,9 @@
     </div>
 
     </p>
+    <div class="bouton3">
+        <input type="button" value="Enregistrer mes données" href="lien" id="bouton3"/>
+    </div>
 
 </section>
 </body>

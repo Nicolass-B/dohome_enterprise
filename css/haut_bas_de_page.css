@@ -245,3 +245,54 @@ fieldset textarea
     text-decoration: none;
     color: #00c555
 }
+section3 a{
+    text-decoration: none;
+    color: white;
+}
+.Promotions{              /*carré*/
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.Produits{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.Offres{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+}
+
+x{
+    display: flex;
+    justify-content: center;
+}

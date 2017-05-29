@@ -3,25 +3,52 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/BoutiqueCSS.css"/>
+    <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
     <title>DoHome|Boutique</title>
     <?php include("haut_de_page.php"); ?>
-
 </head>
 
 
 <body>
-<a>
-    DoHome
-    Entreprise™
-</a>
-<article>
-    <aside>
-        Boutique
-    </aside>
-    Nos Offres
-    Les produits conseillés
-</article>
+<x>
+    <section3>
+
+        <div class="Offres">
+            <a href="">
+
+                <p>Nos Offrres</p>
+            </a>
+
+        </div>
+
+
+    </section3>
+
+    <section3>
+        <div class="Promotions">
+            <a href="">
+                <p>Nos Promotions </p>
+
+            </a>
+
+        </div>
+
+    </section3>
+
+    <section3>
+        <div class="Produits">
+            <a href="">
+
+                <p>
+                    Tous nos produits
+                </p>
+            </a>
+
+        </div>
+
+    </section3>
+
+</x>
 </body>
 
 

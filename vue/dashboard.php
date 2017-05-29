@@ -35,6 +35,9 @@
                 </div>
                 <div class="température">
                     <p>Température</p>
+                    <?php $query = "SELECT Valeur FROM dohome.capteurs";
+
+                    ?>
                     <form method="post" action="mode.php">
                         <select name="température" id="température">
                             <option value="15">15°C</option>

@@ -32,28 +32,35 @@
         <img id="presentation" src="../vue/img/presentation.png">
     </div>
 
-    <div class="connexion-inscription">
-        <form method="POST" action="../controller/traitementConnexion.php">
-
-            <input type="text" name="loginMail" " placeholder="Login" required/>
-            <input type="password" name="pass" placeholder="Mot de passe" required/>
-            <input type="submit" name="envoi" value="Se connecter"/>
-
-            </br></br>
-            <input type="checkbox" name="memo" id="memo"/>
-            <label for="memo">Se souvenir de moi</label>
-            <p>
-                <a id="t" href="../Vue/signUp.php">S'inscrire</a>
-                <a id="t" href="">Mdp oublié ?</a>
-            </p>
-
-        </form>
-        <div class="styleMessageErreur">
-            <?php if (isset($messageErreur)) {
-                echo $messageErreur;
-            } ?>
+    <section3>
+        <div class="bienvenue">
+            Bienvenue sur le site de domotique </br></br>
+            DoHome Enterprise !
         </div>
-    </div>
+        <div class="connexion-inscription">
+            <form method="POST" action="../controller/traitementConnexion.php">
+
+                <input type="text" name="loginMail" " placeholder="Login" required/>
+                <input type="password" name="pass" placeholder="Mot de passe" required/>
+                <input type="submit" name="envoi" value="Se connecter"/>
+
+                </br></br>
+                <input type="checkbox" name="memo" id="memo"/>
+                <label for="memo">Se souvenir de moi</label>
+                <p>
+                    <a id="t" href="../Vue/signUp.php">S'inscrire</a>
+                    <a id="t" href="">Mdp oublié ?</a>
+                </p>
+
+            </form>
+            <div class="styleMessageErreur">
+                <?php if (isset($messageErreur)) {
+                    echo $messageErreur;
+                } ?>
+            </div>
+        </div>
+    </section3>
+
 </div>
 
 

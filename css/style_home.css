@@ -8,7 +8,7 @@ header {
 
 body {
     background-size: cover;
-    background-image: linear-gradient(to bottom right, #2b2b2b, #2b2b2b);
+    background-image: linear-gradient(to bottom right, #2a2a2a, #2a2a2a);
     margin: 0;
     height: auto;
     width: 100%;
@@ -34,13 +34,6 @@ nav {
     text-transform: uppercase;
     color: white;
 }
- #presentation{
-     width: 500px;
-     height: 700px;
- }
-
-
-
 
 ul {
     list-style: none;
@@ -74,6 +67,16 @@ a:focus {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    order: ;
+}
+
+.bienvenue{
+    margin-bottom: 110px;
+    font-family: PT sans;
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
 }
 
 .container {
@@ -143,4 +146,9 @@ input[type=submit] {
     font-size: 13px;
     margin: 10px;
     padding: 3px;
+}
+
+#presentation{
+    height:863px;
+    width: 619px;
 }

@@ -29,7 +29,7 @@
                     <td data-title="Date"><?php echo $row['Date'] ?></td>
                     <td data-title="Expéditeur"><?php echo $row['Nom'] ?></td>
                     <td data-title="Titre">
-                        <a href="../controller/messagerie.php?msg=<?php echo $row['ID_Message'] ?>"><?php echo $row['Titre'] ?></a>
+                        <a href="../controller/voirmessage.php?msg=<?php echo $row['ID_Message'] ?>"><?php echo $row['Titre'] ?></a>
                     </td>
                 </tr>
 

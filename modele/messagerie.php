@@ -49,7 +49,9 @@ function getUserSentMessages (PDO $dbh, int $iduser){
  * @return mixed
  */
 function getUniqueMessage(PDO $dbh, $idmessage, $iduser){
-    $query = "SELECT Titre, contenu, Time_Stamp, ID_Expediteur FROM messagerie WHERE ID_Expediteur=:iduser AND ID_Message=:idmessage";
+    $query = "SELECT Titre, contenu, ID_Expediteur, Time_Stamp AS 'Date', Nom FROM messagerie 
+                  JOIN user on ID_Expediteur = user.id
+                  WHERE ID_Destinataire=:iduser AND ID_Message=:idmessage";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser'=> $iduser, 'idmessage' => $idmessage]);
     $data = $sql->fetch();

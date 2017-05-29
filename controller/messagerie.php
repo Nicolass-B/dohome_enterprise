@@ -28,10 +28,7 @@ if(!isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])){
 } else {
     if(isset($_GET['msg']) && !empty($_GET['msg'])){
         // Si l'utilisateur veut un message individuel
-
-        $message = getUniqueMessage( $dbh, $_GET['msg'], $_SESSION['idUser']);
-        $titre = 'Message';
-        include ('../vue/message.php');
+        include ('../controller/voirmessage.php?msg=' . $_GET['msg']);
     }else{
         // Si on souhaite un affichage général
 

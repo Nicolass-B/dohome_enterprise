@@ -6,9 +6,9 @@
  * Time: 10:43
  */
 
-include_once('../css/tableau.css');
+
+
 include_once('haut_de_page.php');
-include_once('bas_de_page.php');
 
 ?>
 
@@ -16,14 +16,21 @@ include_once('bas_de_page.php');
 
 <div>
     <h1> <?php echo $message['Titre'] ?> </h1>
-    <h2> <?php echo $message['Time_Stamp'] ?></h2>
-    <h2> <?php echo $message['ID_expediteur'] ?>   </h2>
+    <h2> <?php echo $message['Date'] ?></h2>
+    <h2> <?php echo $message['Nom'] ?>   </h2>
 </div>
 <div>
     <p> <?php echo $message['contenu'] ?> </p>
 </div>
 <div>
-    <a href="../controller/messagerie.php"> Retour </a>
+    <h2>
+        <a href="../controller/messagerie.php" style="color: white"> Retour </a>
+    </h2>
+
 </div>
 
 </body>
+
+<?php
+include_once('bas_de_page.php');
+?>

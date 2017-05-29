@@ -10,7 +10,9 @@ require_once ('initConnexionBDD.php');
 
 function getMessageUser(PDO $dbh,int $iduser){
     //renvoie les messages destinés à un utilisateur donné en entrée
-    $query = "SELECT Titre, contenu, ID_Message, ID_Expediteur, Time_Stamp AS 'Date' FROM messagerie WHERE ID_Destinataire=:iduser ORDER BY Time_Stamp DESC";
+    $query = "SELECT Titre, contenu, ID_Message, ID_Expediteur, Time_Stamp AS 'Date', Nom FROM messagerie 
+                  JOIN user on ID_Expediteur = user.id
+                  WHERE ID_Destinataire=:iduser ORDER BY Time_Stamp DESC";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser'=> $iduser]);
     $data = $sql->fetchAll();

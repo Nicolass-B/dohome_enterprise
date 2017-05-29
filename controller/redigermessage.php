@@ -14,6 +14,10 @@ if(isset($_POST["Titre"])&& !empty($_POST["Titre"])){
         if(isset($_POST["destinataire"])&& !empty($_POST["destinataire"])){
             echo 'POST PASS !';
             sendMessageToUser($dbh, $_SESSION['idUser'], $_POST['destinataire'], $_POST['Titre'], $_POST['contenu']);
+
+            ?>
+            <script>alert("<?php echo htmlspecialchars('le message est parti !', ENT_QUOTES); ?>")</script>
+            <?php
         }
     }
 }

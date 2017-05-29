@@ -67,6 +67,7 @@
                                 <option value="femme">Femme</option>
                                 <option value="petit">Petit</option>
                                 <option value="grand">Grand</option>
+                                <option value="EnormeChybre">Enorme Chybre</option>
                             </select>
                         </p>
 

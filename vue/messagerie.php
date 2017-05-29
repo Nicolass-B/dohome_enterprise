@@ -1,53 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
-    <title> Mon profil </title>
-</head>
-<?php include("haut_de_page.php"); ?>
 
+<?php $titre = "Messagerie"; include("haut_de_page.php"); ?>
+<link rel="stylesheet" href="../css/tableau.css">
+<link rel="stylesheet" href="../css/messagerie.css">
 <body>
-<section>
-    <div class="information">
-        <fieldset>
+<div>
+    <h1>
+        <a href="../vue/messagerie.php" style="color: white"> Rédiger un message</a>
+    </h1>
 
-        <ul>
-            <div class="menusec">
-                <li class="enCours"><a href="messagerie.php">Contactez-nous</a></li>
-                <li><a href="messagerie.php">Ma boîte de récéption</a></li>
-            </div>
-        </ul>
+</div>
+<div>
+    <div class="table-responsive-vertical shadow-z-1">
+        <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Expéditeur</th>
+                <th>Titre</th>
+            <tr>
+            </thead>
+            <tbody>
+            <?php
+            //TODO quand on aura les POST bien mis, modifier le tableau pour aller taper dans un controleur piece qui présente les capteurs d'une pice si post et tout si rien
+            foreach ($messagesUser as $row) {
+                //var_dump($row);
+                ?>
+                <tr>
+                    <td data-title="Date"><?php echo $row['Date'] ?></td>
+                    <td data-title="Expéditeur"><?php echo $row['Nom'] ?></td>
+                    <td data-title="Titre">
+                        <a href="../controller/voirmessage.php?msg=<?php echo $row['ID_Message'] ?>"><?php echo $row['Titre'] ?></a>
+                    </td>
+                </tr>
 
-
-            <form method="post" action="">
-                <div class="test">
-                    <ul>
-                        <li>
-                            <label>Objet du message</label> </br>
-                            <input type="text" name="objet" placeholder="Entrez l'objet de votre message" required/>
-                        </li>
-                        <li>
-                            <label>Message</label> </br>
-                            <textarea type="text" name="message" placeholder="Entrez votre message"></textarea>
-                        </li>
-                    </ul>
-
-                </div>
-            </form>
-            <div class="bouton3">
-                <input type="button" value="Envoyer votre message" href="lien" id="bouton3"/>
-            </div>
-
-        </fieldset>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
-
-</section>
-
-
 </body>
 
 
 <?php include("bas_de_page.php"); ?>
-
-</html>

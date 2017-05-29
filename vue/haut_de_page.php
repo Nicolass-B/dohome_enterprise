@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
     <meta charset="UTF-8">
-    <title>Nom de la page</title>
+    <title><?php echo $titre ?></title>
 </head>
 
 

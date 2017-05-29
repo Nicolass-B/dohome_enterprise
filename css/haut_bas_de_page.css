@@ -69,14 +69,15 @@ li:first-child {
 .menu {
     display: flex;
 }
-.menu a :hover{
-    text-color: rgba(0, 197, 85, 0.8);
-}
+
 .menu a {
     text-decoration: none;
     color: white;
 }
 
+a:hover{
+    color: #00c555;
+}
 a:focus {
     color: rgba(0, 197, 85, 0.8);
     text-decoration: none;

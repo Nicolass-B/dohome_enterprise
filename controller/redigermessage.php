@@ -5,9 +5,12 @@
  * Date: 29/05/2017
  * Time: 11:39
  */
+$titre = 'Rédiger un message';
 
 include('../vue/redigermessage.php');
 include_once '../modele/messagerie.php';
+
+
 
 if(isset($_POST["Titre"])&& !empty($_POST["Titre"])){
     if(isset($_POST["contenu"])&& !empty($_POST["contenu"])){

@@ -1,0 +1,247 @@
+
+header {
+    background-size: cover;
+    background-color: #1b1b1b;
+    width: 100%;
+    height: 15%;
+    display: flex;
+}
+
+body {
+    background-size: cover;
+    background-image: linear-gradient(to bottom right, #2b2b2b, #2b2b2b);
+    margin: 0;
+    height: auto;
+    width: 100%;
+}
+
+.LienImage {
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.logo {
+    float: left;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.information {
+    font-family: PT sans;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+section1 {
+    display: flex;
+}
+
+nav {
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 13px;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.menu li {
+    border-left: 2px solid white;
+    padding: 6px;
+}
+
+li:first-child {
+    border-left: none;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+a:focus {
+    color: rgba(0, 197, 85, 0.8);
+    text-decoration: none;
+
+}
+
+
+
+.recherche {
+    display: flex;
+    margin: auto;
+}
+
+#searchthis #search-btn {
+    background-color: #00c555; /* Couleur de fond */
+    border-style: solid; /* Style de la bordure  */
+    border-width: 1px; /* Epaisseur de la bordure  */
+    border-color: #00c555; /* Couleur de la bordure  */
+    padding: 5px;
+    width: 200px; /* Permet d'ajuster la largeur du bouton à 100% */
+    box-sizing: border-box;
+    font-family: PT sans; /* Police du texte */
+    font-size: 13px; /* Taille de la police du texte */
+    letter-spacing: 2px; /* Espacement des caractères */
+    margin: 10px 0 0 0; /* Espace autour du bouton : haut droite bas gauche  */
+    text-transform: uppercase; /* Transforme le texte en majuscules */
+    color: white; /* Couleur du texte */
+}
+
+#searchthis #search {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+footer {
+    display: flex;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    font-size: small;
+    margin: 0px;
+    background-size: cover;
+    background-color: #454545;
+    text-align: center;
+    padding-bottom: 70px;
+
+}
+
+.mail {
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    right: 110px;
+    top: 37px;
+}
+
+.deconexion {
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+
+.droite {
+    position: absolute;
+    right: 100px;
+
+}
+
+.centre {
+    position: absolute;
+    left: 600px;
+}
+
+footer {
+    display: flex;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    font-size: small;
+    margin: 0;
+    background-size: cover;
+    background-color: #454545;
+    text-align: center;
+    padding-bottom: 85px;
+
+}
+
+.dashAdmin {
+    margin:20px;
+    padding:50px;
+    display:flex;
+    justify-content: space-around;
+}
+section2 p {
+    text-align:center;
+    color:white;
+}
+fieldset {
+
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 100px;
+    margin-right:100px;
+    padding-left: 15px;
+    padding-bottom: 1%;
+    border: 2px white solid;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0);
+
+}
+.test{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+
+}
+form li
+{
+    padding-bottom:20px;
+}
+fieldset input[type=text]
+{
+    width:190px;
+}
+fieldset textarea
+{
+    width:1000px;
+    height:300px;
+    max-width:1000px;
+    max-height:300px;
+}
+.bouton3 {
+    margin-left: 70%;
+    margin-bottom: 30px;
+}
+#bouton3 {
+    width: auto;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}
+.menusec li {
+    padding: 6px;
+}
+
+
+
+.menusec {
+    display: flex;
+    font-family: PT sans;
+    font-size: 1.5em;
+}
+
+.menusec a {
+    color: white;
+}
+.enCours a {
+    text-decoration: none;
+    color: #00c555
+}

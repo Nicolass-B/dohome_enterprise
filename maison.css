@@ -1,0 +1,101 @@
+
+
+.logo2{
+    margin: 25%;
+    width: 35%;
+    height: 20%;
+
+}
+.logo3{
+    margin: 25%;
+    margin-top: 10%;
+    width: 35%;
+    height: 20%;
+
+
+}
+
+
+#maison{
+    color: #00c555;
+}
+.salon{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+
+.cuisine{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+
+}
+
+.chambre1{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+
+}
+.salle_de_bain{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+
+}
+.chambre2{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+
+}
+.salle_a_manger{
+    border: solid;
+    border-radius: 5%;
+    color: white;
+    margin: 55px;
+    padding : 15px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+
+ x{
+     display: flex;
+ }
+
+.ajout {
+    margin: 25%;
+    text-align: center;
+    color: white;
+}
+
+
+
+

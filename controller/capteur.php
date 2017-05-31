@@ -34,7 +34,6 @@ if (isset($_GET['capteur']))
                     ?>
                     <script>alert("<?php echo htmlspecialchars('Un capteur vient d\'être ajouté', ENT_QUOTES); ?>")</script>
                     <?php
-
                 }
             }
         }

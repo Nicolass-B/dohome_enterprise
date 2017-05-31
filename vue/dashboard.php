@@ -15,8 +15,6 @@ if (!isset($_SESSION)) {session_start();}
 <?php include("haut_de_page.php"); ?>
 <body>
 
-
-
 <section>
     <HD>
         <section1>

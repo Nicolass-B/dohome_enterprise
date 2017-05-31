@@ -49,7 +49,7 @@ if(isset($_POST['envoi'])){//envoi du formulaire
         if(verif2MDP($pass,$confirmePasse)){
             if(verifMail($dbh,$mail)==false){
                 insertUser($dbh,$nom,$prenom,$pass,$tel,$mail,$adresse,$sexe,$année,$mois,$jour);
-                $error= 'inscription réussi';
+                $error= 'Inscription réussi';
 
             }
 

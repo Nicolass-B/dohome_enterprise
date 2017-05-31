@@ -9,11 +9,11 @@ if (!isset($_SESSION))
 {
     session_start();
 }
-echo  $_SESSION['Mail'];
+//echo  $_SESSION['Mail'];
 // On détruit les variables de notre session
 session_unset ();
-echo  $_SESSION['Mail'];
+//echo  $_SESSION['Mail'];
 // On détruit notre session
 session_destroy ();
-echo  $_SESSION['Mail'];
-header('location: ../Vue/home.php');
+//echo  $_SESSION['Mail'];
+include ('../Vue/home.php');

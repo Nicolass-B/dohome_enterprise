@@ -9,7 +9,7 @@
 <header>
     <section1>
         <div class="container">
-            <img class="logo" src="../Vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
             <nav>
                 <ul>
                     <div class="menu">
@@ -31,7 +31,7 @@
 
 <section>
     <div class="information">
-        <form method="post" action="../controller/traitementInscription.php">
+        <form method="post" action="../controller/traitement_inscription.php">
             <fieldset>
                 <legend>Inscription</legend>
                 <div class="test">

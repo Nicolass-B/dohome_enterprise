@@ -28,10 +28,7 @@
 
 
 <div class="corpPage">
-    <div class="textIntro">
-        <img class="presentation" src="../Vue/img/presentation.png" alt="presentation"/>
-    </div>
-
+    </br><a id="x">Bienvenue sur DoHome Enterprise™</a></br>
     <div class="connexion-inscription">
         <form method="POST" action="../controller/traitementConnexion.php">
 
@@ -53,6 +50,32 @@
                 echo $messageErreur;
             } ?>
         </div>
+    </div>
+
+    <div class="contact" >
+        <div class="contact_bis">
+            <div class="centre">
+                Contact
+            </div>
+            <div class="conteneur">
+                <div class="element">
+                    <img src="Vue/Images/map.png" class="contact_icon">
+                    <p class="contact_txt">28 rue notre dame des champs</p>
+                </div>
+                <div class="element">
+                    <img src="Vue/Images/mail.png" class="contact_icon">
+                    <p class="contact_txt">contact@domisep.com</p>
+                </div>
+                <div class="element">
+                    <img src="Vue/Images/phone.png" class="contact_icon">
+                    <p class="contact_txt">06 00 00 00 00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="textIntro">
+        <img class="presentation" src="../Vue/img/presentation.png" alt="presentation"/>
     </div>
 </div>
 

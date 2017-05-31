@@ -5,7 +5,7 @@
 <body>
 <div>
     <h1>
-        <a href="../vue/messagerie.php" style="color: white"> Rédiger un message</a>
+        <a href="../controller/redigermessage.php" style="color: white"> Rédiger un message</a>
     </h1>
 
 </div>

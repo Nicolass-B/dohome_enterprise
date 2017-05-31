@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
     <meta charset="UTF-8">
     <title><?php echo $titre ?></title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/typeahead.min.js"></script>
 </head>
 
 

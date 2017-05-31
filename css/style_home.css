@@ -35,20 +35,10 @@ nav {
     color: white;
 }
 
-.textIntro {
-    border-radius: 20px;
-    width: 400px;
-    border: 2px solid white;
-    padding: 15px;
-    margin: 20px;
-    text-align: center;
-    horizontal-align: middle;
-    text-align: justify;
-    color: white;
-    font-size: 18px;
-    font-family: PT sans;
+.presentation{
+    height: 890px;
+    width: 619px;
 }
-
 
 ul {
     list-style: none;

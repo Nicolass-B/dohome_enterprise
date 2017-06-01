@@ -11,7 +11,7 @@
 <header>
     <section1>
         <div class="container">
-            <img class="logo" src="../Vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
             <nav>
                 <ul>
                     <div class="menu">
@@ -30,9 +30,9 @@
 <div class="corpPage">
     </br><div class="centre2">Bienvenue sur DoHome Enterprise™</div></br>
     <div class="connexion-inscription">
-        <form method="POST" action="../controller/traitementConnexion.php">
+        <form method="POST" action="../controller/traitement_connexion.php">
 
-            <input type="text" name="loginMail" " placeholder="Login" required/>
+            <input type="text" name="loginMail" placeholder="Login" required/>
             <input type="password" name="pass" placeholder="Mot de passe" required/>
             <input type="submit" name="envoi" value="Se connecter"/>
 

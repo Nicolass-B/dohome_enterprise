@@ -12,7 +12,7 @@ if (isset($_GET['capteur']))
 {
     $Capteur = new Capteur($_GET['capteur'], $dbh);
     $titre = $Capteur->typecapteur[0];
-    include('../Vue/mescapteurs.php');
+    include('../Vue/mes_capteurs.php');
 
 } else {
     // ici le capteur n'est pas précisé dans le formulaire

@@ -9,12 +9,12 @@
 require_once '../modele/initConnexionBDD.php';
 require_once '../modele/messagerie.php';
 
+session_start();
 /** COntroleur de la messagerie interne au site
  *  rattaché au modele et à la vue éponyme
  *
  */
 $_SESSION['idUser'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
-
 
 if(!isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])){
     try {

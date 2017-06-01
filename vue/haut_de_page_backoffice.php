@@ -9,7 +9,7 @@
 <header>
     <section1>
         <div class="container">
-            <img class="logo" src="../Vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
             <nav>
                 <ul>
                     <div class="menu">
@@ -31,7 +31,7 @@
         </div>
     </section1>
     <section1>
-        <a class="LienImage" href="home.php"><img class="deconexion" src="../Vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
+        <a class="LienImage" href="home.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
 
     </section1>
 </header>

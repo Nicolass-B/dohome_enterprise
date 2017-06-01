@@ -15,14 +15,14 @@
 <header>
     <section1>
         <div class="container">
-            <img class="logo" src="../Vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
             <nav>
                 <ul>
                     <div class="menu">
-                        <li><a href="dashboard.php">Dashboard</a></li>
-                        <li><a href="mon_profil.php">Mon profil</a></li>
-                        <li><a href="maison.php">Ma maison</a></li>
-                        <li><a href="boutique.php">Boutique</a></li>
+                        <li><a href="../vue/dashboard.php">Dashboard</a></li>
+                        <li><a href="../vue/mon_profil.php">Mon profil</a></li>
+                        <li><a href="../vue/maison.php">Ma maison</a></li>
+                        <li><a href="../vue/shop.php">Boutique</a></li>
                     </div>
                 </ul>
             </nav>
@@ -37,13 +37,12 @@
         </div>
     </section1>
     <section1>
-        <a class="LienImage" href="messagerie.php"><img class="mail" src="../Vue/img/icon_email.png"
-                                                        alt="logo de l'email"/></a>
-        <a class="LienImage" href="home.php"><img class="deconexion" src="../Vue/img/icon_deconnexion.png"
-                                                  alt="logo de la deco"/></a>
+        <a class="LienImage" href="messagerie.php"><img class="mail" src="../vue/img/icon_email.png" alt="logo de l'email"/></a>
+        <a class="LienImage" href="home.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
 
     </section1>
 </header>
+
 
 
 </html>

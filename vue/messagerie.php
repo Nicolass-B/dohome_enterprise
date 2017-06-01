@@ -1,7 +1,6 @@
 
 <?php $titre = "Messagerie"; include("haut_de_page.php"); ?>
 <link rel="stylesheet" href="../css/tableau.css">
-<link rel="stylesheet" href="../css/messagerie.css">
 <body>
 <div>
     <h1>

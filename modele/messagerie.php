@@ -8,7 +8,7 @@
 
 require_once ('initConnexionBDD.php');
 
-function getMessageUser(PDO $dbh,int $iduser){
+function getMessageUser(PDO $dbh, int $iduser){
     //renvoie les messages destinés à un utilisateur donné en entrée
     $query = "SELECT Titre, contenu, ID_Message, ID_Expediteur, Time_Stamp AS 'Date', Nom FROM messagerie 
                   JOIN user on ID_Expediteur = user.id
@@ -48,7 +48,7 @@ function getUserSentMessages (PDO $dbh, int $iduser){
  * @param $iduser
  * @return mixed
  */
-function getUniqueMessage(PDO $dbh, $idmessage, $iduser){
+function getUniqueMessage(PDO $dbh, $idmessage, int $iduser){
     $query = "SELECT Titre, contenu, ID_Expediteur, Time_Stamp AS 'Date', Nom FROM messagerie 
                   JOIN user on ID_Expediteur = user.id
                   WHERE ID_Destinataire=:iduser AND ID_Message=:idmessage";

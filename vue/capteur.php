@@ -1,4 +1,6 @@
 <?php
+if (!isset($_SESSION)) {session_start();}
+
 $titre = 'Mes Capteurs';
 include('haut_de_page.php');
 

@@ -12,7 +12,7 @@ require_once '../Modele/piece.php';
 require_once '../Modele/ajouts.php';
 
 $idmaison = $_GET['maison']; //TODO MODIFIER CA EN SESSION
-$piece = getPiecesfromMaison($dbh, $idmaison);
+$piece = getPiecesfromMaison($bdd, $idmaison);
 
 
 if (isset($_GET['piece'])) {
@@ -28,7 +28,7 @@ if (isset($_GET['piece'])) {
     if (isset($_POST['envoi'])) {
         if (isset($_POST['maison'])) {
             if (isset($_POST['nom_piece'])) {
-                ajoutPiece($dbh, $_POST['type'], $_POST['piece']);
+                ajoutPiece($bdd, $_POST['type'], $_POST['piece']);
                 ?>
                 <script>alert("<?php echo htmlspecialchars('la pièce a bien été ajoutée', ENT_QUOTES); ?>")</script>
                 <?php

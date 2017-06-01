@@ -27,14 +27,14 @@ function takeIdUser(PDO $bdd,$mail){
 
 //renvoi les info de l'utilisateur pour le profil utilisateur
 function takeInfoUser(PDO $bdd,$mail){
-    $reponse = $bdd-> prepare('SELECT Nom,Prenom,telephone,Adresse,sexe,date_naissance FROM  user WHERE Mail=\'' . $mail . '\' ');
+    $reponse = $bdd-> prepare('SELECT Nom,Prenom,telephone,Adresse,sexe,date_naissance,mot_de_passe FROM  user WHERE Mail=\'' . $mail . '\' ');
     $reponse->execute();
     $affich = $reponse->fetch();
     return $affich;
 }
 
 
-
+/*
 function updateUser(PDO $bdd, $id_client, $infos)
 {
 
@@ -112,7 +112,7 @@ function isMotDePasse($pass)
 {
     return preg_match("#^(?=.*?[a-z])(?=.*?[0-9A-Z!@$%^&*-]).{7,}$#", $pass);
 }
-
+*/
 
 
 

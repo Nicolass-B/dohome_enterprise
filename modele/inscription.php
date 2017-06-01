@@ -35,7 +35,6 @@ function verif2MDP($pass,$passConfirme){
     else{
         return false;
     }
-
 }
 
 //Fonction qui vérifie si le mail entrez n'est pas déja dans la base de donnée

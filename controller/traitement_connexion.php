@@ -18,27 +18,26 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
         $loginMail=htmlentities($_POST['loginMail']);
         $pass=htmlentities($_POST['pass']);
 
-        $repUtilisateur=takeUtilisateurs($dbh,$loginMail);
+        $repUtilisateur=takeUtilisateurs($bdd,$loginMail);
         if($repUtilisateur['nb_ocu']==0){//utilisateur non trouvé dans la base de donnée
             $messageError=  'Utilisateur non trouvé ou Mauvais mot de passe';
             include ('../Vue/home.php');
         }
 
         else{// utilisateur trouvé
-            $repMdp=takeMdp($dbh,$loginMail);
+            $repMdp=takeMdp($bdd,$loginMail);
             if($_POST['pass']!=$repMdp['mot_de_passe']){//mot de passe non trouvé dans la base de donnée
                 $messageError= 'Utilisateur non trouvé ou Mauvais mot de passe';
                 include ('../Vue/home.php');
             }
-            elseif (isAdmin($dbh,$loginMail) && $repUtilisateur['nb_ocu']==1){
+            elseif (isAdmin($bdd,$loginMail) && $repUtilisateur['nb_ocu']==1){
                 include('../Vue/dashboard_backoffice.php');
             }
 
             else{//mdp OK
                 session_start();
                 $_SESSION['Mail']=$loginMail;
-                $_SESSION['MDP']=$pass;
-                $_SESSION['id_user']=takeIdUser($dbh,$loginMail);
+                $_SESSION['id_user']=takeIdUser($bdd,$loginMail);
               include('../Vue/dashboard.php');
             }
         }

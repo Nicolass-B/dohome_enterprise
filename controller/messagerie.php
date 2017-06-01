@@ -6,4 +6,4 @@
  * Time: 00:35
  */
 
-require_once '../modele/initConnexionBDD.php';
+require_once '../modele/init_connexion_bdd.php';

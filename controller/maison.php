@@ -1,4 +1,5 @@
 <?php
+if (!isset($_SESSION)) {session_start();}
 
 $titre = "Mes Maisons";
 
@@ -7,8 +8,8 @@ require_once '../Modele/init_connexion_bdd.php';
 require_once '../Modele/ajouts.php';
 require_once '../Modele/maison.php';
 
-$iduser = 1; //TODO AJOUTER LES SESSIONS
-$maison = getMaisons($dbh, $iduser);
+$iduser = $_SESSION['id_user'];
+$maison = getMaisons($bdd, $iduser);
 
 
 if (isset($_GET['maison'])) {
@@ -24,7 +25,7 @@ if (isset($_GET['maison'])) {
     if (isset($_POST['envoi'])) {
         if (isset($_POST['nom_maison'])) {
 
-            ajoutMaison($dbh, $_POST['nom_maison'], $_POST['piece']);
+            ajoutMaison($bdd, $_POST['nom_maison'], $_POST['piece']);
             ?>
             <script>alert("<?php echo htmlspecialchars('la maison a bien été ajoutée', ENT_QUOTES); ?>")</script>
             <?php

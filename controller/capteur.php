@@ -1,5 +1,7 @@
 <?php
 
+if (!isset($_SESSION)) {session_start();}
+
 $titre = "capteur";
 
 
@@ -10,7 +12,7 @@ require_once '../Modele/piece.php';
 
 if (isset($_GET['capteur']))
 {
-    $Capteur = new Capteur($_GET['capteur'], $dbh);
+    $Capteur = new Capteur($_GET['capteur'], $bdd);
     $titre = $Capteur->typecapteur[0];
     include('../Vue/mes_capteurs.php');
 
@@ -20,7 +22,7 @@ if (isset($_GET['capteur']))
     $idmaison = 1; //$_SESSION['idmaison']; to add quand on aura les sessions
     $idpiece = $_GET['piece'];
     //TODO ajouter les sessions et remplacer ici.
-    $pieces = getPiecesfromMaison($dbh, $idmaison);
+    $pieces = getPiecesfromMaison($bdd, $idmaison);
     $capteur_piece = getCapteursfromPiece($dbh, $idpiece);
     include('../Vue/capteur.php');
 

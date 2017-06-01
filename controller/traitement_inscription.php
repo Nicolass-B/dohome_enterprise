@@ -8,7 +8,7 @@
 
 
 /*
- * étape 1 verif envoi formulaire
+ *étape 1 verif envoi formulaire
  *étape 2 verif des champs
  *étape 3 verif mdp et mdp confirmation
  *étape 4 vérif dans bdd si le mail est bien unique
@@ -31,6 +31,7 @@ if(isset($_POST['envoi'])){//envoi du formulaire
         &&!empty($_POST['jour'])
         &&!empty($_POST['mois'])
         &&!empty($_POST['année'])) {
+
         //htmlentities améliore la sécurité(évite les injections xss)
         $nom=htmlentities($_POST['nom']);
         $prenom=htmlentities($_POST['prenom']);
@@ -47,8 +48,8 @@ if(isset($_POST['envoi'])){//envoi du formulaire
         require ('../modele/Inscription.php');
 
         if(verif2MDP($pass,$confirmePasse)){
-            if(verifMail($dbh,$mail)==false){
-                insertUser($dbh,$nom,$prenom,$pass,$tel,$mail,$adresse,$sexe,$année,$mois,$jour);
+            if(verifMail($bdd,$mail)==false){
+                insertUser($bdd,$nom,$prenom,$pass,$tel,$mail,$adresse,$sexe,$année,$mois,$jour);
                 $error= 'Inscription réussi';
 
             }

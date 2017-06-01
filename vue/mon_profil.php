@@ -1,9 +1,6 @@
 <?php
 if (!isset($_SESSION)) {session_start();}
-var_dump($infoUser);
 ?>
-
-//si modif mail ==> délogue
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +34,9 @@ var_dump($infoUser);
                 Prénom
                 <li><input type="text" name="newprenom" value="<?php echo $infoUser["Prenom"]; ?>" /></li>
                 E-mail
-                <li><input type="email" name="newmail" value="<?php echo $_SESSION['Mail']; ?> disable"/></li>
+                <li><input type="email" name="newmail" value="<?php echo $_SESSION['Mail']; ?> "  disabled /></li>
+                Mot de passe actuel
+                <li><input type="password" name="entermdpactuel" value="" /></li>
                 Mot de passe
                 <li><input type="password" name="newmdp" value="" /></li>
                 Confirmation Mot de passe
@@ -58,6 +57,7 @@ var_dump($infoUser);
 
     </p>
 </form>
+    <?php if(isset($msg)){ echo $msg;} ?>
 
 </section>
 </body>

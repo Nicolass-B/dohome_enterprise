@@ -70,9 +70,11 @@ if (!isset($_SESSION)) {session_start();}
 
         </form>
         <div class="styleMessageErreur">
+
             <?php if (isset($messageErreur)) {
                 echo $messageErreur;
             } ?>
+
         </div>
     </div>
 </div>

@@ -24,7 +24,7 @@ nav {
     color: white;
     padding: 25px;
     width: 418px;
-    height: 60px;
+    height: 55px;
 }
 
 .information {
@@ -160,12 +160,20 @@ input[type=submit] {
     letter-spacing: 2px;
     color: white;
 }
-.centre{
+.texte{
     font-family: "PT Sans";
     text-transform: uppercase;
     letter-spacing: 2px;
     color: white;
-    font-size: 25px;
+    font-weight: bold;
+}
+
+.centre2{
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 20px;
     text-align: center;
     margin: 10px;
 
@@ -175,4 +183,40 @@ input[type=submit] {
     display: flex;
     justify-content: space-around;
     margin: 10px;
+}
+
+.icone{
+    height: 15%;
+    width: 15%;
+}
+
+.photo{
+    height: 280px;
+    width: 280px;
+}
+
+.element{
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+    horizontal-align: middle ;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+}
+
+aside.defilement {
+    background-color: #222;
+    background: no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding: 150px 0;
+}
+
+
+section{
+    display: flex;
+    justify-content: space-around;
 }

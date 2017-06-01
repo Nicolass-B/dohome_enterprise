@@ -4,7 +4,11 @@
 <head>
     <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
     <meta charset="UTF-8">
-    <title><?php echo $titre ?></title>
+    <title><?php if (isset($titre)) {
+            echo $titre;} else {
+            echo 'Dohome';}; ?></title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/typeahead.min.js"></script>
 </head>
 
 
@@ -33,12 +37,13 @@
         </div>
     </section1>
     <section1>
-        <a class="LienImage" href="messagerie.php"><img class="mail" src="../Vue/img/icon_email.png" alt="logo de l'email"/></a>
-        <a class="LienImage" href="home.php"><img class="deconexion" src="../Vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
+        <a class="LienImage" href="messagerie.php"><img class="mail" src="../Vue/img/icon_email.png"
+                                                        alt="logo de l'email"/></a>
+        <a class="LienImage" href="home.php"><img class="deconexion" src="../Vue/img/icon_deconnexion.png"
+                                                  alt="logo de la deco"/></a>
 
     </section1>
 </header>
-
 
 
 </html>

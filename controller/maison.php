@@ -3,9 +3,9 @@
 $titre = "Mes Maisons";
 
 
-require_once '../Modele/initConnexionBDD.php';
-require_once '../Modele/ajouts.php';
-require_once '../Modele/maison.php';
+require_once '../modele/initConnexionBDD.php';
+require_once '../modele/ajouts.php';
+require_once '../modele/maison.php';
 
 $iduser = 1; //TODO AJOUTER LES SESSIONS
 $maison = getMaisons($dbh, $iduser);
@@ -18,7 +18,7 @@ if (isset($_GET['maison'])) {
 } else {
     // ici la piece n'est pas précisé dans le formulaire
     // Affiche toutes les maisons du compte user
-    include('../Vue/mesmaisons.php');
+    include('../vue/mes_maisons.php');
 
 
     if (isset($_POST['envoi'])) {

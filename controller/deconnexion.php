@@ -16,4 +16,4 @@ session_unset ();
 // On détruit notre session
 session_destroy ();
 //echo  $_SESSION['Mail'];
-include ('../Vue/home.php');
+include ('../vue/home.php');

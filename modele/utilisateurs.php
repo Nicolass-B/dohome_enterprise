@@ -17,6 +17,8 @@ function takeUtilisateurs(PDO $dbh, $login)
     return $affiche;
 }
 
+var_dump(takeUtilisateurs($bdd,'test@test.com'));
+
 //renvoi l'id d'un utilisateur en fonction de son mail
 function takeIdUser(PDO $bdd,$mail){
    $reponse = $bdd-> prepare('SELECT id FROM  user WHERE Mail=\'' . $mail . '\' ');

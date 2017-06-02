@@ -37,8 +37,8 @@
         </div>
     </section1>
     <section1>
-        <a class="LienImage" href="../vue/messagerie.php"><img class="mail" src="../vue/img/icon_email.png" alt="logo de l'email"/></a>
-        <a class="LienImage" href="../vue/home.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
+        <a class="LienImage" href="../controller/messagerie.php"><img class="mail" src="../vue/img/icon_email.png" alt="logo de l'email"/></a>
+        <a class="LienImage" href="../controller/deconnexion.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
 
     </section1>
 </header>

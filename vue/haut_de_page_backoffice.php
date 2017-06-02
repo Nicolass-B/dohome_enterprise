@@ -13,10 +13,10 @@
             <nav>
                 <ul>
                     <div class="menu">
-                        <li><a href="dashboard_backoffice.php">Dashboard</a></li>
-                        <li><a href="analyse_backoffice.php">Analyse</a></li>
-                        <li><a href="messagerie_backoffice.php">Messagerie</a></li>
-                        <li><a href="admin_backoffice.php">BackOffice</a></li>
+                        <li><a href="../vue/dashboard_backoffice.php">Dashboard</a></li>
+                        <li><a href="../vue/analyse_backoffice.php">Analyse</a></li>
+                        <li><a href="../vue/messagerie_backoffice.php">Messagerie</a></li>
+                        <li><a href="../vue/admin_backoffice.php">BackOffice</a></li>
                     </div>
                 </ul>
             </nav>
@@ -24,7 +24,7 @@
     </section1>
     <section1>
         <div class="recherche">
-            <form action="/search" id="searchthis" method="get">
+            <form action="search" id="searchthis" method="get">
                 <input id="search" name="q" type="text" placeholder="Rechercher"/>
                 <input id="search-btn" type="submit" value="Rechercher"/>
             </form>

@@ -40,6 +40,16 @@ if(isset($_POST['envoiProfil'])){
 
     }
 
+    if(isset($_POST['newdateNaissance']) && !empty($_POST['newdateNaissance']) && $_POST['newdateNaissance']!=$infoUser['date_naissance']){
+        $newdateNaissance = htmlentities($_POST['newdateNaissance']);
+        $insertdatenaissance = $bdd-> prepare("UPDATE user SET date_naissance= ? WHERE Mail= ?" );
+        $insertdatenaissance-> execute(array($newdateNaissance,$_SESSION['Mail']));
+        //$msg= "Modification prise en compte";
+
+    }
+
+
+
     if(!empty($_POST['entermdpactuel'] && isset($_POST['entermdpactuel']))){
         $mdpActuel=takeMdp($bdd,$_SESSION['Mail']);
         //verif entermdpactuel = mdp bdd

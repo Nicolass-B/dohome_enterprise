@@ -20,9 +20,9 @@
                 <ul>
                     <div class="menu">
                         <li><a href="../vue/dashboard.php">Dashboard</a></li>
-                        <li><a href="../vue/mon_profil.php">Mon profil</a></li>
-                        <li><a href="../vue/maison.php">Ma maison</a></li>
-                        <li><a href="../vue/shop.php">Boutique</a></li>
+                        <li><a href="../controller/mon_profil.php">Mon profil</a></li>
+                        <li><a href="../controller/maison.php">Ma maison</a></li>
+                        <li><a href="../controller/shop.php">Boutique</a></li>
                     </div>
                 </ul>
             </nav>

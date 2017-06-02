@@ -14,7 +14,7 @@ if (!isset($_SESSION)) {session_start();}
 <?php include("haut_de_page.php"); ?>
 
 <body>
-
+<br>
 <div>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover table-mc-light-blue">

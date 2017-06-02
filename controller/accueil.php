@@ -8,5 +8,5 @@
 
 // Se charge de tout display pour un utilisateur pas loggué
 
-require_once 'Vue/home.php';
+require_once '../vue/home.php';
 

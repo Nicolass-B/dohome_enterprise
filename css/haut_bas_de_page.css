@@ -109,20 +109,7 @@ a:focus {
     padding: 8px;
 }
 
-footer {
-    display: flex;
-    font-family: PT sans;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: white;
-    font-size: small;
-    margin: 0px;
-    background-size: cover;
-    background-color: #454545;
-    text-align: center;
-    padding-bottom: 70px;
 
-}
 
 .mail {
     width: 50px;

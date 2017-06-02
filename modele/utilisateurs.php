@@ -17,6 +17,26 @@ function takeUtilisateurs(PDO $dbh, $login)
     return $affiche;
 }
 
+//var_dump(takeUtilisateurs($bdd,'test@test.com'));
+
+//renvoi l'id d'un utilisateur en fonction de son mail
+function takeIdUser(PDO $bdd,$mail){
+   $reponse = $bdd-> prepare('SELECT id FROM  user WHERE Mail=\'' . $mail . '\' ');
+   $reponse->execute();
+   $affich = $reponse->fetch();
+   return $affich;
+}
+
+//renvoi les info de l'utilisateur pour le profil utilisateur
+function takeInfoUser(PDO $bdd,$mail){
+    $reponse = $bdd-> prepare('SELECT Nom,Prenom,telephone,Adresse,sexe,date_naissance,mot_de_passe FROM  user WHERE Mail=\'' . $mail . '\' ');
+    $reponse->execute();
+    $affich = $reponse->fetch();
+    return $affich;
+}
+
+
+/*
 function updateUser(PDO $bdd, $id_client, $infos)
 {
 
@@ -94,7 +114,7 @@ function isMotDePasse($pass)
 {
     return preg_match("#^(?=.*?[a-z])(?=.*?[0-9A-Z!@$%^&*-]).{7,}$#", $pass);
 }
-
+*/
 
 
 

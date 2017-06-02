@@ -1,3 +1,7 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +26,7 @@
         <p>
             <div class="placement">
                 <div class="imagepp">
-                    <img src="../Vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
+                    <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
                 </div>
 
         <p>P + NOM</p>
@@ -43,7 +47,7 @@
     <p>
         <div class="placement">
             <div class="imagepp">
-                <img src="../Vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
+                <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
             </div>
     <p>
         P + NOM
@@ -64,7 +68,7 @@
     <p>
         <div class="placement">
             <div class="imagepp">
-                <img src="../Vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
+                <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
             </div>
     <p>P + NOM</p>
 

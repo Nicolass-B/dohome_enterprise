@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +16,7 @@
 <header>
     <section1>
         <div class="container">
-            <img class="logo" src="../Vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
             <nav>
                 <ul>
                     <div class="menu">
@@ -32,7 +37,7 @@
     <div class="connexion-inscription">
         <form method="POST" action="../controller/traitement_connexion.php">
 
-            <input type="text" name="loginMail" " placeholder="Login" required/>
+            <input type="text" name="loginMail" placeholder="Login" required/>
             <input type="password" name="pass" placeholder="Mot de passe" required/>
             <input type="submit" name="envoi" value="Se connecter"/>
 
@@ -40,15 +45,17 @@
             <input type="checkbox" name="memo" id="memo"/>
             <label for="memo">Se souvenir de moi</label>
             <p>
-                <a id="t" href="../Vue/signUp.php">S'inscrire</a>
+                <a id="t" href="../vue/sign_up.php">S'inscrire</a>
                 <a id="t" href="">Mdp oublié ?</a>
             </p>
 
         </form>
         <div class="styleMessageErreur">
+
             <?php if (isset($messageErreur)) {
                 echo $messageErreur;
             } ?>
+
         </div>
     </div>
 

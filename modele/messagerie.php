@@ -33,6 +33,16 @@ function sendMessageToUser (PDO $dbh, int $idexp, int $iddest, string $titre, st
     ]);
 }
 
+function getIdFromName (PDO $dbh, string $name){
+    // OMFG DANGEROUS AF
+    // Ptites surprises très droles possibles
+    $query = "SELECT id FROM user WHERE Nom=:nom ORDER BY id ";
+    $sql = $dbh->prepare($query);
+    $sql->execute(['nom'=> $name]);
+    $data = $sql->fetch();
+    return $data;
+}
+
 function getUserSentMessages (PDO $dbh, int $iduser){
     //renvoie les messages envoyés par l'utilisateur.
     $query = "SELECT Titre, contenu FROM messagerie WHERE ID_Expediteur=:iduser ORDER BY Time_Stamp DESC ";

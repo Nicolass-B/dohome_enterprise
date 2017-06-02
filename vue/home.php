@@ -30,7 +30,7 @@
 <div class="corpPage">
     </br><div class="centre2">Bienvenue sur DoHome Enterprise™</div></br>
     <div class="connexion-inscription">
-        <form method="POST" action="../controller/traitementConnexion.php">
+        <form method="POST" action="../controller/traitement_connexion.php">
 
             <input type="text" name="loginMail" " placeholder="Login" required/>
             <input type="password" name="pass" placeholder="Mot de passe" required/>
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <aside class="defilement" style="background-image: url('../vue/img/fond.jpg');">
+    <aside class="defilement" style="background-image: url('../vue/img/fond2.jpg');">
         <section>
             <div class="element">
                 <img src="../vue/img/one.png" class="photo">

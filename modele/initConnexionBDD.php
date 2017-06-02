@@ -8,7 +8,7 @@
 
 $dsn = 'mysql:dbname=dohome;host=localhost;charset=utf8';
 $user = 'root';
-$password = '';
+$password = 'root';
 try{
     $dbh = new PDO($dsn, $user, $password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

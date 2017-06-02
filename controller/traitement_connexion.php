@@ -10,6 +10,7 @@ la fonction empty Détermine si une variable est considérée comme vide.
 Une variable est considérée comme vide si elle n'existe pas, ou si sa valeur équivaut à FALSE
  */
 
+
 if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de connexion
     if(!empty($_POST['loginMail']) && !empty($_POST['pass'])) { // L'utilisateur a rempli tous les champs du formulaire
         include ('../modele/utilisateurs.php');

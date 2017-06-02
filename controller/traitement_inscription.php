@@ -71,7 +71,7 @@ if(isset($_POST['envoi'])){//envoi du formulaire
 
 }
 else{
-    echo 'formulaire non envoier';
+    echo 'formulaire non envoyé';
 }
 
 

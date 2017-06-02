@@ -4,7 +4,11 @@
 <head>
     <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
     <meta charset="UTF-8">
-    <title>Nom de la page</title>
+    <title><?php if (isset($titre)) {
+            echo $titre;} else {
+            echo 'Dohome';}; ?></title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/typeahead.min.js"></script>
 </head>
 
 
@@ -16,9 +20,9 @@
                 <ul>
                     <div class="menu">
                         <li><a href="../vue/dashboard.php">Dashboard</a></li>
-                        <li><a href="../controller/mon_profil.php">Mon profil</a></li>
-                        <li><a href="../controller/maison.php">Ma maison</a></li>
-                        <li><a href="../vue/boutique.php">Boutique</a></li>
+                        <li><a href="../vue/mon_profil.php">Mon profil</a></li>
+                        <li><a href="../vue/maison.php">Ma maison</a></li>
+                        <li><a href="../vue/shop.php">Boutique</a></li>
                     </div>
                 </ul>
             </nav>

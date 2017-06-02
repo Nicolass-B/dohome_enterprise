@@ -4,9 +4,9 @@ if (!isset($_SESSION)) {session_start();}
 $titre = "Mes Maisons";
 
 
+require_once '../modele/ajouts.php';
+require_once '../modele/maison.php';
 require_once '../Modele/init_connexion_bdd.php';
-require_once '../Modele/ajouts.php';
-require_once '../Modele/maison.php';
 
 $iduser = $_SESSION['id_user'];
 $maison = getMaisons($bdd, $iduser);

@@ -115,10 +115,10 @@ if (!isset($_SESSION)) {session_start();}
             <div class="information">
                 <div class="video">
                     <p>Vidéosurveillance</p>
-                    <video src="../img/Zombieland copie.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
+                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
                     </video>
                     <p>Salon</p>
-                    <video src="../img/Zombieland copie.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
+                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
                     </video>
                     <p>Chambre parents</p>
                 </div>

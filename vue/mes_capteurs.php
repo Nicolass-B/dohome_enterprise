@@ -6,13 +6,12 @@
  * Time: 16:08
  */
 
-include("haut_de_page.php");
+include("Haut-de-Page.php");
 ?>
     <div>
         <?php
         highlight_string("<?php\n\$data =\n" . var_export($Capteur, true) . ";\n?>");
         ?>
     </div>
-<?php
-include("bas_de_page.php");
+<?php include("bas_de_page.php"); ?>
 

@@ -112,11 +112,11 @@ section {
 }
 
 
-input[type=submit] {
+section input[type=submit] {
     width: auto;
     height: 25px;
     margin-right: 35px;
-    margin-left: 35px;
+    margin-left: 70%;
     margin-top: 10px;
     font-family: "PT Sans";
     text-transform: uppercase;
@@ -126,7 +126,15 @@ input[type=submit] {
     border-radius: 10px;
     border: 2px solid #00c555;
     font-size: 13px;
+}
+.aligne {
+    margin-top:0px;
+    margin-right:350px;
+    display: inline-block;
 
 }
+.aligne2 {
+    display: inline-block;
+    Vertical-align: top;
 
-
+}

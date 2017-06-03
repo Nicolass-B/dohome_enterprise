@@ -6,7 +6,7 @@
  * Time: 23:53
  */
 include "init_connexion_bdd.php";
-function getMaisons(PDO $dbh, $iduser)
+function getMaisons(PDO $dbh, int $iduser)
 {
 
     // ICI ON RETOURNE DANS $data LES MAISONS DE L'USER

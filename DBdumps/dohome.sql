@@ -96,7 +96,8 @@ CREATE TABLE `historique_capteurs` (
 CREATE TABLE `maison` (
   `Id` int(11) NOT NULL,
   `nbpieces` int(11) NOT NULL,
-  `ID_user` int(11) DEFAULT NULL
+  `ID_user` int(11) DEFAULT NULL,
+  `Nom` varchar(20) DEFAULT 'Maison'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

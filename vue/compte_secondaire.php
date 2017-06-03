@@ -1,5 +1,7 @@
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +16,12 @@ if (!isset($_SESSION)) {session_start();}
 <body>
 
 
-
 <section>
     <div class="information">
         <ul>
             <div class="menusec">
-                <li><a href="mon_profil.php">Mon profil</a></li>
-                <li class="enCours"><a href="compte_secondaire.php">Mes comptes secondaires</a></li>
+                <li><a href="../controller/mon_profil.php">Mon profil</a></li>
+                <li class="enCours"><a href="../controller/compte_secondaire.php">Mes comptes secondaires</a></li>
             </div>
         </ul>
         <p>
@@ -46,23 +47,23 @@ if (!isset($_SESSION)) {session_start();}
 
     <p>
         <div class="placement">
-            <div class="imagepp">
-                <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
+                <div class="imagepp">
+                    <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
+                </div>
+            <p>
+                P + NOM
+            </p>
+
+            <div class="boutton">
+
+                <div class="bouton1">
+                    <input type="button" value="Modifier les accès du compte secondaire" href="lien" id="bouton1"/>
+                </div>
+                <div class="bouton2">
+                    <input type="button" value="Supprimer le compte secondaire" href="lien" id="bouton2"/>
+                </div>
             </div>
-    <p>
-        P + NOM
-    </p>
-
-    <div class="boutton">
-
-        <div class="bouton1">
-            <input type="button" value="Modifier les accès du compte secondaire" href="lien" id="bouton1"/>
         </div>
-        <div class="bouton2">
-            <input type="button" value="Supprimer le compte secondaire" href="lien" id="bouton2"/>
-        </div>
-    </div>
-    </div>
     </p>
 
     <p>

@@ -6,4 +6,4 @@
  * Time: 10:53
  */
 
-include '../vue/shop.php';
+include '../vue/compte_secondaire.php';

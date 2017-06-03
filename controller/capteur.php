@@ -23,7 +23,7 @@ if (isset($_GET['capteur']))
     $idpiece = $_GET['piece'];
     //TODO ajouter les sessions et remplacer ici.
     $pieces = getPiecesfromMaison($bdd, $idmaison);
-    $capteur_piece = getCapteursfromPiece($dbh, $idpiece);
+    $capteur_piece = getCapteursfromPiece($bdd, $idpiece);
     include('../Vue/capteur.php');
 
 
@@ -32,7 +32,7 @@ if (isset($_GET['capteur']))
         if (isset($_POST['type'])) {
             if (isset($_POST['piece'])) {
                 if (isset($_POST['nom_capteur'])) {
-                    ajoutCapteur($dbh, $_POST['type'], $_POST['piece']);
+                    ajoutCapteur($bdd, $_POST['type'], $_POST['piece']);
                     ?>
                     <script>alert("<?php echo htmlspecialchars('Un capteur vient d\'être ajouté', ENT_QUOTES); ?>")</script>
                     <?php

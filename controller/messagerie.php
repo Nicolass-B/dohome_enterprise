@@ -5,18 +5,18 @@
  * Date: 21/05/2017
  * Time: 00:35
  */
-
+if (!isset($_SESSION)) {session_start();}
 require_once '../modele/init_connexion_bdd.php';
 require_once '../modele/messagerie.php';
 
-session_start();
+
 /** COntroleur de la messagerie interne au site
  *  rattaché au modele et à la vue éponyme
  *
  */
-$_SESSION['idUser'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
+//$_SESSION['idUser'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
 
-if(!isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])){
+if(!isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])){
     try {
         http_redirect('../index.php');
         die("Vous n'êtes pas connecté, retour à la page d'accueil");
@@ -32,8 +32,8 @@ if(!isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])){
     }else{
         // Si on souhaite un affichage général
 
-        $messagesUser = getMessageUser($dbh, $_SESSION['idUser']);
-        $messageSent = getUserSentMessages($dbh, $_SESSION['idUser']);
+        $messagesUser = getMessageUser($bdd, $_SESSION['id_user']);
+        $messageSent = getUserSentMessages($bdd, $_SESSION['id_user']);
 
         include '../vue/messagerie.php';
     }

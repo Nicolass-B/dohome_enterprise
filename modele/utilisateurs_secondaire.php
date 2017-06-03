@@ -23,3 +23,6 @@ function getSecondaryUser(PDO $bdd,$id_user){
 function deleteSecondaryUser(PDO $bdd,$id_user){
     $bdd->query('DELETE * FROM client_secondaire  WHERE ID_USER=\'' . $id_user . '\'');
 }
+
+
+

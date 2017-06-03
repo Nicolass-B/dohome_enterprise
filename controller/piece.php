@@ -5,7 +5,7 @@
  * Date: 21/05/2017
  * Time: 16:11
  */
-
+if (!isset($_SESSION)) {session_start();}
 $titre = "Mes pièces";
 require_once '../Modele/init_connexion_bdd.php';
 require_once '../Modele/piece.php';

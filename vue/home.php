@@ -50,12 +50,11 @@ if (!isset($_SESSION)) {session_start();}
             </p>
 
         </form>
+
         <div class="styleMessageErreur">
-
             <?php if (isset($messageErreur)) {
-                echo $messageErreur;
+                echo '<div class="">'.$messageErreur.'</div>';
             } ?>
-
         </div>
     </div>
 

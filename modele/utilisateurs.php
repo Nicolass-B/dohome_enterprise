@@ -24,6 +24,7 @@ function takeIdUser(PDO $bdd,$mail){
    $reponse = $bdd-> prepare('SELECT id FROM  user WHERE Mail=\'' . $mail . '\' ');
    $reponse->execute();
    $affich = $reponse->fetch();
+
    return $affich;
 }
 
@@ -113,50 +114,5 @@ function isNumeroTel($numero)
 function isMotDePasse($pass)
 {
     return preg_match("#^(?=.*?[a-z])(?=.*?[0-9A-Z!@$%^&*-]).{7,}$#", $pass);
-}
-*/
-
-
-
-
-
-
-
-/*
-$rep=takeMdp($dbh,'test@test.Com');
-var_dump($rep);
-
-function connectUser(PDO $db, $email, $mot_de_passe)
->>>>>>> origin/Nico-Accueil-inscription-profil
-{
-    ####
-// Vérification des identifiants
-    $email = htmlspecialchars($email);
-    $mot_de_passe = htmlspecialchars($mot_de_passe);
-    $req = $db->prepare('SELECT * FROM user WHERE Mail = :email AND mot_de_passe = :mot_de_passe');
-    $req->execute(array(
-        'email' => $email,
-        'mot_de_passe' => md5($mot_de_passe)));
-
-    $resultat = $req->fetch();
-
-    //echo ("BLOP");
-    return ($resultat);
-}
-
-function createUser($bdd, $utilisateur)
-{
-    $query=$bdd->prepare('INSERT INTO client(nom, prenom, mot_de_passe, email) VALUES(:nom, :prenom, :mot_de_passe, :email)');
-    $query->execute(array(
-        'nom' => htmlspecialchars($utilisateur['nom']),
-        'prenom' => htmlspecialchars($utilisateur['prenom']),
-        'mot_de_passe' => htmlspecialchars(md5($utilisateur['mot_de_passe'])),
-        'email' => htmlspecialchars($utilisateur['email'])
-    ));
-    $id_client = $bdd->lastInsertId();
-    $query->CloseCursor();
-
-    return ($id_client);
-
 }
 */

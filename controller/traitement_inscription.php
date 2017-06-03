@@ -51,27 +51,29 @@ if(isset($_POST['envoi'])){//envoi du formulaire
             if(verifMail($bdd,$mail)==false){
                 insertUser($bdd,$nom,$prenom,$pass,$tel,$mail,$adresse,$sexe,$année,$mois,$jour);
                 $error= 'Inscription réussi';
+                include('../vue/sign_up.php');
 
             }
 
             else {
                 $error= 'le mail est déja utilisé';
-                include('../Vue/sign_up.php');
+                include('../vue/sign_up.php');
             }
         }
         else{
             $error= 'mdp différent';
-            include('../Vue/sign_up.php');
+            include('../vue/sign_up.php');
         }
     }
     else {
         $error= 'les champs ne sont pas tous rempli';
-        include('../Vue/sign_up.php');
+        include('../vue/sign_up.php');
     }
 
 }
 else{
-    echo 'formulaire non envoyé';
+    $error= 'formulaire non envoyé';
+    include('../vue/sign_up.php');
 }
 
 

@@ -6,7 +6,7 @@
  * Time: 10:06
  */
 
-require_once ('initConnexionBDD.php');
+require_once ('init_connexion_bdd.php');
 
 function getMessageUser(PDO $dbh, int $iduser){
     //renvoie les messages destinés à un utilisateur donné en entrée

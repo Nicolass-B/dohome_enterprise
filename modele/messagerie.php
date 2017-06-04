@@ -19,7 +19,7 @@ function getMessageUser(PDO $dbh,int $iduser){
     return $data;
 }
 
-function sendMessageToUser (PDO $dbh, int $idexp, int $iddest, string $titre, string $texte){
+function sendMessageToUser (PDO $dbh, int $idexp, string $iddest, string $titre, string $texte){
     // Permet d'envoyer un message
     // https://s-media-cache-ak0.pinimg.com/736x/19/ec/3f/19ec3f46ca09b4b2e91380f7d4ee45fe.jpg
     $query = "INSERT INTO messagerie(Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) 
@@ -29,7 +29,7 @@ function sendMessageToUser (PDO $dbh, int $idexp, int $iddest, string $titre, st
         'idexp'=> $idexp,
         'iddest' => $iddest,
         'titre' => $titre,
-        'texte' => $texte
+        'content' => $texte
     ]);
 }
 

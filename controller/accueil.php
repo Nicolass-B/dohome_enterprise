@@ -7,6 +7,6 @@
  */
 
 // Se charge de tout display pour un utilisateur pas loggué
-
-require_once 'Vue/home.php';
+if (!isset($_SESSION)) {session_start();}
+require_once '../vue/home.php';
 

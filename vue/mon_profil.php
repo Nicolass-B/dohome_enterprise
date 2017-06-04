@@ -1,3 +1,7 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,28 +19,44 @@
         <ul>
             <div class="menusec">
                 <li class="enCours"><a href="mon_profil.php">Mon profil</a></li>
-                <li><a href="compte_secondaire.php">Mes comptes secondaires</a></li>
+                <li><a href="../vue/compte_secondaire.php">Mes comptes secondaires</a></li>
             </div>
         </ul>
     </div>
+
+<form method="POST" action="../controller/edit_profil.php" enctype="multipart/form-data">
     <p>
     <div class="formulaire">
         <div class="information">
             <ul>
-                <label>Nom</label>
-                <li><input type="text" name="pseudo" value="Nom"/></li>
-                <label>Prénom</label>
-                <li><input type="text" name="pseudo" value="Prénom"/></li>
-                <label>E-mail</label>
-                <li><input type="text" name="pseudo" value="Adresse mail" disabled="disabled"/></li>
-                <label>Mot de passe</label>
-                <li><input type="text" name="pseudo" value="********" disabled="disabled"/></li>
-                <label>Adresse</label>
-                <li><input type="text" name="pseudo" value="Adresse"/></li>
-                <label>Date de naissance</label>
-                <li><input type="date" value="JJ/MM/AAAA"/></li>
-                <label>Numéro de téléphone</label>
-                <li><input type="text" name="pseudo" value="Numéro"/></li>
+                Nom
+                <li><input type="text" name="newnom" value="<?php echo $infoUser["Nom"]; ?>" /></li>
+                Prénom
+                <li><input type="text" name="newprenom" value="<?php echo $infoUser["Prenom"]; ?>" /></li>
+                E-mail
+                <li><input type="email" name="newmail" value="<?php echo $_SESSION['Mail']; ?> "  disabled /></li>
+                Mot de passe actuel
+                <li><input type="password" name="entermdpactuel" value="" /></li>
+                Mot de passe
+                <li><input type="password" name="newmdp" value="" /></li>
+                Confirmation Mot de passe
+                <li><input type="password" name="newconfirmeMdp" value="" /></li>
+                Adresse
+                <li><input type="text" name="newadresse" value="<?php echo $infoUser["Adresse"]; ?>"/></li>
+                Date de naissance
+                <li><input type="text"  name="newdateNaissance" value="<?php echo $infoUser["date_naissance"]; ?>"/></li>
+                Numéro de téléphone
+                <li><input type="tel" name="newtel" value="<?php echo $infoUser["telephone"]; ?>"/></li>
+                <?php if(!empty($infoUser['avatar'])){
+                    ?>
+                <img src="../vue/avatar_user/<?php echo $infoUser['avatar'] ?>" width="100" />
+                <?php
+                } ?>
+                Photo de profil
+                <li><input type="file" name="avatar" "/></li>
+
+
+                <input type="submit" name="envoiProfil" value="Modifier mon profil">
 
 
             </ul>
@@ -44,9 +64,8 @@
     </div>
 
     </p>
-    <div class="bouton3">
-        <input type="button" value="Enregistrer mes données" href="lien" id="bouton3"/>
-    </div>
+</form>
+    <?php if(isset($msg)){ echo $msg;} ?>
 
 </section>
 </body>

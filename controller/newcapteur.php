@@ -4,10 +4,11 @@
  * leur rattachement à une piece et une une maison.
  *
  */
-include('../Modele/initConnexionBDD.php');
+if (!isset($_SESSION)) {session_start();}
+include('../Modele/init_connexion_bdd.php');
 $idmaison = 1; //$_SESSION['idmaison']; to add quand on aura les sessions
 $query = "SELECT ID_pieces,Nom FROM pieces WHERE ID_Maison =:idmaison";
-$sql = $dbh->prepare($query);
+$sql = $bdd->prepare($query);
 $sql->bindParam(':idmaison', $idmaison);
 $sql->execute();
 $sql->fetch();

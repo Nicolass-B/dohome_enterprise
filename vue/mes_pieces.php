@@ -1,10 +1,14 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Maison</title>
-    <link rel="stylesheet" href="../css/Maison.css"/>
+    <link rel="stylesheet" href="../css/maison.css"/>
     <link rel="stylesheet" href="../css/tableau.css"/>
 </head>
 <?php include("haut_de_page.php"); ?>

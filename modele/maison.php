@@ -5,7 +5,7 @@
  * Date: 20/05/2017
  * Time: 23:53
  */
-
+include "init_connexion_bdd.php";
 function getMaisons(PDO $dbh, $iduser)
 {
 

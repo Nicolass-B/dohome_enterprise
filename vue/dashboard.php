@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+?>
+
+
 <!DOCTYPE html>
 <html xmlns:justify xmlns:text-justify="http://www.w3.org/1999/xhtml">
 
@@ -9,8 +14,6 @@
 
 <?php include("haut_de_page.php"); ?>
 <body>
-
-
 
 <section>
     <HD>
@@ -112,10 +115,10 @@
             <div class="information">
                 <div class="video">
                     <p>Vidéosurveillance</p>
-                    <video src="../img/Zombieland copie.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
+                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
                     </video>
                     <p>Salon</p>
-                    <video src="../img/Zombieland copie.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
+                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
                     </video>
                     <p>Chambre parents</p>
                 </div>

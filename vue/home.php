@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)) {session_start();}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +16,7 @@
 <header>
     <section1>
         <div class="container">
-            <img class="logo" src="../Vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
             <nav>
                 <ul>
                     <div class="menu">
@@ -28,30 +33,11 @@
 
 
 <div class="corpPage">
-    <div class="textIntro">
-
-        L'approche sociale dans notre pays encourage la diversité
-        et la sensibilité d'un mouvement cheminant vers plus d'unité.
-        En effet, c'est en toute prescience que je peux garantir
-        présentement que la sécurité des personnes confirme
-        l'inaliénable volonté d'un temps et d'une époque en phase
-        avec les innovations afin de ne pas être dépassé.
-        Beaucoup de nos concitoyens n’ont pas encore fait leur
-        choix et pensent que la tradition attachée à notre mémoire
-        consubstantielle justifie les subventions publiques d'un
-        déploiement visionnaire revivifiant. De plus, vous
-        connaissez certainement la situation qui mène à dire que
-        la dynamique vertueuse doit correspondre aux directives
-        indispensables préalablement établies afin de poursuivre
-        l'effort plus que légitime d'une majorité parlementaire
-        qui responsabiliserait sur l'urgence écologique.
-
-    </div>
-
+    </br><div class="centre2">Bienvenue sur DoHome Enterprise™</div></br>
     <div class="connexion-inscription">
-        <form method="POST" action="../controller/traitementConnexion.php">
+        <form method="POST" action="../controller/traitement_connexion.php">
 
-            <input type="text" name="loginMail" " placeholder="Login" required/>
+            <input type="text" name="loginMail" placeholder="Login" required/>
             <input type="password" name="pass" placeholder="Mot de passe" required/>
             <input type="submit" name="envoi" value="Se connecter"/>
 
@@ -59,15 +45,65 @@
             <input type="checkbox" name="memo" id="memo"/>
             <label for="memo">Se souvenir de moi</label>
             <p>
-                <a id="t" href="../Vue/signUp.php">S'inscrire</a>
+                <a id="t" href="../vue/sign_up.php">S'inscrire</a>
                 <a id="t" href="">Mdp oublié ?</a>
             </p>
 
         </form>
+
         <div class="styleMessageErreur">
             <?php if (isset($messageErreur)) {
-                echo $messageErreur;
+                echo '<div class="">'.$messageErreur.'</div>';
             } ?>
+        </div>
+    </div>
+
+    <aside class="defilement" style="background-image: url('../vue/img/fond2.jpg');">
+        <section>
+            <div class="element">
+                <img src="../vue/img/one.png" class="photo">
+                <div class="texte">DoHome Enterprise ™ vous propose </br> une solution domotique innovante </br>et intelligente</div>
+            </div>
+            <div class="element">
+                <img src="../vue/img/two.png" class="photo">
+                <div class="texte">Gérez votre consommation </br> énergétique et faites </br>des bénéfices !</div>
+            </div>
+        </section>
+        <section>
+            <div class="element">
+                <img src="../vue/img/three.png" class="photo">
+                <div class="texte">Contrôlez votre maison </br>où que vous soyez sur votre smartphone </br>ou votre ordinateur</div>
+            </div>
+            <div class="element">
+                <img src="../vue/img/four.png" class="photo">
+                <div class="texte">Toutes vos données sont </br>sécurisées et sont anonymes</div>
+            </div>
+        </section>
+    </aside>
+
+
+
+
+
+    <div class="contact" >
+        <div class="contact_bis">
+            <div class="centre2">
+                Contact
+            </div>
+            <div class="conteneur">
+                <div class="element">
+                    <img src="../vue/img/localisation.png" class="icone">
+                    <div class="contact_txt">28 Rue Notre Dame des Champs</br>Paris 75006</div>
+                </div>
+                <div class="element">
+                    <img src="../vue/img/mail.png" class="icone">
+                    <div class="contact_txt">admin@dohome.com</div>
+                </div>
+                <div class="element">
+                    <img src="../vue/img/telephone.png" class="icone">
+                    <div class="contact_txt">06 XX XX XX XX</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -5,14 +5,14 @@
  * Date: 21/05/2017
  * Time: 16:11
  */
-
+if (!isset($_SESSION)) {session_start();}
 $titre = "Mes pièces";
-require_once '../Modele/initConnexionBDD.php';
+require_once '../Modele/init_connexion_bdd.php';
 require_once '../Modele/piece.php';
 require_once '../Modele/ajouts.php';
 
 $idmaison = $_GET['maison']; //TODO MODIFIER CA EN SESSION
-$piece = getPiecesfromMaison($dbh, $idmaison);
+$piece = getPiecesfromMaison($bdd, $idmaison);
 
 
 if (isset($_GET['piece'])) {
@@ -28,7 +28,7 @@ if (isset($_GET['piece'])) {
     if (isset($_POST['envoi'])) {
         if (isset($_POST['maison'])) {
             if (isset($_POST['nom_piece'])) {
-                ajoutPiece($dbh, $_POST['type'], $_POST['piece']);
+                ajoutPiece($bdd, $_POST['type'], $_POST['piece']);
                 ?>
                 <script>alert("<?php echo htmlspecialchars('la pièce a bien été ajoutée', ENT_QUOTES); ?>")</script>
                 <?php

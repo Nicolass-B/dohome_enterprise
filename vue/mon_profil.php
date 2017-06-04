@@ -24,7 +24,7 @@ if (!isset($_SESSION)) {session_start();}
         </ul>
     </div>
 
-<form method="POST" action="../controller/edit_profil.php">
+<form method="POST" action="../controller/edit_profil.php" enctype="multipart/form-data">
     <p>
     <div class="formulaire">
         <div class="information">
@@ -47,6 +47,14 @@ if (!isset($_SESSION)) {session_start();}
                 <li><input type="text"  name="newdateNaissance" value="<?php echo $infoUser["date_naissance"]; ?>"/></li>
                 Numéro de téléphone
                 <li><input type="tel" name="newtel" value="<?php echo $infoUser["telephone"]; ?>"/></li>
+                <?php if(!empty($infoUser['avatar'])){
+                    ?>
+                <img src="../vue/avatar_user/<?php echo $infoUser['avatar'] ?>" width="100" />
+                <?php
+                } ?>
+                Photo de profil
+                <li><input type="file" name="avatar" "/></li>
+
 
                 <input type="submit" name="envoiProfil" value="Modifier mon profil">
 

@@ -6,16 +6,16 @@
  * Time: 14:26
  */
 include_once ('../modele/messagerie.php');
-
+if (!isset($_SESSION)) {session_start();}
 
 //TODO DELETE LES SESSIONS §§§§
 
-$_SESSION['idUser'] = 1;
+//$_SESSION['idUser'] = 1;
 
 if (isset($_GET['msg']) && !empty($_GET['msg'])) {
     // Si l'utilisateur veut un message individuel
 
-    $message = getUniqueMessage($dbh, $_GET['msg'], $_SESSION['idUser']);
+    $message = getUniqueMessage($bdd, $_GET['msg'], $_SESSION['id_user']);
     $titre = 'Message de '. $message['Nom'];
     include_once('../vue/message.php');
 } else {

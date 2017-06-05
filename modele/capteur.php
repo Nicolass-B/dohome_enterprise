@@ -5,7 +5,7 @@
  * Date: 05/05/2017
  * Time: 10:12
  */
-require_once("initConnexionBDD.php");
+require_once("init_connexion_bdd.php");
 
 class capteur
 {

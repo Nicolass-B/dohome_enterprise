@@ -2,6 +2,8 @@
     <link rel="stylesheet" href="../css/tableau.css">
 </head>
 <?php
+if (!isset($_SESSION)) {session_start();}
+
 $titre = 'Mes Capteurs';
 include('haut_de_page.php');
 require_once('..\Modele\Capteur.php');
@@ -75,4 +77,6 @@ require_once('..\Modele\Capteur.php');
 </div>
 
 
-</body>
+    </body>
+
+<?php include 'bas_de_page.php'; ?>

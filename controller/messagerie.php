@@ -5,9 +5,10 @@
  * Date: 21/05/2017
  * Time: 00:35
  */
-
-require_once '../modele/initConnexionBDD.php';
+if (!isset($_SESSION)) {session_start();}
+require_once '../modele/init_connexion_bdd.php';
 require_once '../modele/messagerie.php';
+
 
 /** COntroleur de la messagerie interne au site
  *  rattaché au modele et à la vue éponyme
@@ -32,11 +33,12 @@ if(!isset($_SESSION['id_user'])){
     }else{
         // Si on souhaite un affichage général
 
+
         $messagesUser = getMessageUser($dbh, $_SESSION['id_user']);
         $messageSent = getUserSentMessages($dbh, $_SESSION['id_user']);
+
 
         include '../vue/messagerie.php';
     }
 
 }
-

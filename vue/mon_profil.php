@@ -57,11 +57,9 @@ if (!isset($_SESSION)) {session_start();}
                 <input type="submit" name="envoiProfil" value="Modifier mon profil">
 
 
-                </ul>
             </div>
         </div>
 
-    </p>
 </form>
     <?php if(isset($msg)){ echo $msg;} ?>
 

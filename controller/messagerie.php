@@ -13,16 +13,16 @@ require_once '../modele/messagerie.php';
  *  rattaché au modele et à la vue éponyme
  *
  */
-$_SESSION['idUser'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
+$_SESSION['id_user'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
 
 
-if(!isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])){
+if(!isset($_SESSION['id_user'])){
     try {
         http_redirect('../index.php');
         die("Vous n'êtes pas connecté, retour à la page d'accueil");
     }
     catch (Exception $e){
-        echo (' bon, y\'a pas windows c\'est problématique non ?');
+        echo (' bon, y\'a pas ça sur windows c\'est problématique non ?');
     }
 
 } else {
@@ -32,8 +32,8 @@ if(!isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])){
     }else{
         // Si on souhaite un affichage général
 
-        $messagesUser = getMessageUser($dbh, $_SESSION['idUser']);
-        $messageSent = getUserSentMessages($dbh, $_SESSION['idUser']);
+        $messagesUser = getMessageUser($dbh, $_SESSION['id_user']);
+        $messageSent = getUserSentMessages($dbh, $_SESSION['id_user']);
 
         include '../vue/messagerie.php';
     }

@@ -34,7 +34,7 @@ if (!isset($_SESSION)) {session_start();}
                 <tr>
                     <td data-title="ID"><?php echo $row['ID_pieces'] ?></td>
                     <td data-title="Nom">
-                        <a href="../controller/piece.php?piece=<?php echo $row['ID_pieces'] ?>?maison=<?php echo $idmaison?>"> <?php echo $row['Nom'] ?> </a>
+                        <a href="../controller/piece.php?piece=<?php echo $row['ID_pieces'] ?>&maison=<?php echo $idmaison?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
                 </tr>
 

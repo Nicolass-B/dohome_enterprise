@@ -77,6 +77,33 @@ if(isset($_POST['envoiProfil'])){
             $msg ='Mot de passe actuel invalide';
         }
     }
+
+    if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])){
+        $tailleMax= 2097152;
+        $extensiosValides=array('jpg','jpeg','gif','png');
+        if($_FILES['avatar']['size']<= $tailleMax){
+            //strrchr renvoi l'extension avec un point substr ignore un caratere
+            $extensionsUpload =strtolower(substr(strrchr($_FILES['avatar']['name'],'.'),1));
+            //in_array verif si se qui a dans $extensionsUpload est dans le tableau $extensiosValides
+            if(in_array($extensionsUpload,$extensiosValides)){
+                $chemin ="../vue/avatar_user/".$_SESSION['id_user'].".".$extensionsUpload;
+                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);
+                if($resultat){
+                    updateAvatarUser($bdd,$_SESSION['id_user'],$extensionsUpload);
+                }
+                else{
+                    $msg ="erreur durant l'importation de votre avatar";
+                }
+            }
+            else{
+                $msg='Votre photo de profil doit être au format jpg,jpeg,gif ou png';
+            }
+        }
+        else{
+            $msg='Votre photo de profil ne doit pas dépasser 2Mo';
+        }
+    }
+
     include ('../controller/mon_profil.php');
 
 }

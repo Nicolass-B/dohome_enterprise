@@ -1,7 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
+if (!isset($_SESSION)) {session_start();}
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +61,9 @@ if (!isset($_SESSION)) {
             </div>
         </div>
 
-    </form>
-    <?php if (isset($msg)) {
-        echo $msg;
-    } ?>
+    </p>
+</form>
+    <?php if(isset($msg)){ echo $msg;} ?>
 
 </section>
 </body>

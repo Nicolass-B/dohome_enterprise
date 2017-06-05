@@ -19,34 +19,38 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
         $loginMail=htmlentities($_POST['loginMail']);
         $pass=htmlentities($_POST['pass']);
 
-        $repUtilisateur=takeUtilisateurs($dbh,$loginMail);
+        $repUtilisateur=takeUtilisateurs($bdd,$loginMail);
         if($repUtilisateur['nb_ocu']==0){//utilisateur non trouvé dans la base de donnée
-            $messageError=  'Utilisateur non trouvé';
+            $messageErreur=  'Login ou mot de passe incorrect';
             include ('../Vue/home.php');
         }
 
         else{// utilisateur trouvé
-            $repMdp=takeMdp($dbh,$loginMail);
+            $repMdp=takeMdp($bdd,$loginMail);
             if($_POST['pass']!=$repMdp['mot_de_passe']){//mot de passe non trouvé dans la base de donnée
-                $messageError= 'Mauvais mot de passe';
+                $messageErreur= 'Login ou mot de passe incorrect';
                 include ('../Vue/home.php');
             }
-            elseif (isAdmin($dbh,$loginMail) && $repUtilisateur['nb_ocu']==1){
-                include('../Vue/dashboard_back_office.php');
+            elseif (isAdmin($bdd,$loginMail) && $repUtilisateur['nb_ocu']==1){
+                include('../Vue/dashboard_backoffice.php');
             }
 
             else{//mdp OK
+                session_start();
+                $_SESSION['Mail']=$loginMail;
+                $idUser=takeIdUser($bdd,$loginMail);
+                $_SESSION['id_user']=$idUser['id'];
               include('../Vue/dashboard.php');
             }
         }
     }
     else{
-        $messageError=  'Tout les champs ne sont pas remplis';
+        $messageErreur=  'Tout les champs ne sont pas remplis';
         include ('../Vue/home.php');
     }
 }
 else{
-    $messageError= 'Formulaire pas validé';
+    $messageErreur= 'Formulaire pas validé';
     include ('../Vue/home.php');
 }
 

@@ -1,4 +1,5 @@
 <?php
+if (!isset($_SESSION)) {session_start();}
 //database configuration
 $dbHost = 'localhost';
 $dbUsername = 'root';

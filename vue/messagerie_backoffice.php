@@ -8,13 +8,57 @@
 <?php include("haut_de_page_backoffice.php"); ?>
 
 <body>
+<div>
+    <h1>
+        <a href="../controller/redigermessage.php" style="color: white"> Rédiger un message</a>
+    </h1>
+</div>
+<div>
+    <form method="POST" action="../controller/msg_admin.php">
+        <select name="id" required>
+            <?php
 
+            foreach ($userList as $row) {
+                echo "<option value=" . $row['id'] . ">" . $row['Nom'] . "</option>";
+            }
+            ?>
+        </select>
+        <input type="submit" name="envoi" value="impersonate that person"/>
 
+</div>
 
-<body>
+<div>
+    <div class="table-responsive-vertical shadow-z-1">
+        <table id="table" class="table table-hover table-mc-light-blue">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Expéditeur</th>
+                <th>Destinataire</th>
+                <th>Titre</th>
+            <tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($messagesUser as $row) {
+                //var_dump($row);
+                ?>
+                <tr>
+                    <td data-title="Date"><?php echo $row['Date'] ?></td>
+                    <td data-title="Expéditeur"><?php echo $row['Nom'] ?></td>
+                    <td data-title="Destinataire"><?php echo $row['desti'] ?></td>
+                    <td data-title="Titre">
+                        <a href="../controller/voirmessage.php?msg=<?php echo $row['ID_Message'] ?>"><?php echo $row['Titre'] ?></a>
+                    </td>
+                </tr>
 
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
 <?php include("bas_de_page.php"); ?>
-
-</html>

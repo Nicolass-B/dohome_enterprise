@@ -1,0 +1,120 @@
+section{
+    display: flex;
+    justify-content: space-around;
+    font-family: PT sans;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+#ajout {
+    width: auto;
+    height: 25px;
+    margin-right: 35px;
+    margin-left: 35px;
+    margin-top: 10px;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}
+
+.temperature{
+    border-radius: 20px;
+    width: auto;
+    border: 2px solid white;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    horizontal-align: middle ;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 60px;
+    padding-left: 60px;
+
+}
+.camera{
+    border-radius: 20px;
+    width: auto;
+    border: 2px solid white;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    horizontal-align: middle ;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.fumee{
+    border-radius: 20px;
+    width: auto;
+    border: 2px solid white;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    horizontal-align: middle ;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.alarme{
+    border-radius: 20px;
+    width: auto;
+    border: 2px solid white;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    horizontal-align: middle ;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+#quantite{
+    width:100px;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color:white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}
+
+#temperature{
+    height: 100px;
+    width: 100px;
+}
+
+#camera{
+    height: 100px;
+    width: 100px;
+}
+
+#alarme{
+    height: 100px;
+    width: 100px;
+}
+
+#feu{
+    height: 100px;
+    width: 100px;
+}
+
+texteintro{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}

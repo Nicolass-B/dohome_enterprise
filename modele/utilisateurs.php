@@ -8,7 +8,6 @@ function takeMdp(PDO $dbh, $login)
     $affiche = $reponse->fetch();
     return $affiche;
 }
-
 // vérif user
 function takeUtilisateurs(PDO $dbh, $login)
 {
@@ -16,9 +15,6 @@ function takeUtilisateurs(PDO $dbh, $login)
     $affiche = $reponse->fetch();
     return $affiche;
 }
-
-//var_dump(takeUtilisateurs($bdd,'test@test.com'));
-
 //renvoi l'id d'un utilisateur en fonction de son mail
 function takeIdUser(PDO $bdd,$mail){
    $reponse = $bdd-> prepare('SELECT id FROM  user WHERE Mail=\'' . $mail . '\' ');
@@ -27,7 +23,6 @@ function takeIdUser(PDO $bdd,$mail){
 
    return $affich;
 }
-
 //renvoi les info de l'utilisateur pour le profil utilisateur
 function takeInfoUser(PDO $bdd,$mail){
     $reponse = $bdd-> prepare('SELECT Nom,Prenom,telephone,Adresse,sexe,date_naissance,mot_de_passe,avatar FROM  user WHERE Mail=\'' . $mail . '\' ');
@@ -43,3 +38,4 @@ function updateAvatarUser(PDO $bdd,$id_user,$extensioUpload){
         'id'=>$id_user
     ));
 }
+

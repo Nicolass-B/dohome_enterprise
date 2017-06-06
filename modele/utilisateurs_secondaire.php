@@ -7,15 +7,16 @@
  */
 include ('init_connexion_bdd.php');
 
-function createSecondaryUser(PDO $bdd, $SecondUser,$prenomSecondUser,$mailSecondUser,$passSecondUser,$id_user){
-    $query=$bdd->prepare('INSERT INTO client_secondaire(nom,prenom,mail,pass,ID_USER) VALUES(:nom,:prenom :mail, :pass, :ID_USER)');
+function createSecondaryUser(PDO $bdd, $nomSecondUser,$prenomSecondUser,$mailSecondUser,$passSecondUser,$id_user){
+    $query=$bdd->prepare('INSERT INTO client_secondaire(nom,prenom,mail,pass,ID_USER) VALUES(:nom,:prenom ,:mail, :pass, :ID_USER)');
     $query->execute(array(
-        'nom'=>$SecondUser,
+        'nom'=>$nomSecondUser,
         'prenom'=>$prenomSecondUser,
         'mail' => $mailSecondUser,
         'pass' => $passSecondUser,
         'ID_USER' => $id_user
     ));
+    echo 'good';
 }
 
 function updateSecondaryUser(PDO $bdd,$id_user){

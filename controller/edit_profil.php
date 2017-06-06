@@ -79,15 +79,19 @@ if(isset($_POST['envoiProfil'])){
     }
 
     if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])){
+        var_dump($_FILES['avatar']);
         $tailleMax= 2097152;
         $extensiosValides=array('jpg','jpeg','gif','png');
         if($_FILES['avatar']['size']<= $tailleMax){
-            //strrchr renvoi l'extension avec un point substr ignore un caratere
+            //1. strrchr renvoie l'extension avec le point (« . »).
+            //2. substr(chaine,1) ignore le premier caractère de chaine.
+            //3. strtolower met l'extension en minuscules.
             $extensionsUpload =strtolower(substr(strrchr($_FILES['avatar']['name'],'.'),1));
             //in_array verif si se qui a dans $extensionsUpload est dans le tableau $extensiosValides
             if(in_array($extensionsUpload,$extensiosValides)){
-                $chemin ="../vue/avatar_user/".$_SESSION['id_user'].".".$extensionsUpload;
-                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);
+                $realname = pathinfo($_FILES['avatar']['name'], PATHINFO_FILENAME);
+                $chemin ="../controller/".$realname.$_SESSION['id_user'].".".$extensionsUpload;
+                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);;
                 if($resultat){
                     updateAvatarUser($bdd,$_SESSION['id_user'],$extensionsUpload);
                 }

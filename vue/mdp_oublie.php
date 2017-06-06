@@ -9,7 +9,7 @@
 
 <body>
 
-<form method="post"  action="../controller/traitementMdpOubli.php">
+<form method="post"  action="../controller/traitement_mdp_oubli.php">
     <input type="email" name="recup_mail" placeholder="Entrez votre mail"/><br/>
     <input type="submit" name="envoi" value="Valider"/>
 </form>

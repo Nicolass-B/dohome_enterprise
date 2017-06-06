@@ -1,4 +1,5 @@
 ErrorDocument 404 /DoHome/Vue/error404.php
+options +FollowSymlinks
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

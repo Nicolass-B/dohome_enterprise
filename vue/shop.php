@@ -37,7 +37,7 @@
 
     <section3>
         <div class="Produits">
-            <a href="">
+            <a href="../vue/boutique.php">
 
                 <p>
                     Tous nos produits

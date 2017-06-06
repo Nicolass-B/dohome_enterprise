@@ -16,6 +16,8 @@ class capteur
     public $id_user;
     public $typecapteur;
     public $valeur_now;
+    public $histo_valeur;
+    public $histo_date;
 
     private $pdo; // pour les acces de l'objet a la base de données
 
@@ -53,9 +55,7 @@ class capteur
         $req2->execute(array(
             "idpiece" => intval($id)
         ));
-        var_dump($req2);
         $this->idmaison = $req2->fetch();
-        var_dump($req2);
         //echo" GOGOOGOGOGO";
     }
 
@@ -76,13 +76,13 @@ class capteur
 
     public function get_valeur_history()
     {
-        $req = $this->pdo->prepare('SELECT Valeur FROM historique_capteurs WHERE ID_Capteurs=:idcapteur ORDER BY Date_Mesure');
+        $req = $this->pdo->prepare('SELECT Date_Mesure FROM historique_capteurs WHERE ID_Capteur=:idcapteur ORDER BY Date_Mesure');
         $req->execute(array('idcapteur' => $this->idcapteur));
-
-        return $req;
+        $this->histo_date = $req->fetchAll(PDO::FETCH_COLUMN, 0);
+        $req = $this->pdo->prepare('SELECT Valeur FROM historique_capteurs WHERE ID_Capteur=:idcapteur ORDER BY Date_Mesure');
+        $req->execute(array('idcapteur' => $this->idcapteur));
+        $this->histo_valeur = $req->fetchAll(PDO::FETCH_COLUMN, 0);
     }
-
-
 
 }
 ?>

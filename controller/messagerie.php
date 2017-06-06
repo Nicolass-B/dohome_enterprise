@@ -6,7 +6,7 @@
  * Time: 00:35
  */
 if (!isset($_SESSION)) {session_start();}
-require_once '../modele/init_connexion_bdd.php';
+require  '../modele/init_connexion_bdd.php';
 require_once '../modele/messagerie.php';
 
 
@@ -34,8 +34,8 @@ if(!isset($_SESSION['id_user'])){
         // Si on souhaite un affichage général
 
 
-        $messagesUser = getMessageUser($dbh, $_SESSION['id_user']);
-        $messageSent = getUserSentMessages($dbh, $_SESSION['id_user']);
+        $messagesUser = getMessageUser($bdd, $_SESSION['id_user']);
+        $messageSent = getUserSentMessages($bdd, $_SESSION['id_user']);
 
 
         include '../vue/messagerie.php';

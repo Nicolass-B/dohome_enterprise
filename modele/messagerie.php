@@ -33,12 +33,12 @@ function sendMessageToUser (PDO $dbh, int $idexp, string $iddest, string $titre,
     ]);
 }
 
-function getIdFromName (PDO $dbh, string $name){
+function getIdFromMail (PDO $dbh, string $mail){
     // OMFG DANGEROUS AF
     // Ptites surprises très droles possibles
-    $query = "SELECT id FROM user WHERE Nom=:nom ORDER BY id ";
+    $query = "SELECT id FROM user WHERE Mail=:mail ORDER BY id ";
     $sql = $dbh->prepare($query);
-    $sql->execute(['nom'=> $name]);
+    $sql->execute(['mail'=> $mail]);
     $data = $sql->fetch();
     return $data;
 }

@@ -13,9 +13,9 @@ $db = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 $name = $_GET['term'];
 
 //get matched data from skills table
-$query = $db->query("SELECT id, Nom, Prenom FROM user WHERE Prenom LIKE '%" . $name . "%' OR Nom LIKE '%" . $name  ."%'");
+$query = $db->query("SELECT Mail FROM user WHERE Mail LIKE '%" . $name . "%' ");
 while ($row = $query->fetch_assoc()) {
-    $data[] = $row['Nom'];
+    $data[] = $row['Mail'];
     //$data[] = $row['Prenom'];
 }
 

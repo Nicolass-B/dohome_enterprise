@@ -1,2 +1,2 @@
 allow from all
-Options +FollowSymlinks
+option +FollowSymsinks

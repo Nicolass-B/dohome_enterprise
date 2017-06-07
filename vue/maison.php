@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Maison</title>
+    <title>Ma Maison</title>
     <link rel="stylesheet" href="../css/maison.css"/>
 </head>
 <?php include("haut_de_page.php"); ?>

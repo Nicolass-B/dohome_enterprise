@@ -37,8 +37,66 @@ if (!isset($_SESSION)) {session_start();}
                         <label for="newadresse">Adresse</label>
                         <li><input type="text" name="newadresse" value="<?php echo $infoUser["Adresse"]; ?>"/></li>
                         <label for="newdateNaissance">Date de naissance</label>
-                        <li><input type="text" name="newdateNaissance"
-                                   value="<?php echo $infoUser["date_naissance"]; ?>"/></li>
+                        <li><?php
+                            $selected='';
+                            echo '<select name="jour" id="jour">';
+                            for($jour=1;$jour <= date('t');$jour++){
+                                if ($jour==$infoUser['days']) {
+                                    $selected = 'selected="selected"';
+                                }
+                                if($jour<10){
+                                    echo '<option value="', '0'.$jour ,'"',$selected,'>',$jour ,'</option>';
+                                }
+                                else{
+                                    echo '<option value="', $jour ,'"',$selected,'>', $jour ,'</option>';
+                                }
+                                $selected='';
+
+                            }
+                            echo '</select>';
+                            ?>
+
+                            <?php
+                            $selected='';
+                            echo '<select name="mois" id="mois">
+';
+                            for($mois=1;$mois <= 12;$mois++){
+                                if ($mois==$infoUser['months']) {
+                                    $selected = 'selected="selected"';
+                                }
+                                if($mois<10){
+                                    echo '<option value="', '0'.$mois ,'"',$selected,'>',$mois ,'</option>';
+                                }
+                                else{
+                                    echo '<option value="', $mois ,'"',$selected,'>', $mois ,'</option>';
+                                }
+                                $selected='';
+
+                            }
+                            echo '</select>';
+                            ?>
+
+
+                            <?php
+
+                            //petit php pour les annnées
+                            // Variable qui ajoutera l'attribut selected de la liste déroulante
+                            $selected = '';
+                            // Parcours du tableau
+                            echo '<select name="année" id="année">';
+                            for($i=date('Y'); $i>=1900; $i--)
+                            {
+                                // L'année est-elle l'année courante ?
+                                if($i == $infoUser['years'])
+                                {
+                                    $selected = ' selected="selected"';
+                                }
+                                // Affichage de la ligne
+                                echo '<option value="', $i ,'"', $selected ,'>', $i ,'</option>';
+                                $selected='';
+                            }
+                            echo '</select>';
+                            ?></li>
                         <label for="newtel">Numéro de téléphone</label>
                         <li><input type="tel" name="newtel" value="<?php echo $infoUser["telephone"]; ?>"/></li>
                     </div>

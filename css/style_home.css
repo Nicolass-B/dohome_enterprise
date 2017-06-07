@@ -186,7 +186,7 @@ input[type=submit] {
 }
 
 .icone{
-    height: 15%;
+    height: auto;
     width: 15%;
 }
 

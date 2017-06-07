@@ -34,8 +34,8 @@ if(!isset($_SESSION['id_user'])){
         // Si on souhaite un affichage général
 
 
-        $messagesUser = getMessageUser($dbh, $_SESSION['id_user']);
-        $messageSent = getUserSentMessages($dbh, $_SESSION['id_user']);
+        $messagesUser = getMessageUser($bdd, $_SESSION['id_user']);
+        $messageSent = getUserSentMessages($bdd, $_SESSION['id_user']);
 
 
         include '../vue/messagerie.php';

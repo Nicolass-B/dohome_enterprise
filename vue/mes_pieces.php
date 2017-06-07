@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {session_start();}
 
 <head>
     <meta charset="UTF-8">
-    <title>Maison</title>
+    <title>Mes pièces</title>
     <link rel="stylesheet" href="../css/maison.css"/>
     <link rel="stylesheet" href="../css/tableau.css"/>
 </head>

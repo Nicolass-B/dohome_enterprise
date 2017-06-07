@@ -1,7 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
+if (!isset($_SESSION)) {session_start();}
 ?>
 
 <!DOCTYPE html>
@@ -66,12 +64,12 @@ if (!isset($_SESSION)) {
         </div>
     </p>
 
-    <p>
-        <div class="placement">
-            <div class="imagepp">
-                <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
-            </div>
-    <p>P + NOM</p>
+            <p>
+                <div class="placement">
+                    <div class="imagepp">
+                        <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>
+                    </div>
+                    <p>P + NOM</p>
 
     <div class="boutton">
         <div class="bouton1">

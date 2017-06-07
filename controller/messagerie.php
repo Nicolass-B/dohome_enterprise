@@ -6,7 +6,7 @@
  * Time: 00:35
  */
 if (!isset($_SESSION)) {session_start();}
-require_once '../modele/init_connexion_bdd.php';
+require  '../modele/init_connexion_bdd.php';
 require_once '../modele/messagerie.php';
 
 
@@ -14,7 +14,7 @@ require_once '../modele/messagerie.php';
  *  rattaché au modele et à la vue éponyme
  *
  */
-$_SESSION['id_user'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
+//$_SESSION['id_user'] = 1; // utiisé à des fins de test parce que voilà, on a pas encore les sessions
 
 
 if(!isset($_SESSION['id_user'])){

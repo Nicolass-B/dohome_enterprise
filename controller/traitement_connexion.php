@@ -38,8 +38,10 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
             else{//mdp OK
                 session_start();
                 $_SESSION['Mail']=$loginMail;
+                var_dump($_SESSION['Mail']);
                 $idUser=takeIdUser($bdd,$loginMail);
                 $_SESSION['id_user']=$idUser['id'];
+                var_dump($_SESSION['Mail']);
               include('../Vue/dashboard.php');
             }
         }

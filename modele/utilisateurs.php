@@ -39,3 +39,4 @@ function updateAvatarUser(PDO $bdd,$id_user,$extensioUpload){
     ));
 }
 
+

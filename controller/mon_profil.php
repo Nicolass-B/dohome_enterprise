@@ -8,7 +8,6 @@ $infoUser = takeInfoUser($bdd, $_SESSION['Mail']);
 //var_dump($infoUser);
 include('../vue/mon_profil.php');
 
-
 ?>
 
 

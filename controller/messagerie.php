@@ -6,7 +6,7 @@
  * Time: 00:35
  */
 if (!isset($_SESSION)) {session_start();}
-require_once '../modele/init_connexion_bdd.php';
+require  '../modele/init_connexion_bdd.php';
 require_once '../modele/messagerie.php';
 
 

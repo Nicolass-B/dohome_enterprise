@@ -14,6 +14,9 @@ if (isset($_GET['capteur']))
 {
     $Capteur = new Capteur($_GET['capteur'], $bdd);
     $titre = $Capteur->typecapteur[0];
+    $Capteur->get_valeur_history();
+    $dataval = json_encode($Capteur->histo_valeur); $datadate = json_encode($Capteur->histo_date);
+
     include('../Vue/mes_capteurs.php');
 
 } else {

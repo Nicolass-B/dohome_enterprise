@@ -65,4 +65,4 @@ $RECYCLE.BIN/
 *.lnk
 
 .idea/webServers.xml
-.idea/deployement.xml
+.idea/deployment.xml

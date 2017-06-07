@@ -16,7 +16,6 @@ function createSecondaryUser(PDO $bdd, $nomSecondUser,$prenomSecondUser,$mailSec
         'pass' => $passSecondUser,
         'ID_USER' => $id_user
     ));
-    echo 'good';
 }
 
 function updateSecondaryUser(PDO $bdd,$id_user){

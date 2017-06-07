@@ -39,9 +39,9 @@ if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
                     if ($responseData->success) {
                         // if recaptcha check was success
                         echo '4';
-                        $idDestinataire = getIdFromName($dbh, htmlspecialchars($_POST['destinataire']));
+                        $idDestinataire = getIdFromName($bdd, htmlspecialchars($_POST['destinataire']));
                         var_dump($idDestinataire);
-                        sendMessageToUser($dbh, $_SESSION['idUser'], $idDestinataire['id'], htmlspecialchars($_POST['Titre']), htmlspecialchars($_POST['contenu']));
+                        sendMessageToUser($bdd, $_SESSION['idUser'], $idDestinataire['id'], htmlspecialchars($_POST['Titre']), htmlspecialchars($_POST['contenu']));
 
                         ?>
                         <script>alert("<?php echo htmlspecialchars('le message est envoyé !', ENT_QUOTES); ?>")</script>

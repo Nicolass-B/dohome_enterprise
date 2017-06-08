@@ -37,21 +37,24 @@ if (!isset($_SESSION)) {session_start();}
                         <label for="newadresse">Adresse</label>
                         <li><input type="text" name="newadresse" value="<?php echo $infoUser["Adresse"]; ?>"/></li>
                         <label for="newdateNaissance">Date de naissance</label>
-                        <li><?php
-                            $selected='';
-                            echo '<select name="jour" id="jour">';
-                            for($jour=1;$jour <= date('t');$jour++){
-                                if ($jour==$infoUser['days']) {
-                                    $selected = 'selected="selected"';
-                                }
-                                if($jour<10){
-                                    echo '<option value="', '0'.$jour ,'"',$selected,'>',$jour ,'</option>';
-                                }
-                                else{
-                                    echo '<option value="', $jour ,'"',$selected,'>', $jour ,'</option>';
-                                }
-                                $selected='';
+                        <li>
+                            <?php
 
+                            //petit php pour les annnées
+                            // Variable qui ajoutera l'attribut selected de la liste déroulante
+                            $selected = '';
+                            // Parcours du tableau
+                            echo '<select name="année" id="année">';
+                            for($i=date('Y'); $i>=1900; $i--)
+                            {
+                                // L'année est-elle l'année courante ?
+                                if($i == $infoUser['years'])
+                                {
+                                    $selected = ' selected="selected"';
+                                }
+                                // Affichage de la ligne
+                                echo '<option value="', $i ,'"', $selected ,'>', $i ,'</option>';
+                                $selected='';
                             }
                             echo '</select>';
                             ?>
@@ -76,27 +79,26 @@ if (!isset($_SESSION)) {session_start();}
                             echo '</select>';
                             ?>
 
-
                             <?php
-
-                            //petit php pour les annnées
-                            // Variable qui ajoutera l'attribut selected de la liste déroulante
-                            $selected = '';
-                            // Parcours du tableau
-                            echo '<select name="année" id="année">';
-                            for($i=date('Y'); $i>=1900; $i--)
-                            {
-                                // L'année est-elle l'année courante ?
-                                if($i == $infoUser['years'])
-                                {
-                                    $selected = ' selected="selected"';
+                            $selected='';
+                            echo '<select name="jour" id="jour">';
+                            for($jour=1;$jour <= date('t');$jour++){
+                                if ($jour==$infoUser['days']) {
+                                    $selected = 'selected="selected"';
                                 }
-                                // Affichage de la ligne
-                                echo '<option value="', $i ,'"', $selected ,'>', $i ,'</option>';
+                                if($jour<10){
+                                    echo '<option value="', '0'.$jour ,'"',$selected,'>',$jour ,'</option>';
+                                }
+                                else{
+                                    echo '<option value="', $jour ,'"',$selected,'>', $jour ,'</option>';
+                                }
                                 $selected='';
+
                             }
                             echo '</select>';
-                            ?></li>
+                            ?>
+                        </li>
+
                         <label for="newtel">Numéro de téléphone</label>
                         <li><input type="tel" name="newtel" value="<?php echo $infoUser["telephone"]; ?>"/></li>
                     </div>
@@ -118,6 +120,7 @@ if (!isset($_SESSION)) {session_start();}
             </div>
         </div>
 
+    </p>
 </form>
     <?php if(isset($msg)){ echo $msg;} ?>
 

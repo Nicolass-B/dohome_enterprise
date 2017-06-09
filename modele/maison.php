@@ -17,3 +17,15 @@ function getMaisons(PDO $dbh, int $iduser)
     $data = $sql->fetchAll();
     return $data;
 }
+getMaisons()
+
+function getPiecesMaison(PDO $bdd, int $idmaison)
+{
+    $query = "SELECT ID_pieces,Nom FROM pieces WHERE ID_Maison =:idmaison";
+    $sql = $bdd->prepare($query);
+    $sql->execute(['idmaison' => $idmaison]);
+    $data = $sql->fetchAll();
+    var_dump($data);
+    return $data;
+}
+getPiecesMaison($bdd,1);

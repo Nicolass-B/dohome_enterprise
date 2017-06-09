@@ -131,7 +131,7 @@
                 </div>
             </fieldset>
         </form>
-        <?php if(isset($error)){echo '<div class="">'.$error.'</div>' ;} ; ?>
+        <?php if(isset($error)){echo '<div class="success">'.$error.'</div>' ;} ; ?>
 
     </div>
 </section>

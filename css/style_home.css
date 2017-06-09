@@ -220,3 +220,19 @@ section{
     display: flex;
     justify-content: space-around;
 }
+
+.styleMessageErreur{
+    text-align: center;
+    width: auto;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #c5111d;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #c5111d;
+    font-size: 13px;
+    margin: 10px;
+    padding: 3px;
+    margin-bottom: 15px;
+}

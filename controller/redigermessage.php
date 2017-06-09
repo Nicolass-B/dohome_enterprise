@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_user'])) {
     $_SESSION['id'];
     //TODO : Redirect if not logged in
     ?>
-    <script>window.location.replace("http://stackoverflow.com");</script>
+    <script>window.location.replace("../index.php");</script>
     <?php
 }
 

@@ -2,26 +2,29 @@
 <?php
 //TODO S'amuser avec la barre de recherche et des requete mysql LIKE
 session_start();
-require_once("Modele/initConnexionBDD.php");
+require_once("modele/init_connexion_bdd.php");
 
 
 if (isset($_GET['home']))
 {
     if ($_GET['home'] == "form")
     {
-        include("controller/traitementInscription.php");
+        include("controller/traitement_connexion.php");
     }
     else if ($_GET['inscription'] == "verif")
     {
-        include("controller/traitementInscription.php");
+        include("controller/traitement_inscription.php");
     }
 }
-else if (!isset($_SESSION["id_client"]))
+else if (!isset($_SESSION["id_user"]))
 {
     //require("Vue/login.php");
     // On tombe sur la page d'accueil
     ?>
-    <link rel="stylesheet" href="css/styleHome.css"/><?php
+    <link rel="stylesheet" href="css/style_sign_up.css"/>
+    <link rel="stylesheet" href="css/style_home.css" />
+    <link rel="stylesheet" href="css/haut_bas_de_page.css" />
+    <?php
     include("controller/accueil.php");
 }
 else
@@ -32,7 +35,7 @@ else
         {    //include("Vue/accueil.php");
             ?>
             <script type="text/javascript">
-                setTimeout("document.location='accueil.php'; " , 20);
+                setTimeout("document.location='vue/index.php'; " , 20);
             </script>
             <?php
         }
@@ -45,7 +48,7 @@ else
                 setcookie(session_name(), '', time()-42000, '/');
             }
             session_destroy();
-            ?><link rel="stylesheet" href="Styles/login.css" /><?php
+            ?><link rel="stylesheet" href="css/style_sign_up.css" /><?php
             include ("Controleur/login.php");
         }
         else if ($_GET['cible'] == "gen")

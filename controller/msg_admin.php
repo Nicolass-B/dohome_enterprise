@@ -5,8 +5,9 @@
  * Date: 04/06/2017
  * Time: 17:35
  */
-require '../modele/backoffice.php';
-
+require_once '../modele/backoffice.php';
+require_once '../modele/messagerie.php';
+$_SESSION['id_user'] = 3;
 if (!isset($_SESSION)) {
     session_start();
 } else if (!isAdmin($dbh, $_SESSION['id_user'])) {

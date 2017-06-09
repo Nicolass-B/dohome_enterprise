@@ -142,6 +142,11 @@ a:focus {
     right: 200px;
 }
 
+.equipe{
+    color: white;
+}
+
+
 footer {
     display: flex;
     font-family: PT sans;

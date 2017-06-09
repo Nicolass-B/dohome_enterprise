@@ -11,6 +11,9 @@
         <span class="centre">Powered By DoHome Enterprise™</span>
         <span class="droite">Mentions Légales</span>
     </p>
+    <p>
+        <a href="../vue/Contact.php" class="equipe">L'équipe</a>
+    </p>
 
 
 </footer>

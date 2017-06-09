@@ -17,7 +17,6 @@ function getMaisons(PDO $dbh, int $iduser)
     $data = $sql->fetchAll();
     return $data;
 }
-getMaisons()
 
 function getPiecesMaison(PDO $bdd, int $idmaison)
 {

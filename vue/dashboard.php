@@ -40,26 +40,26 @@ if (!isset($_SESSION)) {session_start();}
                     <p>Température</p>
                     <form method="post" action="mode.php">
                         <select name="type" required style="width: 214px">
-                            <?php
-                            include('../modele/maison.php');
-                            $piece=getPiecesMaison($bdd,1);
+                         <!--   <?php
+                           // include('../modele/maison.php');
+                            //$maison=getMaisons($bdd,$_SESSION['id_user']);
                             ?>
                             <?php
-                            foreach ($piece as list($ID_pieces,$Nom)) {
-                                echo "<option value=" .$ID_pieces. ">" . $Nom . "</option>";
-                            }
+                            /*foreach ($maison as list($ID_maison,$Nom)) {
+                                echo "<option value=" .$ID_maison. ">" . $Nom . "</option>";
+                            }*/
                             ?>
                         </select>
                         <select name="type" required style="width: 214px">
                             <?php
-                            include('../modele/maison.php');
-                            $piece=getPiecesMaison($bdd,1);
+                           // $piece=getPiecesMaison($bdd,$maison['Id']);
                             ?>
                             <?php
-                            foreach ($piece as list($ID_pieces,$Nom)) {
+                            /*foreach ($piece as list($ID_pieces,$Nom)) {
                                 echo "<option value=" .$ID_pieces. ">" . $Nom . "</option>";
-                            }
+                            }*/
                             ?>
+                            -->
                         </select>
                     </form>
                 </div>

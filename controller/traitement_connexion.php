@@ -41,6 +41,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 $_SESSION['Mail']=$loginMail;
                 $idUser=takeIdUser($bdd,$loginMail);
                 $_SESSION['id_user']=$idUser['id'];
+                $_SESSION['id_maison']=
               include('../Vue/dashboard.php');
             }
         }

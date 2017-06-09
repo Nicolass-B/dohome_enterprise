@@ -5,10 +5,10 @@
  * Date: 29/05/2017
  * Time: 11:39
  */
-if (!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
-if (!isset($_SESSION['id_user'])){
+if (!isset($_SESSION['id_user'])) {
     $_SESSION['id'];
     //TODO : Redirect if not logged in
     ?>
@@ -24,24 +24,17 @@ include_once '../modele/messagerie.php';
 
 if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
     if (isset($_POST["Titre"]) && !empty($_POST["Titre"])) {
-        echo '1';
         if (isset($_POST["contenu"]) && !empty($_POST["contenu"])) {
-            echo '2';
-            var_dump($_POST['destinataire']);
             if (isset($_POST["destinataire"]) && !empty($_POST["destinataire"])) {
-                echo '3';
                 if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
-                    echo '4';
                     $secret = '6Ldd3iMUAAAAAHivcpzKVjz-HRtZcdmWwv8iFCIF';
                     $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
                     $responseData = json_decode($verifyResponse);
 
                     if ($responseData->success) {
                         // if recaptcha check was success
-                        echo '4';
-                        $idDestinataire = getIdFromName($dbh, htmlspecialchars($_POST['destinataire']));
-                        var_dump($idDestinataire);
-                        sendMessageToUser($dbh, $_SESSION['idUser'], $idDestinataire['id'], htmlspecialchars($_POST['Titre']), htmlspecialchars($_POST['contenu']));
+                        $idDestinataire = getIdFromMail($bdd, htmlspecialchars($_POST['destinataire']));
+                        sendMessageToUser($bdd, $_SESSION['id_user'], $idDestinataire['id'], htmlspecialchars($_POST['Titre']), htmlspecialchars($_POST['contenu']));
 
                         ?>
                         <script>alert("<?php echo htmlspecialchars('le message est envoyé !', ENT_QUOTES); ?>")</script>
@@ -72,6 +65,7 @@ if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
             ?>
             <script>alert("<?php echo htmlspecialchars('Votre contenu est vide ...', ENT_QUOTES); ?>")</script>
             <?php
+
         }
     } else {
         ?>

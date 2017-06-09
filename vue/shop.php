@@ -16,7 +16,7 @@
         <div class="Offres">
             <a href="">
 
-                <p>Nos Offrres</p>
+                <p>Nos Offres</p>
             </a>
 
         </div>
@@ -37,7 +37,7 @@
 
     <section3>
         <div class="Produits">
-            <a href="">
+            <a href="../vue/boutique.php">
 
                 <p>
                     Tous nos produits

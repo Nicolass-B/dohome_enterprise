@@ -22,17 +22,18 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
         $repUtilisateur=takeUtilisateurs($bdd,$loginMail);
         if($repUtilisateur['nb_ocu']==0){//utilisateur non trouvé dans la base de donnée
             $messageErreur=  'Login ou mot de passe incorrect';
-            include ('../Vue/home.php');
+            include ('../vue/home.php');
         }
 
         else{// utilisateur trouvé
-            $repMdp=takeMdp($bdd,$loginMail);
+            $repMdp= takeMdp($bdd,$loginMail);
+            var_dump($repMdp);
             if($_POST['pass']!=$repMdp['mot_de_passe']){//mot de passe non trouvé dans la base de donnée
                 $messageErreur= 'Login ou mot de passe incorrect';
-                include ('../Vue/home.php');
+                include ('../vue/home.php');
             }
             elseif (isAdmin($bdd,$loginMail) && $repUtilisateur['nb_ocu']==1){
-                include('../Vue/dashboard_backoffice.php');
+                include('../vue/dashboard_backoffice.php');
             }
 
             else{//mdp OK
@@ -40,18 +41,19 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 $_SESSION['Mail']=$loginMail;
                 $idUser=takeIdUser($bdd,$loginMail);
                 $_SESSION['id_user']=$idUser['id'];
+                $_SESSION['id_maison']=
               include('../Vue/dashboard.php');
             }
         }
     }
     else{
         $messageErreur=  'Tout les champs ne sont pas remplis';
-        include ('../Vue/home.php');
+        include ('../vue/home.php');
     }
 }
 else{
     $messageErreur= 'Formulaire pas validé';
-    include ('../Vue/home.php');
+    include ('../vue/home.php');
 }
 
 

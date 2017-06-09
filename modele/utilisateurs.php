@@ -8,7 +8,6 @@ function takeMdp(PDO $dbh, $login)
     $affiche = $reponse->fetch();
     return $affiche;
 }
-
 // vérif user
 function takeUtilisateurs(PDO $dbh, $login)
 {
@@ -16,9 +15,6 @@ function takeUtilisateurs(PDO $dbh, $login)
     $affiche = $reponse->fetch();
     return $affiche;
 }
-
-//var_dump(takeUtilisateurs($bdd,'test@test.com'));
-
 //renvoi l'id d'un utilisateur en fonction de son mail
 function takeIdUser(PDO $bdd,$mail){
    $reponse = $bdd-> prepare('SELECT id FROM  user WHERE Mail=\'' . $mail . '\' ');
@@ -27,19 +23,20 @@ function takeIdUser(PDO $bdd,$mail){
 
    return $affich;
 }
-
 //renvoi les info de l'utilisateur pour le profil utilisateur
 function takeInfoUser(PDO $bdd,$mail){
-    $reponse = $bdd-> prepare('SELECT Nom,Prenom,telephone,Adresse,sexe,date_naissance,mot_de_passe,avatar FROM  user WHERE Mail=\'' . $mail . '\' ');
+    $reponse = $bdd-> prepare('SELECT Nom,Prenom,telephone,Adresse,sexe,YEAR(date_naissance) as years, MONTH(date_naissance) as months, DAY(date_naissance) as days,mot_de_passe,avatar FROM  user WHERE Mail=\'' . $mail . '\' ');
     $reponse->execute();
     $affich = $reponse->fetch();
     return $affich;
 }
 
-function updateAvatarUser(PDO $bdd,$id_user,$extensioUpload){
+function updateAvatarUser(PDO $bdd,$id_user,$extensionUpload){
     $updateavatar= $bdd->prepare('UPDATE user SET avatar= :avatar WHERE id=:id');
     $updateavatar-> execute(array(
-        'avatar'=>$id_user.".".$extensioUpload,
+        'avatar'=>$id_user.".".$extensionUpload,
         'id'=>$id_user
     ));
 }
+
+

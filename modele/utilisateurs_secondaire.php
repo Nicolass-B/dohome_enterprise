@@ -7,10 +7,10 @@
  */
 include ('init_connexion_bdd.php');
 
-function createSecondaryUser(PDO $bdd, $SecondUser,$prenomSecondUser,$mailSecondUser,$passSecondUser,$id_user){
-    $query=$bdd->prepare('INSERT INTO client_secondaire(nom,prenom,mail,pass,ID_USER) VALUES(:nom,:prenom :mail, :pass, :ID_USER)');
+function createSecondaryUser(PDO $bdd, $nomSecondUser,$prenomSecondUser,$mailSecondUser,$passSecondUser,$id_user){
+    $query=$bdd->prepare('INSERT INTO client_secondaire(nom,prenom,mail,pass,ID_USER) VALUES(:nom,:prenom ,:mail, :pass, :ID_USER)');
     $query->execute(array(
-        'nom'=>$SecondUser,
+        'nom'=>$nomSecondUser,
         'prenom'=>$prenomSecondUser,
         'mail' => $mailSecondUser,
         'pass' => $passSecondUser,
@@ -22,9 +22,13 @@ function updateSecondaryUser(PDO $bdd,$id_user){
 }
 
 function getSecondaryUser(PDO $bdd,$id_user){
+    $rep=$bdd->prepare('SELECT nom,prenom FROM client_secondaire  WHERE ID_USER=\'' . $id_user . '\'');
+    $rep->execute();
+    $infoSecondaryUser =  $rep -> fetchAll();
+    return $infoSecondaryUser;
 }
 
 function deleteSecondaryUser(PDO $bdd,$id_user,$mailUserSup){
-    $reponse =$bdd->query('DELETE FROM client_secondaire  WHERE mail=\'' . $mailUserSup . '\' and ID_USER=\'' . $id_user . '\'');
+    $reponse =$bdd->prepare('DELETE FROM client_secondaire  WHERE mail=\'' . $mailUserSup . '\' and ID_USER=\'' . $id_user . '\'');
     $reponse->execute();
 }

@@ -10,7 +10,7 @@ require_once '../modele/messagerie.php';
 $_SESSION['id_user'] = 3;
 if (!isset($_SESSION)) {
     session_start();
-} else if (!isAdmin($dbh, $_SESSION['id_user'])) {
+} else if (!isAdmin($bdd, $_SESSION['id_user'])) {
     // We don't want any unauthorized ppl
     header('HTTP/1.0 403 Forbidden');
     die('You are not allowed to access this file.');
@@ -26,9 +26,9 @@ if (!isset($_SESSION)) {
             //par défaut c'est la boite mail de l'admin qui s'affiche
             $_POST['id'] = $_SESSION['id_user'];
         }
-        $messagesUser = getMessageUser($dbh, $_POST['id']);
-        $messageSent = getUserSentMessages($dbh, $_POST['id']);
-        $userList = getUserList($dbh);
+        $messagesUser = getMessageUser($bdd, $_POST['id']);
+        $messageSent = getUserSentMessages($bdd, $_POST['id']);
+        $userList = getUserList($bdd);
         include '../vue/messagerie_backoffice.php';
     }
 }

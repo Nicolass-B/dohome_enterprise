@@ -6,6 +6,7 @@ h1 {
 
 .joli-form {
     padding: 20px;
+    margin: 20px;
 }
 .joli-form input[type=text], select {
     width: 100%;

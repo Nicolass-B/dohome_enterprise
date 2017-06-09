@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../css/profil.css"/>
+
     <link rel="stylesheet" href="../css/tableau.css"/>
-    <title> Mon profil </title>
+
+    <title>Messagerie</title>
 </head>
 <?php include("haut_de_page_backoffice.php"); ?>
 

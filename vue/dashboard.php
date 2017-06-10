@@ -10,6 +10,74 @@ if (!isset($_SESSION)) {session_start();}
     <link rel="stylesheet" href="../css/dashboard_css.css"/>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <script>
+        function showUser(str)
+        {
+            if (str == "")
+            {
+                document.getElementById("piece").innerHTML = "";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                xmlhttp= new XMLHttpRequest();
+            } else {
+                if (window.ActiveXObject)
+                    try {
+                        xmlhttp= new ActiveXObject("Msxml2.XMLHTTP");
+                    } catch (e) {
+                        try {
+                            xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+                        } catch (e) {
+                            return NULL;
+                        }
+                    }
+            }
+
+            xmlhttp.onreadystatechange = function ()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+                    document.getElementById("piece").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "dashbordSelectPiece.php?q=" + str, true);
+            xmlhttp.send();
+        }
+
+        function showUser2(str)
+        {
+            if (str == "")
+            {
+                document.getElementById("capteurTemp").innerHTML = "";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                xmlhttp= new XMLHttpRequest();
+            } else {
+                if (window.ActiveXObject)
+                    try {
+                        xmlhttp= new ActiveXObject("Msxml2.XMLHTTP");
+                    } catch (e) {
+                        try {
+                            xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+                        } catch (e) {
+                            return NULL;
+                        }
+                    }
+            }
+
+            xmlhttp.onreadystatechange = function ()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+                    document.getElementById("capteurTemp").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "dashbordAfficheCapteur.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    </script>
+
 </head>
 
 <?php include("haut_de_page.php"); ?>
@@ -26,6 +94,7 @@ if (!isset($_SESSION)) {session_start();}
                         <div class="slider round"></div>
                     </label>
                 </div>
+
                 <div class="mode">
                     <p>Mode</p>
                     <form method="post" action="mode.php">
@@ -36,33 +105,32 @@ if (!isset($_SESSION)) {session_start();}
                         </select>
                     </form>
                 </div>
-                <div class="température">
+
+                <div class="température" id="temperature">
                     <p>Température</p>
-                    <form method="post" action="mode.php">
-                        <select id="type" required style="width: 200px">
-                         <!--   <?php
-                           // include('../modele/maison.php');
-                            //$maison=getMaisons($bdd,$_SESSION['id_user']);
-                            ?>
-                            <?php
-                            /*foreach ($maison as list($ID_maison,$Nom)) {
-                                echo "<option value=" .$ID_maison. ">" . $Nom . "</option>";
-                            }*/
-                            ?>
+
+                        <select name="maison"  onchange="showUser(this.value)">
+                            <option selected="selected" value="">Choissisez votre maison</option>
+                            <?php include ('../controller/dashbordSelectMaison.php') ?>
                         </select>
-                        <select name="type" required style="width: 214px">
-                            <?php
-                           // $piece=getPiecesMaison($bdd,$maison['Id']);
-                            ?>
-                            <?php
-                            /*foreach ($piece as list($ID_pieces,$Nom)) {
-                                echo "<option value=" .$ID_pieces. ">" . $Nom . "</option>";
-                            }*/
-                            ?>
-                            -->
-                        </select>
-                    </form>
+
+                        <br>
+                        <br>
+
+                         <div id="piece">
+
+                        </div>
+
+                        <br>
+
+                        <div id="capteurTemp">
+                        </div>
+
                 </div>
+
+            </div>
+            <div id="test">
+
             </div>
         </section1>
 

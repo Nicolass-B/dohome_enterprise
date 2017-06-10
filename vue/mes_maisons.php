@@ -29,7 +29,7 @@ if (!isset($_SESSION)) {session_start();}
             <?php
             //TODO quand on aura les POST bien mis, modifier le tableau pour aller taper dans un controleur piece qui présente les capteurs d'une pice si post et tout si rien
             foreach ($maison as $row) {
-                var_dump($row);
+                //var_dump($row);
                 ?>
                 <tr>
                     <td data-title="ID"><?php echo $row['Id'] ?></td>

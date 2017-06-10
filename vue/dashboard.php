@@ -39,7 +39,7 @@ if (!isset($_SESSION)) {session_start();}
                 <div class="température">
                     <p>Température</p>
                     <form method="post" action="mode.php">
-                        <select name="type" required style="width: 214px">
+                        <select id="type" required style="width: 200px">
                          <!--   <?php
                            // include('../modele/maison.php');
                             //$maison=getMaisons($bdd,$_SESSION['id_user']);

@@ -16,7 +16,7 @@
         <div class="Offres">
             <a href="">
 
-                <p>Nos Offrres</p>
+                <p>Nos Offres</p>
             </a>
 
         </div>

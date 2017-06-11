@@ -6,5 +6,8 @@
  * Time: 10:53
  */
 if (!isset($_SESSION)) {session_start();}
+include ('../modele/maison.php');
 
-include '../vue/shop.php';
+$affichePieces = getPiecesMaison($bdd,$_SESSION['id_maison']);
+
+include '../vue/dashboard.php';

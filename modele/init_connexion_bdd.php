@@ -12,7 +12,6 @@ $password = '';
 try{
     $bdd = new PDO($dsn, $user, $password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    echo ' good';
 }
 catch(PDOException $e){
     die('Erreur : ' . $e->getMessage());

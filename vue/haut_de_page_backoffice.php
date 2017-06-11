@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
-    <title> Mon profil </title>
+    <title> Haut de page </title>
 </head>
 
 <header>

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../css/profil.css"/>
-    <title> Mon profil </title>
+
+    <link rel="stylesheet" href="../css/tableau.css"/>
+
+    <title>Messagerie</title>
 </head>
 <?php include("haut_de_page_backoffice.php"); ?>
 
@@ -16,10 +19,11 @@
 <div>
     <form method="POST" action="../controller/msg_admin.php">
         <select name="id" required>
+            <option value=""></option>
             <?php
 
             foreach ($userList as $row) {
-                echo "<option value=" . $row['id'] . ">" . $row['Nom'] . "</option>";
+                echo "<option value=" . $row['id'] . ">" . $row['Nom'] . " ". $row['Prenom'] . "</option>";
             }
             ?>
         </select>

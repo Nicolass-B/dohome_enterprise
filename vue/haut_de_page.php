@@ -19,7 +19,7 @@
             <nav>
                 <ul>
                     <div class="menu">
-                        <li><a href="../vue/dashboard.php">Dashboard</a></li>
+                        <li><a href="../controller/dashboard.php">Dashboard</a></li>
                         <li><a href="../controller/mon_profil.php">Mon profil</a></li>
                         <li><a href="../controller/maison.php">Ma maison</a></li>
                         <li><a href="../controller/shop.php">Boutique</a></li>
@@ -37,7 +37,7 @@
         </div>
     </section1>
     <section1>
-        <a class="LienImage" href="../controller/messagerie.php"><img class="mail" src="../vue/img/icon_email.png" alt="logo de l'email"/></a>
+        <a class="LienImage" href="../vue/messagerie.php"><img class="mail" src="../vue/img/icon_email.png" alt="logo de l'email"/></a>
         <a class="LienImage" href="../controller/deconnexion.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
 
     </section1>

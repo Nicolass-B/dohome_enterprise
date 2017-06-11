@@ -87,9 +87,13 @@ ul {
 li:first-child {
      border-left: none;
  }
+
 .menu {
     display: flex;
+    position: absolute;
+    right: 10px;
 }
+
 .menu a {
     text-decoration: none;
     color: white;
@@ -112,4 +116,21 @@ a:focus {
     border-radius: 10px;
     border: 2px solid #00c555;
     font-size: 13px;
+}
+
+
+.success{
+    text-align: center;
+    width: auto;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #0f96c5;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #0f96c5;
+    font-size: 13px;
+    margin: 10px;
+    padding: 3px;
+    margin-bottom: 15px;
 }

@@ -6,7 +6,7 @@
  * Time: 23:53
  */
 include "init_connexion_bdd.php";
-function getMaisons(PDO $dbh, $iduser)
+function getMaisons(PDO $dbh, int $iduser)
 {
 
     // ICI ON RETOURNE DANS $data LES MAISONS DE L'USER
@@ -17,3 +17,14 @@ function getMaisons(PDO $dbh, $iduser)
     $data = $sql->fetchAll();
     return $data;
 }
+
+function getPiecesMaison(PDO $bdd, int $idmaison)
+{
+    $query = "SELECT ID_pieces,Nom FROM pieces WHERE ID_Maison =:idmaison";
+    $sql = $bdd->prepare($query);
+    $sql->execute(['idmaison' => $idmaison]);
+    $data = $sql->fetchAll();
+    var_dump($data);
+    return $data;
+}
+getPiecesMaison($bdd,1);

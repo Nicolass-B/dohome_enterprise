@@ -10,74 +10,90 @@ include 'haut_de_page.php';
 ?>
 <head>
     <script src="../js/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="../css/capteur.css">
 </head>
+
 <body>
-<div>
-    <?php
-    /*highlight_string("<?php\n\$data =\n" . var_export($Capteur, true) . ";\n?>");
-    That's debug for ya babe
-    */
-    ?>
-    <div class="joli-form" style="height 150px  ">
-        <canvas id="chart_capteur"></canvas>
-        <script>
-            var ctx = document.getElementById("chart_capteur").getContext('2d');
-            <?php echo "var val_array_bad = " . $dataval . ";"?>
+<div class="title">
+    <h1>Historique et mesure instantanée du capteur </h1>
+</div>
+<section class="container">
 
-            var val_array = val_array_bad.map(function (item) {
-                return parseInt(item, 10);
-            });
-            <?php echo "var date_array = " . $datadate . ";\n"?>
-            var couleur = '#FFFFFF';
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: date_array,
-                    datasets: [{
-                        label: "Valeur Capteur",
-                        backgroundColor: '#3aff55',
-                        borderColor: '#3aff55',
-                        data: val_array,
-                        fill: false,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    tooltips: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    hover: {
-                        mode: 'nearest',
-                        intersect: true
-                    },
-                    scales: {
-                        xAxes: [{
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Month'
-                            }
-                        }],
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            },
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Value'
-                            }
+    <div class="one">
+        <?php
+        /*highlight_string("<?php\n\$data =\n" . var_export($Capteur, true) . ";\n?>");
+        That's debug for ya babe
+        */
+        ?>
+        <div class="joli-chart">
+            <canvas id="chart_capteur"></canvas>
+            <script>
+                var ctx = document.getElementById("chart_capteur").getContext('2d');
+                <?php echo "var val_array_bad = " . $dataval . ";"?>
 
+                var val_array = val_array_bad.map(function (item) {
+                    return parseInt(item, 10);
+                });
+                <?php echo "var date_array = " . $datadate . ";\n"?>
+                var couleur = '#FFFFFF';
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: date_array,
+                        datasets: [{
+                            label: "HCapteur",
+                            backgroundColor: '#3aff55',
+                            borderColor: '#3aff55',
+                            data: val_array,
+                            fill: false,
                         }]
+                    },
+                    options: {
+                        responsive: true,
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        },
+                        scales: {
+                            xAxes: [{
+                                color: 'rgba(255,255,255,0.1)',
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Mesure'
+                                }
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                color: couleur,
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Valeur'
+                                }
+
+                            }]
+                        }
                     }
-                }
-            });
-        </script>
+                });
+            </script>
+        </div>
+
+
+    </div>
+    <div class="two">
+        <?php
+        highlight_string("<?php\n\$data =\n" . var_export($Capteur, true) . ";\n?>");
+        ?>
     </div>
 
-
-</div>
+</section>
 </body>
 
 <?php include("bas_de_page.php"); ?>

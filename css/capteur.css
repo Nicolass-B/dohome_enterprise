@@ -1,0 +1,36 @@
+.joli-chart{
+    width: 100%;
+}
+
+.title{
+    color: white;
+    font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+    text-align: center;
+}
+.container {
+    width: 95%;
+    height: 70%;
+    padding: 10px;
+}
+.one {
+    width: 50%;
+    float: left;
+    margin: 10px;
+    background: #858585;
+    border: 2px solid #a9a9a9;
+    padding-right: 2px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+}
+.two {
+    margin-left: 10px;
+    width: 50%;
+    background: #858585;
+    border: 2px solid #a9a9a9;
+    padding-right: 2px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+
+}

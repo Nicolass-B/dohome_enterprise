@@ -1,4 +1,5 @@
-# dohome_enterprise
+# Dohome Enterprise
+**GIT REPO** 
 
 ## Fonctionnalités : 
 
@@ -9,3 +10,8 @@
 - Envoi et réception mails en interne
 - ??? 
 - PROFIT !
+- Lots of things !
+
+## BUGS ? 
+
+_You Tell me ...``_

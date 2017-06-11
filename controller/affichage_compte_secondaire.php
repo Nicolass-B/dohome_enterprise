@@ -7,7 +7,7 @@
  */
 
 if (!isset($_SESSION)) {session_start();}
-include ('../modele/utilisateurs_secondaire.php');
+include_once('../modele/utilisateurs_secondaire.php');
 
 $infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);
 

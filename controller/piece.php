@@ -5,7 +5,9 @@
  * Date: 21/05/2017
  * Time: 16:11
  */
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 $titre = "Mes pièces";
 require_once '../Modele/init_connexion_bdd.php';
 require_once '../Modele/piece.php';
@@ -22,20 +24,22 @@ if (isset($_GET['piece'])) {
 } else {
     // ici la piece n'est pas précisé dans le formulaire
     // on renvoie a l'accueil des pieces
-    include('../Vue/mes_pieces.php');
 
-
-    if (isset($_POST['envoi'])) {
-        if (isset($_POST['maison'])) {
-            if (isset($_POST['nom_piece'])) {
-                ajoutPiece($bdd, $_POST['type'], $_POST['piece']);
+    if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
+        if (isset($_POST['superficie']) && !empty($_POST['superficie'])) {
+            if (isset($_POST['nom_piece']) && !empty($_POST['nom_piece'])) {
+                ajoutPiece($bdd, $_POST['nom_piece'], $idmaison, $superficie);
                 ?>
                 <script>alert("<?php echo htmlspecialchars('la pièce a bien été ajoutée', ENT_QUOTES); ?>")</script>
                 <?php
 
             }
         }
-    } else {
-        echo "<p>DAMN RIEN DU TOUT</p>";
+    } elseif (isset($_GET['suppr']) && !empty($_GET['suppr']))  {
+        suppressionPiece($bdd, $_GET['suppr']);
+        ?>
+        <script>alert("<?php echo 'la pièce a bien été supprimée', ENT_QUOTES ?>")</script>
+        <?php
     }
+    include('../Vue/mes_pieces.php');
 }

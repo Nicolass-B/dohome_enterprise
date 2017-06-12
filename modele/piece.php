@@ -7,11 +7,9 @@
  */
 
 function getPiecesfromMaison(PDO $dbh, $idmaison)
-{
+{   // ICI ON RETOURNE DANS $data LES PIECES DE L'UTILISATEUR POUR SA MAISON
 
-    // ICI ON RETOURNE DANS $data LES PIECES DE L'UTILISATEUR POUR SA MAISON
-
-    $query = "SELECT ID_pieces,Nom FROM pieces WHERE ID_Maison =:idmaison";
+    $query = "SELECT ID_pieces,Nom, superficie FROM pieces WHERE ID_Maison =:idmaison";
     $sql = $dbh->prepare($query);
     $sql->execute(['idmaison' => $idmaison]);
     $data = $sql->fetchAll();
@@ -29,3 +27,8 @@ function getCapteursfromPiece(PDO $dbh, $idpiece)
     return $data;
 }
 
+function suppressionPiece(PDO $bdd, $idpiece){
+    $query = "DELETE FROM pieces WHERE ID_pieces = :idpiece";
+    $sql = $bdd->prepare($query);
+    $sql->execute(['idpiece' => $idpiece]);
+}

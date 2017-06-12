@@ -27,7 +27,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
 
         else{// utilisateur trouvé
             $repMdp= takeMdp($bdd,$loginMail);
-            var_dump($repMdp);
+            //var_dump($repMdp);
             if($_POST['pass']!=$repMdp['mot_de_passe']){//mot de passe non trouvé dans la base de donnée
                 $messageErreur= 'Login ou mot de passe incorrect';
                 include ('../vue/home.php');
@@ -41,7 +41,6 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 $_SESSION['Mail']=$loginMail;
                 $idUser=takeIdUser($bdd,$loginMail);
                 $_SESSION['id_user']=$idUser['id'];
-                $_SESSION['id_maison']=
               include('../Vue/dashboard.php');
             }
         }

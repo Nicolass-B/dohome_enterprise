@@ -22,13 +22,13 @@ function updateSecondaryUser(PDO $bdd,$id_user){
 }
 
 function getSecondaryUser(PDO $bdd,$id_user){
-    $rep=$bdd->prepare('SELECT nom,prenom FROM client_secondaire  WHERE ID_USER=\'' . $id_user . '\'');
+    $rep=$bdd->prepare('SELECT nom,prenom,ID_Secondaire FROM client_secondaire  WHERE ID_USER=\'' . $id_user . '\'');
     $rep->execute();
     $infoSecondaryUser =  $rep -> fetchAll();
     return $infoSecondaryUser;
 }
 
-function deleteSecondaryUser(PDO $bdd,$id_user,$mailUserSup){
-    $reponse =$bdd->prepare('DELETE FROM client_secondaire  WHERE mail=\'' . $mailUserSup . '\' and ID_USER=\'' . $id_user . '\'');
+function deleteSecondaryUser(PDO $bdd,$id_user,$id_secondaire){
+    $reponse =$bdd->prepare('DELETE FROM client_secondaire  WHERE ID_Secondaire=\'' . $id_secondaire . '\' and ID_USER=\'' . $id_user . '\'');
     $reponse->execute();
 }

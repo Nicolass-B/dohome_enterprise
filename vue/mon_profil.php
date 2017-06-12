@@ -19,7 +19,7 @@ if (!isset($_SESSION)) {session_start();}
         <ul>
             <div class="menusec">
                 <li class="enCours"><a href="../controller/mon_profil.php">Mon profil</a></li>
-                <li><a href="../controller/compte_secondaire.php">Mes comptes secondaires</a></li>
+                <li><a href="../controller/affichage_compte_secondaire.php">Mes comptes secondaires</a></li>
             </div>
         </ul>
     </div>
@@ -44,7 +44,7 @@ if (!isset($_SESSION)) {session_start();}
                             // Variable qui ajoutera l'attribut selected de la liste déroulante
                             $selected = '';
                             // Parcours du tableau
-                            echo '<select name="année" id="année">';
+                            echo '<select name="annee" id="annee">';
                             for($i=date('Y'); $i>=1900; $i--)
                             {
                                 // L'année est-elle l'année courante ?
@@ -61,8 +61,7 @@ if (!isset($_SESSION)) {session_start();}
 
                             <?php
                             $selected='';
-                            echo '<select name="mois" id="mois">
-';
+                            echo '<select name="mois" id="mois">';
                             for($mois=1;$mois <= 12;$mois++){
                                 if ($mois==$infoUser['months']) {
                                     $selected = 'selected="selected"';

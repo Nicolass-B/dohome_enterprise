@@ -27,7 +27,7 @@ if(isset($_POST['envoiProfil'])){
 
     }
     if(isset($_POST['newadresse']) && !empty($_POST['newadresse']) && $_POST['newadresse']!=$infoUser['Adresse']){
-        $newadresse = htmlentities($_POST['newprenom']);
+        $newadresse = htmlentities($_POST['newadresse']);
         $insertadresse = $bdd-> prepare("UPDATE user SET Adresse= ? WHERE Mail= ?" );
         $insertadresse-> execute(array($newadresse,$_SESSION['Mail']));
        // $msg= "Modification prise en compte";
@@ -40,10 +40,13 @@ if(isset($_POST['envoiProfil'])){
 
     }
 
-    if(isset($_POST['newdateNaissance']) && !empty($_POST['newdateNaissance']) && $_POST['newdateNaissance']!=$infoUser['date_naissance']){
-        $newdateNaissance = htmlentities($_POST['newdateNaissance']);
+    if( isset($_POST['annee'])&& !empty($_POST['annee'])&& $_POST['annee']!=$infoUser['years']
+        ||isset($_POST['mois'])&&!empty($_POST['mois'])&& !empty($_POST['mois']!= $infoUser['months'])
+        ||isset($_POST['jour'])&& !empty($_POST['jour'])&& $_POST['jour']!=$infoUser['days'] ){
+
+        $newDate_naissance = $_POST['annee'].'-'.$_POST['mois'].'-'.$_POST['jour'] ;
         $insertdatenaissance = $bdd-> prepare("UPDATE user SET date_naissance= ? WHERE Mail= ?" );
-        $insertdatenaissance-> execute(array($newdateNaissance,$_SESSION['Mail']));
+        $insertdatenaissance-> execute(array($newDate_naissance,$_SESSION['Mail']));
         //$msg= "Modification prise en compte";
 
     }
@@ -79,7 +82,7 @@ if(isset($_POST['envoiProfil'])){
     }
 
     if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])){
-        var_dump($_FILES['avatar']);
+        //var_dump($_FILES['avatar']);
         $tailleMax= 2097152;
         $extensiosValides=array('jpg','jpeg','gif','png');
         if($_FILES['avatar']['size']<= $tailleMax){

@@ -38,7 +38,6 @@ if (!isset($_SESSION)) {
             </thead>
             <tbody>
             <?php
-            //TODO quand on aura les POST bien mis, modifier le tableau pour aller taper dans un controleur piece qui présente les capteurs d'une pice si post et tout si rien
             foreach ($maison as $row) {
                 //var_dump($row);
                 ?>
@@ -48,7 +47,7 @@ if (!isset($_SESSION)) {
                         <a href="../controller/piece.php?maison=<?php echo $row['Id'] ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
                     <td data-title="Superficie"><?php echo $row['superficie'] ?></td>
-                    <td data-title="Supprimer"><a href="../controller/maison.php$suppr=<?php echo $row['ID_pieces'] ?>">
+                    <td data-title="Supprimer"><a href="../controller/maison.php?suppr=<?php echo $row['Id'] ?>">
                             <img src="../vue/img/img_96165.svg" width="20" height="20">
                         </a></td>
                 </tr>

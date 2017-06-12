@@ -19,9 +19,6 @@ if (isset($_GET['maison'])) {
 } else {
     // ici la piece n'est pas précisé dans le formulaire
     // Affiche toutes les maisons du compte user
-    include('../vue/mes_maisons.php');
-
-
     if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
         if (isset($_POST['nom']) && !empty($_POST['nom'])) {
             if(isset($_POST['superficie']) && !empty($_POST['superficie'])) {
@@ -32,7 +29,13 @@ if (isset($_GET['maison'])) {
                 <?php
             }
         }
-    } elseif(isset($_GET['suppr']) && !empty($_GET['suppr'])) {
-        suppressionMaison($bdd, $_GET['suppr']);
+    } else {
+        if(isset($_GET['suppr']) && !empty($_GET['suppr'])) {
+            suppressionMaison($bdd, $_GET['suppr']);
+            ?>
+            <script>alert("<?php echo 'la maison a bien été supprimée', ENT_QUOTES; ?>")</script>
+            <?php
+        }
     }
+    include('../vue/mes_maisons.php');
 }

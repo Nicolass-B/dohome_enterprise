@@ -1,8 +1,8 @@
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('Essai 1', 'Aujourd''hui il fait 25 degrés, c''est beaucoup et c''est pas facile de travailler dans ces conditions ! ', 2, 1, '2017-05-29 09:47:56');
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('Toto', 'toto est un pauvre petit', 1, 2, '2017-05-29 09:48:18');
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('Titi', 'Titi est un gentil pauv type !', 1, 2, '2017-05-29 09:48:46');
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('HAHAHHAHA', 'got lemonade ?', 2, 1, '2017-05-24 09:49:19');
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('Lets test this', 'like really test it', 2, 1, '2017-07-25 09:49:57');
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('Enore des tests', 'Nous avons un correcteur grammtical a droite', 3, 1, '2017-05-29 14:15:38');
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('Bla', 'Bla bla bla', 3, 1, '2016-07-29 14:15:51');
-INSERT INTO dohome.messagerie (Titre, Contenu, ID_Expediteur, ID_Destinataire, Time_Stamp) VALUES ('Hello ! ', 'mouhahahahaha !', 1, 3, '2017-06-04 13:07:35');
+UPDATE dohome.messagerie SET Titre = 'Essai 1', Contenu = 'Aujourd''hui il fait 25 degrés, c''est beaucoup et c''est pas facile de travailler dans ces conditions ! ', ID_Expediteur = 2, ID_Destinataire = 1, Time_Stamp = '2017-05-29 09:47:56' WHERE ID_Message = 1;
+UPDATE dohome.messagerie SET Titre = 'Toto', Contenu = 'toto est un pauvre petit', ID_Expediteur = 1, ID_Destinataire = 2, Time_Stamp = '2017-05-29 09:48:18' WHERE ID_Message = 2;
+UPDATE dohome.messagerie SET Titre = 'Titi', Contenu = 'Titi est un gentil pauv type !', ID_Expediteur = 1, ID_Destinataire = 2, Time_Stamp = '2017-05-29 09:48:46' WHERE ID_Message = 3;
+UPDATE dohome.messagerie SET Titre = 'HAHAHHAHA', Contenu = 'got lemonade ?', ID_Expediteur = 2, ID_Destinataire = 1, Time_Stamp = '2017-05-24 09:49:19' WHERE ID_Message = 4;
+UPDATE dohome.messagerie SET Titre = 'Lets test this', Contenu = 'like really test it', ID_Expediteur = 2, ID_Destinataire = 1, Time_Stamp = '2017-07-25 09:49:57' WHERE ID_Message = 5;
+UPDATE dohome.messagerie SET Titre = 'Enore des tests', Contenu = 'Nous avons un correcteur grammtical a droite', ID_Expediteur = 3, ID_Destinataire = 1, Time_Stamp = '2017-05-29 14:15:38' WHERE ID_Message = 7;
+UPDATE dohome.messagerie SET Titre = 'Bla', Contenu = 'Bla bla bla', ID_Expediteur = 3, ID_Destinataire = 1, Time_Stamp = '2016-07-29 14:15:51' WHERE ID_Message = 8;
+UPDATE dohome.messagerie SET Titre = 'Hello ! ', Contenu = 'mouhahahahaha !', ID_Expediteur = 1, ID_Destinataire = 3, Time_Stamp = '2017-06-04 13:07:35' WHERE ID_Message = 9;

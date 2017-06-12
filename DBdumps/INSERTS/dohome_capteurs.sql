@@ -1,5 +1,5 @@
-INSERT INTO dohome.capteurs (Type, Valeur, Date_Installation, Etat_Batterie, ID_piece, unite) VALUES ('temp', 20, '2017-05-19 00:00:00', 100, 1, 'Celsius');
-INSERT INTO dohome.capteurs (Type, Valeur, Date_Installation, Etat_Batterie, ID_piece, unite) VALUES ('temp', 25, '2017-05-10 00:00:00', 100, 2, 'Celsius');
-INSERT INTO dohome.capteurs (Type, Valeur, Date_Installation, Etat_Batterie, ID_piece, unite) VALUES ('temp', 25, '2017-05-10 00:00:00', 100, 2, 'Celsius');
-INSERT INTO dohome.capteurs (Type, Valeur, Date_Installation, Etat_Batterie, ID_piece, unite) VALUES ('illum', 4300, '2017-05-01 00:00:00', 100, 3, 'Lux');
-INSERT INTO dohome.capteurs (Type, Valeur, Date_Installation, Etat_Batterie, ID_piece, unite) VALUES ('presence', -1, '2017-05-22 09:32:39', 100, 1, null);
+UPDATE dohome.capteurs SET Type = 'temp', Valeur = 20, Date_Installation = '2017-05-19 00:00:00', Etat_Batterie = 100, ID_piece = 1, unite = 'Celsius' WHERE ID_Capteurs = 1;
+UPDATE dohome.capteurs SET Type = 'temp', Valeur = 25, Date_Installation = '2017-05-10 00:00:00', Etat_Batterie = 100, ID_piece = 2, unite = 'Celsius' WHERE ID_Capteurs = 2;
+UPDATE dohome.capteurs SET Type = 'temp', Valeur = 25, Date_Installation = '2017-05-10 00:00:00', Etat_Batterie = 100, ID_piece = 2, unite = 'Celsius' WHERE ID_Capteurs = 3;
+UPDATE dohome.capteurs SET Type = 'illum', Valeur = 4300, Date_Installation = '2017-05-01 00:00:00', Etat_Batterie = 100, ID_piece = 3, unite = 'Lux' WHERE ID_Capteurs = 4;
+UPDATE dohome.capteurs SET Type = 'presence', Valeur = -1, Date_Installation = '2017-05-22 09:32:39', Etat_Batterie = 100, ID_piece = 1, unite = null WHERE ID_Capteurs = 5;

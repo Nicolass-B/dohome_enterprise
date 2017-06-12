@@ -14,23 +14,18 @@ if (!isset($_SESSION)) {session_start();}
 <?php include("haut_de_page.php"); ?>
 
 <body>
+<br>
 <div class="connexion-inscription">
     <form method="POST" action="../controller/newcapteur.php">
-        <select name="maison" required>
-            <?php
-            foreach ($sql as $row) {
-                echo "<option value=" . $row['ID_pièces'] . ">" . $row['Nom'] . "</option>";
-            }
-            ?>
-        </select>
+        <input type="text" name="idmaison" placeholder="<?php echo $_GET['maison'] ?>" required hidden/>
         <input type="text" name="nom_piece" placeholder="Nom de la pièce" required/>
-        <input type="text" name="superficie" placeholder=""required/>
+        <input type="text" name="superficie" placeholder="Superficie" required/>
         <input type="submit" name="envoi" value="Valider"/>
 
 
     </form>
 </div>
-
+<br>
 <div>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover table-mc-light-blue">
@@ -53,7 +48,7 @@ if (!isset($_SESSION)) {session_start();}
                     </td>
                     <td data-title="Superficie"><?php echo $row['superficie'] ?> m²</td>
                     <td data-title="Supprimer"><a href="../controller/piece.php$suppr=<?php echo $row['ID_pieces'] ?>">
-                            <img border="0" alt="W3Schools" src="logo_w3s.gif" width="20" height="20">
+                            <img border="0" alt="W3Schools" src="../vue/img/img_96165.svg" width="20" height="20">
                         </a></td>
                 </tr>
 

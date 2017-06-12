@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Lun 05 Juin 2017 à 14:45
--- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  7.1.2
+-- Hôte : 127.0.0.1
+-- Généré le :  lun. 12 juin 2017 à 11:48
+-- Version du serveur :  10.1.22-MariaDB
+-- Version de PHP :  7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -29,7 +31,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `actionneur` (
   `Id_Actionneur` int(11) NOT NULL,
   `Etat_Actionneur` tinyint(1) NOT NULL,
-  `id_user` int(11) DEFAULT NULL
+  `id_user` int(11) DEFAULT NULL,
+  `id` int(11) DEFAULT NULL,
+  `type` varchar(20) NOT NULL,
+  `Date_Installation` date NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  `Nom` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -40,7 +47,7 @@ CREATE TABLE `actionneur` (
 
 CREATE TABLE `capteurs` (
   `ID_Capteurs` int(11) NOT NULL,
-  `Type` text NOT NULL,
+  `Type` varchar(20) NOT NULL,
   `Valeur` float NOT NULL,
   `Date_Installation` datetime NOT NULL,
   `Etat_Batterie` int(11) NOT NULL,
@@ -49,14 +56,15 @@ CREATE TABLE `capteurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `capteurs`
+-- Déchargement des données de la table `capteurs`
 --
 
 INSERT INTO `capteurs` (`ID_Capteurs`, `Type`, `Valeur`, `Date_Installation`, `Etat_Batterie`, `ID_piece`, `unite`) VALUES
 (1, 'temp', 20, '2017-05-19 00:00:00', 100, 1, 'Celsius'),
 (2, 'temp', 25, '2017-05-10 00:00:00', 100, 2, 'Celsius'),
 (3, 'temp', 25, '2017-05-10 00:00:00', 100, 2, 'Celsius'),
-(4, 'illum', 4300, '2017-05-01 00:00:00', 100, 3, 'Lux');
+(4, 'illum', 4300, '2017-05-01 00:00:00', 100, 3, 'Lux'),
+(5, 'presence', -1, '2017-05-22 09:32:39', 100, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -74,16 +82,38 @@ CREATE TABLE `client_secondaire` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(11) NOT NULL,
+  `question` text NOT NULL,
+  `reponse` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `historique_capteurs`
 --
 
 CREATE TABLE `historique_capteurs` (
   `Id_mesure` int(11) NOT NULL,
-  `Date_Mesure` date NOT NULL,
+  `Date_Mesure` datetime NOT NULL,
   `Valeur` float NOT NULL,
   `unite` varchar(3) NOT NULL,
   `ID_capteur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `historique_capteurs`
+--
+
+INSERT INTO `historique_capteurs` (`Id_mesure`, `Date_Mesure`, `Valeur`, `unite`, `ID_capteur`) VALUES
+(1, '2017-06-06 09:40:58', 20, 'C', 1),
+(2, '2017-06-06 09:41:12', 21, 'C', 1),
+(3, '2017-06-06 09:41:21', 23, 'C', 1),
+(4, '2017-06-06 09:41:30', 26, 'C', 1);
 
 -- --------------------------------------------------------
 
@@ -95,15 +125,19 @@ CREATE TABLE `maison` (
   `Id` int(11) NOT NULL,
   `nbpieces` int(11) NOT NULL,
   `ID_user` int(11) DEFAULT NULL,
-  `Nom` varchar(25) DEFAULT NULL
+  `Nom` varchar(20) DEFAULT 'Maison',
+  `superficie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `maison`
+-- Déchargement des données de la table `maison`
 --
 
-INSERT INTO `maison` (`Id`, `nbpieces`, `ID_user`, `Nom`) VALUES
-(1, 1, 1, 'Appart');
+INSERT INTO `maison` (`Id`, `nbpieces`, `ID_user`, `Nom`, `superficie`) VALUES
+(1, 1, 1, 'Maison', 120),
+(2, 0, 2, 'Villa Plage', 420),
+(3, 0, 1, 'Villa Plage', 69),
+(5, 1, 3, 'Appart', 110);
 
 -- --------------------------------------------------------
 
@@ -117,8 +151,22 @@ CREATE TABLE `messagerie` (
   `Contenu` text NOT NULL,
   `ID_Expediteur` int(11) NOT NULL,
   `ID_Destinataire` int(11) NOT NULL,
-  `Time_Stamp` text NOT NULL
+  `Time_Stamp` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `messagerie`
+--
+
+INSERT INTO `messagerie` (`ID_Message`, `Titre`, `Contenu`, `ID_Expediteur`, `ID_Destinataire`, `Time_Stamp`) VALUES
+(1, 'Essai 1', 'Aujourd\'hui il fait 25 degrés, c\'est beaucoup et c\'est pas facile de travailler dans ces conditions ! ', 2, 1, '2017-05-29 09:47:56'),
+(2, 'Toto', 'toto est un pauvre petit', 1, 2, '2017-05-29 09:48:18'),
+(3, 'Titi', 'Titi est un gentil pauv type !', 1, 2, '2017-05-29 09:48:46'),
+(4, 'HAHAHHAHA', 'got lemonade ?', 2, 1, '2017-05-24 09:49:19'),
+(5, 'Lets test this', 'like really test it', 2, 1, '2017-07-25 09:49:57'),
+(7, 'Enore des tests', 'Nous avons un correcteur grammtical a droite', 3, 1, '2017-05-29 14:15:38'),
+(8, 'Bla', 'Bla bla bla', 3, 1, '2016-07-29 14:15:51'),
+(9, 'Hello ! ', 'mouhahahahaha !', 1, 3, '2017-06-04 13:07:35');
 
 -- --------------------------------------------------------
 
@@ -162,17 +210,20 @@ CREATE TABLE `ownership_pièces_scen` (
 CREATE TABLE `pieces` (
   `ID_pieces` int(11) NOT NULL,
   `ID_Maison` int(11) NOT NULL,
-  `Nom` text NOT NULL
+  `Nom` text NOT NULL,
+  `superficie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Contenu de la table `pieces`
+-- Déchargement des données de la table `pieces`
 --
 
-INSERT INTO `pieces` (`ID_pieces`, `ID_Maison`, `Nom`) VALUES
-(1, 1, 'Salon'),
-(2, 1, 'Cuisine'),
-(3, 1, 'Cuisine 2');
+INSERT INTO `pieces` (`ID_pieces`, `ID_Maison`, `Nom`, `superficie`) VALUES
+(1, 1, 'Salon', 15),
+(2, 1, 'Cuisine', 10),
+(3, 1, 'Cuisine 2', 31),
+(4, 3, 'Salon', 20),
+(5, 3, 'entrée', 5);
 
 -- --------------------------------------------------------
 
@@ -185,6 +236,50 @@ CREATE TABLE `scenarios` (
   `ID_User` int(11) NOT NULL,
   `Nom_Scénarios` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `type_act`
+--
+
+CREATE TABLE `type_act` (
+  `typename` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `type_act`
+--
+
+INSERT INTO `type_act` (`typename`) VALUES
+('Chauffage'),
+('Clim'),
+('Moteur'),
+('Porte'),
+('Ventilateur'),
+('Volets');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `type_capt`
+--
+
+CREATE TABLE `type_capt` (
+  `typename` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `type_capt`
+--
+
+INSERT INTO `type_capt` (`typename`) VALUES
+('bruit'),
+('humidite'),
+('illum'),
+('presence'),
+('temp'),
+('vent');
 
 -- --------------------------------------------------------
 
@@ -207,16 +302,19 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `user`
+-- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `Mail`, `Prenom`, `Nom`, `telephone`, `mot_de_passe`, `Adresse`, `Is_admin`, `date_inscription`, `date_naissance`, `sexe`) VALUES
-(1, 'test@gmail.xxx', 'Nicolas', 'Kiris', '064206969', 'azerty', 'no', 0, '2017-05-07 17:43:44', '0000-00-00 00:00:00', NULL),
-(2, 'test@test.Com', 'Nicolas', 'lelelelel', '064206969', 'azerty', 'no', 0, '2017-05-05 17:43:55', '0000-00-00 00:00:00', NULL),
-(3, 'admin', 'admin', 'admin', '', 'admin', 'no', 1, '2017-05-21 17:43:13', '1995-05-21 17:43:20', 0);
+(1, 'test@gmail.xxx', 'Nicolas', 'Kiris', '064206969', 'azerty', 'no', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL),
+(2, 'test@test.com', 'Nicolas', 'Le Grand Génie', '064206969', 'azerty', 'no', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL),
+(3, 'admin', 'admin', 'admin', '064567890', 'admin', 'no', 1, '2017-05-22 00:46:57', '2017-05-22 00:47:00', 1),
+(4, 'tic@tac.com', 'Antoine', 'dank', '098765432', 'azerty', 'no', 0, '2017-05-31 10:09:04', '2017-05-31 10:09:05', 1),
+(5, 'toto@toto.com', 'Guillaume', 'Froger', '123456789', 'azerty', 'no', 0, '2017-05-31 10:09:43', '2017-05-31 10:09:44', 1),
+(6, 'titi@tata.fr', 'Mat', 'ématiques', '098765543', 'azerty', 'no', 0, '2017-05-31 10:10:42', '2017-05-31 10:10:43', 1);
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -224,14 +322,16 @@ INSERT INTO `user` (`id`, `Mail`, `Prenom`, `Nom`, `telephone`, `mot_de_passe`, 
 --
 ALTER TABLE `actionneur`
   ADD PRIMARY KEY (`Id_Actionneur`),
-  ADD KEY `actionneur_user_id_fk` (`id_user`);
+  ADD KEY `actionneur_user_id_fk` (`id_user`),
+  ADD KEY `actionneur_type_act_typename_fk` (`type`);
 
 --
 -- Index pour la table `capteurs`
 --
 ALTER TABLE `capteurs`
   ADD PRIMARY KEY (`ID_Capteurs`),
-  ADD KEY `capteurs_pieces_ID_pièces_fk` (`ID_piece`);
+  ADD KEY `capteurs_pieces_ID_pièces_fk` (`ID_piece`),
+  ADD KEY `capteurs_type_capt_typename_fk` (`Type`);
 
 --
 -- Index pour la table `client_secondaire`
@@ -239,6 +339,12 @@ ALTER TABLE `capteurs`
 ALTER TABLE `client_secondaire`
   ADD PRIMARY KEY (`ID_Secondaire`),
   ADD KEY `client_secondaire_user_id_fk` (`ID_USER`);
+
+--
+-- Index pour la table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `historique_capteurs`
@@ -295,6 +401,18 @@ ALTER TABLE `scenarios`
   ADD KEY `scénarios_user_id_fk` (`ID_User`);
 
 --
+-- Index pour la table `type_act`
+--
+ALTER TABLE `type_act`
+  ADD PRIMARY KEY (`typename`);
+
+--
+-- Index pour la table `type_capt`
+--
+ALTER TABLE `type_capt`
+  ADD PRIMARY KEY (`typename`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
@@ -302,7 +420,7 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `user_Mail_uindex` (`Mail`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
@@ -314,27 +432,32 @@ ALTER TABLE `actionneur`
 -- AUTO_INCREMENT pour la table `capteurs`
 --
 ALTER TABLE `capteurs`
-  MODIFY `ID_Capteurs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_Capteurs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `client_secondaire`
 --
 ALTER TABLE `client_secondaire`
   MODIFY `ID_Secondaire` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `historique_capteurs`
 --
 ALTER TABLE `historique_capteurs`
-  MODIFY `Id_mesure` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_mesure` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `maison`
 --
 ALTER TABLE `maison`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `messagerie`
 --
 ALTER TABLE `messagerie`
-  MODIFY `ID_Message` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `ownership_actio_scen`
 --
@@ -344,7 +467,7 @@ ALTER TABLE `ownership_actio_scen`
 -- AUTO_INCREMENT pour la table `pieces`
 --
 ALTER TABLE `pieces`
-  MODIFY `ID_pieces` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_pieces` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `scenarios`
 --
@@ -354,22 +477,23 @@ ALTER TABLE `scenarios`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- Contraintes pour les tables exportées
+-- Contraintes pour les tables déchargées
 --
 
 --
 -- Contraintes pour la table `actionneur`
 --
 ALTER TABLE `actionneur`
-  ADD CONSTRAINT `actionneur_user_id_fk` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `actionneur_type_act_typename_fk` FOREIGN KEY (`type`) REFERENCES `type_act` (`typename`);
 
 --
 -- Contraintes pour la table `capteurs`
 --
 ALTER TABLE `capteurs`
-  ADD CONSTRAINT `capteurs_pieces_ID_pièces_fk` FOREIGN KEY (`ID_piece`) REFERENCES `pieces` (`ID_pieces`);
+  ADD CONSTRAINT `capteurs_pieces_ID_pièces_fk` FOREIGN KEY (`ID_piece`) REFERENCES `pieces` (`ID_pieces`),
+  ADD CONSTRAINT `capteurs_type_capt_typename_fk` FOREIGN KEY (`Type`) REFERENCES `type_capt` (`typename`);
 
 --
 -- Contraintes pour la table `client_secondaire`
@@ -407,6 +531,7 @@ ALTER TABLE `pieces`
 --
 ALTER TABLE `scenarios`
   ADD CONSTRAINT `scénarios_user_id_fk` FOREIGN KEY (`ID_User`) REFERENCES `user` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -18,20 +18,27 @@ function ajoutCapteur(PDO $bdd, $type, $idpiece)
     ));
 }
 
-function ajoutPiece(PDO $bdd, $nom, $idmaison)
+/**
+ * @param PDO $bdd
+ * @param $nom
+ * @param $idmaison
+ */
+function ajoutPiece(PDO $bdd, $nom, $idmaison, $superficie)
 {
-    $query = $bdd->prepare('INSERT INTO pieces(ID_Maison, Nom) VALUES (:idmaison, :nom)');
+    $query = $bdd->prepare('INSERT INTO pieces(ID_Maison, Nom, superficie) VALUES (:idmaison, :nom, :superficie)');
     $query->execute(array(
         'idmaison' => $idmaison,
-        'nom' => $nom
+        'nom' => $nom,
+        'superficie' => $superficie
     ));
 }
 
-function ajoutMaison(PDO $bdd, $nom, $iduser)
+function ajoutMaison(PDO $bdd, $nom, $iduser, $superficie)
 {
-    $query = $bdd->prepare('INSERT INTO maison(Id, nbpieces, ID_user, Nom) VALUES (NULL ,0,:iduser,:nom)');
+    $query = $bdd->prepare('INSERT INTO maison(Id, nbpieces, ID_user, Nom, superficie) VALUES (NULL ,0,:iduser,:nom, :superficie)');
     $query->execute(array(
         'nom' => $nom,
-        'iduser' => $iduser
+        'iduser' => $iduser,
+        'superficie' => $superficie
     ));
 }

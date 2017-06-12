@@ -9,7 +9,6 @@ require_once '../modele/maison.php';
 require_once '../modele/init_connexion_bdd.php';
 
 $iduser = $_SESSION['id_user'];
-var_dump($iduser);
 $maison = getMaisons($bdd, $iduser);
 
 
@@ -23,16 +22,17 @@ if (isset($_GET['maison'])) {
     include('../vue/mes_maisons.php');
 
 
-    if (isset($_POST['envoi'])) {
-        if (isset($_POST['nom_maison'])) {
+    if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
+        if (isset($_POST['nom']) && !empty($_POST['nom'])) {
+            if(isset($_POST['superficie']) && !empty($_POST['superficie'])) {
 
-            ajoutMaison($bdd, $_POST['nom_maison'], $_POST['piece']);
-            ?>
-            <script>alert("<?php echo htmlspecialchars('la maison a bien été ajoutée', ENT_QUOTES); ?>")</script>
-            <?php
-
+                ajoutMaison($bdd, $_POST['nom'], $_POST['piece'], $_POST['superficie']);
+                ?>
+                <script>alert("<?php echo 'la maison a bien été ajoutée', ENT_QUOTES; ?>")</script>
+                <?php
+            }
         }
-    } else {
-        echo "<p>DAMN, tu viens d'ajouter un capteur dans la pièce !</p>";
+    } elseif(isset($_GET['suppr']) && !empty($_GET['suppr'])) {
+        suppressionMaison($bdd, $_GET['suppr']);
     }
 }

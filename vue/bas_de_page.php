@@ -12,7 +12,7 @@
         <span class="droite">Mentions Légales</span>
     </p>
     <p>
-        <a href="../vue/Contact.php" class="equipe">L'équipe</a>
+        <a href="../vue/contact.php" class="equipe">L'équipe</a>
     </p>
 
 

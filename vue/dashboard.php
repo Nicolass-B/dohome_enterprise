@@ -40,18 +40,18 @@ if (!isset($_SESSION)) {session_start();}
                     </form>
                 </div>
 
-                <div class="température" id="temperature">
-                    <p>Température</p>
+                <div class="température">
+                    <p>Capteurs</p>
 
-                        <select name="maison"  onchange="showUser(this.value)">
-                            <option selected="selected" value="">Choissisez votre maison</option>
+                        <select style="width:auto;" name="maison" id="température" onchange="showUser(this.value)">
+                            <option  selected="selected" value="">Choissisez votre maison</option>
                             <?php include ('../controller/dashbordSelectMaison.php') ?>
                         </select>
 
                         <br>
                         <br>
 
-                         <div id="piece">
+                        <div id="piece">
 
                         </div>
 

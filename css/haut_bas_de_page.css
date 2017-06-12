@@ -75,12 +75,20 @@ li:first-child {
     color: white;
 }
 
+
 a:focus {
     color: rgba(0, 197, 85, 0.8);
     text-decoration: none;
 
 }
-
+.equipe {
+    text-decoration: none;
+    color: white;
+}
+.equipe a:focus {
+    color: rgba(0, 197, 85, 0.8);
+    text-decoration: none;
+}
 
 
 .recherche {
@@ -142,9 +150,7 @@ a:focus {
     right: 200px;
 }
 
-.equipe{
-    color: white;
-}
+
 
 
 footer {

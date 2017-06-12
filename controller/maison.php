@@ -9,7 +9,6 @@ require_once '../modele/maison.php';
 require_once '../modele/init_connexion_bdd.php';
 
 $iduser = $_SESSION['id_user'];
-var_dump($iduser);
 $maison = getMaisons($bdd, $iduser);
 
 

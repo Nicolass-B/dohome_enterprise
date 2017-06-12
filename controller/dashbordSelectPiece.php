@@ -13,7 +13,7 @@ $id_maison=$_GET['q'];
 
 $reponse = $bdd -> query('SELECT Nom,ID_pieces FROM pieces WHERE ID_Maison=\'' . $id_maison . '\'');
 ?>
-<select id="piece" name="piece"  onchange="showUser2(this.value)">
+<select style="width:auto;" id="température" name="piece"  onchange="showUser2(this.value)">
 
 <option selected="selected" value="">Choissisez votre piece</option>
 <?php

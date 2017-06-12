@@ -5,10 +5,10 @@ if (!isset($_SESSION)) {session_start();}
 $titre = "capteur";
 
 
-require_once '../Modele/init_connexion_bdd.php';
-require_once '../Modele/capteur.php';
-require_once '../Modele/ajouts.php';
-require_once '../Modele/piece.php';
+require_once '../modele/init_connexion_bdd.php';
+require_once '../modele/capteur.php';
+require_once '../modele/ajouts.php';
+require_once '../modele/piece.php';
 
 if (isset($_GET['capteur']))
 {
@@ -17,7 +17,7 @@ if (isset($_GET['capteur']))
     $Capteur->get_valeur_history();
     $dataval = json_encode($Capteur->histo_valeur); $datadate = json_encode($Capteur->histo_date);
 
-    include('../Vue/mes_capteurs.php');
+    include('../vue/mes_capteurs.php');
 
 } else {
     // ici le capteur n'est pas précisé dans le formulaire
@@ -27,7 +27,7 @@ if (isset($_GET['capteur']))
     //TODO ajouter les sessions et remplacer ici.
     $pieces = getPiecesfromMaison($bdd, $idmaison);
     $capteur_piece = getCapteursfromPiece($bdd, $idpiece);
-    include('../Vue/capteur.php');
+    include('../vue/capteur.php');
 
 
 

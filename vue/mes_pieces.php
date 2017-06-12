@@ -3,8 +3,7 @@ if (!isset($_SESSION)) {session_start();}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Mes pièces</title>
@@ -15,14 +14,11 @@ if (!isset($_SESSION)) {session_start();}
 
 <body>
 <br>
-<div class="connexion-inscription">
-    <form method="POST" action="../controller/newcapteur.php">
-        <input type="text" name="idmaison" placeholder="<?php echo $_GET['maison'] ?>" required hidden/>
+<div class="">
+    <form method="POST" action="../controller/piece.php?maison=<?php echo $idmaison ?>">
         <input type="text" name="nom_piece" placeholder="Nom de la pièce" required/>
         <input type="text" name="superficie" placeholder="Superficie" required/>
-        <input type="submit" name="envoi" value="Valider"/>
-
-
+        <input type="submit" name="envoi" value="Valider" />
     </form>
 </div>
 <br>
@@ -48,7 +44,7 @@ if (!isset($_SESSION)) {session_start();}
                     </td>
                     <td data-title="Superficie"><?php echo $row['superficie'] ?> m²</td>
                     <td data-title="Supprimer"><a href="../controller/piece.php$suppr=<?php echo $row['ID_pieces'] ?>">
-                            <img border="0" alt="W3Schools" src="../vue/img/img_96165.svg" width="20" height="20">
+                            <img border="0" alt="supprimer" src="../vue/img/img_96165.svg" width="20" height="20">
                         </a></td>
                 </tr>
 

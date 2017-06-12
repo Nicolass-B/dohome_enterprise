@@ -23,12 +23,13 @@ function ajoutCapteur(PDO $bdd, $type, $idpiece)
  * @param $nom
  * @param $idmaison
  */
-function ajoutPiece(PDO $bdd, $nom, $idmaison)
+function ajoutPiece(PDO $bdd, $nom, $idmaison, $superficie)
 {
-    $query = $bdd->prepare('INSERT INTO pieces(ID_Maison, Nom) VALUES (:idmaison, :nom)');
+    $query = $bdd->prepare('INSERT INTO pieces(ID_Maison, Nom, superficie) VALUES (:idmaison, :nom, :superficie)');
     $query->execute(array(
         'idmaison' => $idmaison,
-        'nom' => $nom
+        'nom' => $nom,
+        'superficie' => $superficie
     ));
 }
 

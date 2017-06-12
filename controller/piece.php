@@ -28,7 +28,7 @@ if (isset($_GET['piece'])) {
     if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
         if (isset($_POST['superficie']) && !empty($_POST['superficie'])) {
             if (isset($_POST['nom_piece']) && !empty($_POST['nom_piece'])) {
-                ajoutPiece($bdd, $_POST['nom_piece'], $idmaison, $superficie);
+                ajoutPiece($bdd, $_POST['nom_piece'], $idmaison, $_POST['superficie']);
                 ?>
                 <script>alert("<?php echo htmlspecialchars('la pièce a bien été ajoutée', ENT_QUOTES); ?>")</script>
                 <?php

@@ -16,7 +16,7 @@
  *
  * */
 
-
+session_start();
 
 if(isset($_POST['envoi'])){//envoi du formulaire
 
@@ -49,29 +49,44 @@ if(isset($_POST['envoi'])){//envoi du formulaire
 
         if(verif2MDP($pass,$confirmePasse)){
             if(verifMail($bdd,$mail)==false){
+                if(isset($_POST['memo']) && htmlentities($_POST['memo'])=='j\'accepte'){
+
                 insertUser($bdd,$nom,$prenom,$pass,$tel,$mail,$adresse,$sexe,$année,$mois,$jour);
                 $error= 'Inscription réussi';
+                session_unset();
+                session_destroy();
                 include('../vue/sign_up.php');
+
+                }
+                else{
+                    $_SESSION=$_POST;
+                    $error= 'veuillez accepter les conditions d\'utilisation';
+                    include('../vue/sign_up.php');
+                }
 
             }
 
             else {
+                $_SESSION=$_POST;
                 $error= 'le mail est déja utilisé';
                 include('../vue/sign_up.php');
             }
         }
         else{
+            $_SESSION=$_POST;
             $error= 'mdp différent';
             include('../vue/sign_up.php');
         }
     }
     else {
+        $_SESSION=$_POST;
         $error= 'les champs ne sont pas tous rempli';
         include('../vue/sign_up.php');
     }
 
 }
 else{
+    $_SESSION=$_POST;
     $error= 'formulaire non envoyé';
     include('../vue/sign_up.php');
 }

@@ -40,31 +40,27 @@ if (!isset($_SESSION)) {session_start();}
                     </form>
                 </div>
 
-                <div class="température">
-                    <p>Capteurs</p>
+                <div class="température" id="temperature">
+                    <p>Température</p>
 
-                        <select style="width:auto;" name="maison" id="température" onchange="showUser(this.value)">
-                            <option  selected="selected" value="">Choissisez votre maison</option>
-                            <?php include ('../controller/dashbordSelectMaison.php') ?>
-                        </select>
+                    <select id="température" name="maison"  onchange="showUser(this.value)">
+                        <option selected="selected" value="">Choissisez votre maison</option>
+                        <?php include ('../controller/dashbordSelectMaison.php') ?>
+                    </select>
 
-                        <br>
-                        <br>
+                    <br>
+                    <br>
 
-                        <div id="piece">
+                    <div id="piece">
 
-                        </div>
+                    </div>
 
-                        <br>
+                    <br><br>
 
-                        <div id="capteurTemp">
-                        </div>
+                    <div id="capteurTemp">
+                    </div>
 
                 </div>
-
-            </div>
-            <div id="test">
-
             </div>
         </section1>
 

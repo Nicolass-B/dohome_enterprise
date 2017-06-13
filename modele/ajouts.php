@@ -35,7 +35,7 @@ function ajoutPiece(PDO $bdd, $nom, $idmaison, $superficie)
 
 function ajoutMaison(PDO $bdd, $nom, $iduser, $superficie)
 {
-    $query = $bdd->prepare('INSERT INTO maison(Id, nbpieces, ID_user, Nom, superficie) VALUES (NULL ,0,:iduser,:nom, :superficie)');
+    $query = $bdd->prepare('INSERT INTO maison(Id_user, nbpieces, ID_user, Nom, superficie) VALUES (NULL ,0,:iduser,:nom, :superficie)');
     $query->execute(array(
         'nom' => $nom,
         'iduser' => $iduser,

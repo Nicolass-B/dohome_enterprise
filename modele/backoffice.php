@@ -11,7 +11,7 @@ include 'init_connexion_bdd.php';
 
 function isAdmin(PDO $bdd, $id)
 {
-    $reponse = $bdd->prepare('SELECT Is_admin FROM user WHERE id=\'' . $id . '\'');
+    $reponse = $bdd->prepare('SELECT Is_admin FROM user WHERE id_user=\'' . $id . '\'');
     $reponse->execute();
     $affiche = $reponse->fetch();
     if ($affiche['Is_admin'] == 1) {
@@ -25,7 +25,7 @@ function getUserList(PDO $bdd)
 {
     // ICI ON RETOURNE DANS $data LES PIECES DE L'UTILISATEUR POUR SA MAISON
 
-    $query = "SELECT id,Nom,Prenom FROM user";
+    $query = "SELECT id_user,Nom,Prenom FROM user";
     $sql = $bdd->prepare($query);
     $sql->execute();
     $data = $sql->fetchAll();

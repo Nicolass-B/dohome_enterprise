@@ -17,7 +17,7 @@ if (isset($_GET['act']))
     $Actionneur->get_valeur_history();
     $dataval = json_encode($Actionneur->histo_valeur); $datadate = json_encode($Actionneur->histo_date);
 
-    include('../Vue/mes_actionneurs.php');
+    include('../vue/mes_actionneurs.php');
 
 } else {
     // ici le capteur n'est pas précisé dans le formulaire

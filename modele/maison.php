@@ -10,7 +10,7 @@ function getMaisons(PDO $dbh, int $iduser)
 {
     // ICI ON RETOURNE DANS $data LES MAISONS DE L'USER
 
-    $query = "SELECT Id,Nom, superficie FROM maison WHERE ID_user =:iduser";
+    $query = "SELECT Id_user,Nom, superficie FROM maison WHERE ID_user =:iduser";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser' => $iduser]);
     $data = $sql->fetchAll();
@@ -29,7 +29,7 @@ function getPiecesMaison(PDO $bdd, int $idmaison)
 
 
 function suppressionMaison(PDO $bdd, $idmaison){
-    $query = "DELETE FROM maison WHERE Id = :idmaison";
+    $query = "DELETE FROM maison WHERE Id_user = :idmaison";
     $sql = $bdd->prepare($query);
     $sql->execute(['idmaison' => $idmaison]);
 }

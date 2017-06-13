@@ -9,6 +9,8 @@ if (!isset($_SESSION))
 {
     session_start();
 }
+setcookie('email','',time()-3600);
+setcookie('password','',time()-3600);
 //echo  $_SESSION['Mail'];
 // On détruit les variables de notre session
 session_unset ();

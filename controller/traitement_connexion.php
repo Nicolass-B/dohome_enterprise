@@ -12,6 +12,7 @@ Une variable est considérée comme vide si elle n'existe pas, ou si sa valeur �
 
 
 if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de connexion
+
     if(!empty($_POST['loginMail']) && !empty($_POST['pass'])) { // L'utilisateur a rempli tous les champs du formulaire
         include ('../modele/utilisateurs.php');
         include ('../modele/inscription.php');
@@ -37,10 +38,14 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
             }
 
             else{//mdp OK
+                if(isset($_POST['memo']) && !empty($_POST['memo'])){
+                    setcookie('email',$loginMail,time()*365*24*3600,'/',null,false,true);
+                    setcookie('password',$pass,time()*365*24*3600,'/',null,false,true);
+                }
                 session_start();
                 $_SESSION['Mail']=$loginMail;
                 $idUser=takeIdUser($bdd,$loginMail);
-                $_SESSION['id_user']=$idUser['id'];
+                $_SESSION['id_user']=$idUser['id_user'];
               include('../Vue/dashboard.php');
             }
         }

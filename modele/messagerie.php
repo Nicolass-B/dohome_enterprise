@@ -11,7 +11,7 @@ require_once ('init_connexion_bdd.php');
 function getMessageUser(PDO $dbh, int $iduser){
     //renvoie les messages destinés à un utilisateur donné en entrée
     $query = "SELECT Titre, contenu, ID_Message, ID_Expediteur, Time_Stamp AS 'Date', Nom FROM messagerie 
-                  JOIN user on ID_Expediteur = user.id
+                  JOIN user on ID_Expediteur = user.id_user
                   WHERE ID_Destinataire=:iduser ORDER BY Time_Stamp DESC";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser'=> $iduser]);
@@ -36,7 +36,7 @@ function sendMessageToUser (PDO $dbh, int $idexp, string $iddest, string $titre,
 function getIdFromMail (PDO $dbh, string $mail){
     // OMFG DANGEROUS AF
     // Ptites surprises très droles possibles
-    $query = "SELECT id FROM user WHERE Mail=:mail ORDER BY id ";
+    $query = "SELECT id_user FROM user WHERE Mail=:mail ORDER BY id_user ";
     $sql = $dbh->prepare($query);
     $sql->execute(['mail'=> $mail]);
     $data = $sql->fetch();
@@ -60,7 +60,7 @@ function getUserSentMessages (PDO $dbh, int $iduser){
  */
 function getUniqueMessage(PDO $dbh, $idmessage, int $iduser){
     $query = "SELECT Titre, contenu, ID_Expediteur, Time_Stamp AS 'Date', Nom FROM messagerie 
-                  JOIN user on ID_Expediteur = user.id
+                  JOIN user on ID_Expediteur = user.id_user
                   WHERE ID_Destinataire=:iduser AND ID_Message=:idmessage";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser'=> $iduser, 'idmessage' => $idmessage]);

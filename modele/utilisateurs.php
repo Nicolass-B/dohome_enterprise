@@ -17,7 +17,7 @@ function takeUtilisateurs(PDO $dbh, $login)
 }
 //renvoi l'id d'un utilisateur en fonction de son mail
 function takeIdUser(PDO $bdd,$mail){
-   $reponse = $bdd-> prepare('SELECT id FROM  user WHERE Mail=\'' . $mail . '\' ');
+   $reponse = $bdd-> prepare('SELECT id_user FROM  user WHERE Mail=\'' . $mail . '\' ');
    $reponse->execute();
    $affich = $reponse->fetch();
 
@@ -32,10 +32,10 @@ function takeInfoUser(PDO $bdd,$mail){
 }
 
 function updateAvatarUser(PDO $bdd,$id_user,$extensionUpload){
-    $updateavatar= $bdd->prepare('UPDATE user SET avatar= :avatar WHERE id=:id');
+    $updateavatar= $bdd->prepare('UPDATE user SET avatar= :avatar WHERE id_user=:id_user');
     $updateavatar-> execute(array(
         'avatar'=>$id_user.".".$extensionUpload,
-        'id'=>$id_user
+        'id_user'=>$id_user
     ));
 }
 

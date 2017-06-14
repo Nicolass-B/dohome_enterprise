@@ -30,7 +30,6 @@ if (isset($_GET['capteur']))
     include('../vue/capteur.php');
 
 
-
     if (isset($_POST['envoi'])) {
         if (isset($_POST['type'])) {
             if (isset($_POST['piece'])) {

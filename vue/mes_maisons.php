@@ -33,7 +33,7 @@ if (!isset($_SESSION)) {
                 <th>ID</th>
                 <th>Nom</th>
                 <th>Superficie</th>
-                <th>Supprimer </th>
+                <th>Supprimer</th>
             <tr>
             </thead>
             <tbody>
@@ -42,12 +42,12 @@ if (!isset($_SESSION)) {
                 //var_dump($row);
                 ?>
                 <tr>
-                    <td data-title="ID"><?php echo $row['Id_user'] ?></td>
+                    <td data-title="ID"><?php echo $row['Id'] ?></td>
                     <td data-title="Nom">
-                        <a href="../controller/piece.php?maison=<?php echo $row['Id_user'] ?>"> <?php echo $row['Nom'] ?> </a>
+                        <a href="../controller/piece.php?maison=<?php echo $row['Id'] ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
                     <td data-title="Superficie"><?php echo $row['superficie'] ?></td>
-                    <td data-title="Supprimer"><a href="../controller/maison.php?suppr=<?php echo $row['Id_user'] ?>">
+                    <td data-title="Supprimer"><a href="../controller/maison.php?suppr=<?php echo $row['Id'] ?>">
                             <img src="../vue/img/img_96165.svg" width="20" height="20">
                         </a></td>
                 </tr>

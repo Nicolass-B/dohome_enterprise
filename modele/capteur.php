@@ -51,7 +51,6 @@ class capteur
         $this->idpiece = $req->fetch();
         $req2 = $this->pdo->prepare('SELECT ID_maison FROM pieces WHERE ID_pieces=:idpiece');
         $id = $this->idpiece["ID_piece"];
-        var_dump($id);
         $req2->execute(array(
             "idpiece" => intval($id)
         ));

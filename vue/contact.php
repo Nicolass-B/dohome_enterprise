@@ -13,7 +13,7 @@
         <div class="guillaume">
              <img class="img1" src="../vue/img/guigui.png" alt="plus">
                 <p>Guillaume Froger Delapierre</p>
-                <p>Directeur Tchatcheur</p>
+                <p>Directeur Communication</p>
         </div>
 
         <div class="nico">
@@ -45,7 +45,7 @@
         <div class="antoine">
             <img class="img5" src="../vue/img/antoine.png" alt="plus">
             <p>Antoine Poussot</p>
-            <p>PDG</p>
+            <p>CEO</p>
 
         </div>
 

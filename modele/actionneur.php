@@ -16,8 +16,6 @@ class actionneur
     public $id_user;
     public $typeactionneur;
     public $is_active;
-    public $histo_valeur;
-    public $histo_date;
 
     private $pdo; // pour les acces de l'objet a la base de données
 
@@ -72,16 +70,5 @@ class actionneur
         $req->execute();
         $this->typecapteur = $req->fetch();
     }
-
-    public function get_valeur_history()
-    {
-        $req = $this->pdo->prepare('SELECT Date_Mesure FROM historique_capteurs WHERE ID_Capteur=:idcapteur ORDER BY Date_Mesure');
-        $req->execute(array('idcapteur' => $this->idactionneur));
-        $this->histo_date = $req->fetchAll(PDO::FETCH_COLUMN, 0);
-        $req = $this->pdo->prepare('SELECT Valeur FROM historique_capteurs WHERE ID_Capteur=:idcapteur ORDER BY Date_Mesure');
-        $req->execute(array('idcapteur' => $this->idactionneur));
-        $this->histo_valeur = $req->fetchAll(PDO::FETCH_COLUMN, 0);
-    }
-
 }
 ?>

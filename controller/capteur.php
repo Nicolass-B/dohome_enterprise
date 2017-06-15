@@ -9,6 +9,8 @@ require_once '../modele/init_connexion_bdd.php';
 require_once '../modele/capteur.php';
 require_once '../modele/ajouts.php';
 require_once '../modele/piece.php';
+require_once '../modele/actionneur.php';
+
 
 if (isset($_GET['capteur']))
 {
@@ -16,8 +18,14 @@ if (isset($_GET['capteur']))
     $titre = $Capteur->typecapteur[0];
     $Capteur->get_valeur_history();
     $dataval = json_encode($Capteur->histo_valeur); $datadate = json_encode($Capteur->histo_date);
-
     include('../vue/mes_capteurs.php');
+
+} else if ($_GET['actionneur']) {
+
+    $actionneur = new Actionneur($_GET['actionneur'], $bdd);
+    $titre = $Actionneur->typecapteur[0];
+    include('../vue/mes_actionneurs.php');
+
 
 } else {
     // ici le capteur n'est pas précisé dans le formulaire
@@ -27,6 +35,7 @@ if (isset($_GET['capteur']))
     //TODO ajouter les sessions et remplacer ici.
     $pieces = getPiecesfromMaison($bdd, $idmaison);
     $capteur_piece = getCapteursfromPiece($bdd, $idpiece);
+    $actionneur_piece = getActionneursfromPiece($bdd, $idpiece);
     include('../vue/capteur.php');
 
 

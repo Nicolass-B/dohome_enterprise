@@ -94,6 +94,7 @@ a:focus {
 .recherche {
     display: flex;
     margin: auto;
+    overflow: scroll;
 }
 
 #searchthis #search-btn {
@@ -133,7 +134,6 @@ a:focus {
 .deconexion {
     width: 40px;
     height: 40px;
-
     position: absolute;
     right: 50px;
     top: 30px;

@@ -23,7 +23,7 @@ if (isset($_GET['maison'])) {
         if (isset($_POST['nom']) && !empty($_POST['nom'])) {
             if(isset($_POST['superficie']) && !empty($_POST['superficie'])) {
 
-                ajoutMaison($bdd, $_POST['nom'], $_POST['piece'], $_POST['superficie']);
+                ajoutMaison($bdd, $_POST['nom'], $_SESSION['id_user'], $_POST['superficie']);
                 ?>
                 <script>alert("<?php echo 'la maison a bien été ajoutée', ENT_QUOTES; ?>")</script>
                 <?php

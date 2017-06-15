@@ -10,7 +10,7 @@ function getMaisons(PDO $dbh, int $iduser)
 {
     // ICI ON RETOURNE DANS $data LES MAISONS DE L'USER
 
-    $query = "SELECT Id_user,Nom, superficie FROM maison WHERE ID_user =:iduser";
+    $query = "SELECT id_maison,Nom, superficie FROM maison WHERE ID_user =:iduser";
     $sql = $dbh->prepare($query);
     $sql->execute(['iduser' => $iduser]);
     $data = $sql->fetchAll();

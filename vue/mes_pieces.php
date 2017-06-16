@@ -14,6 +14,8 @@ if (!isset($_SESSION)) {session_start();}
 
 <body>
 <br>
+<intro>Ajoutez une pièce</intro>
+</br>
 <div class="">
     <form method="POST" action="../controller/piece.php?maison=<?php echo $idmaison ?>">
         <input id="case" type="text" name="nom_piece" placeholder="Nom de la pièce" required/>

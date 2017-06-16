@@ -17,7 +17,7 @@ if (!isset($_SESSION)) {
 
 <body>
 <br>
-<intro>Ajoutez un capteur</intro>
+<intro>Ajoutez une maison</intro>
 </br>
 <div class="connexion-inscription">
     <form method="POST" action="../controller/maison.php">

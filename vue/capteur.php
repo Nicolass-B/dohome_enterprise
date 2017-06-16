@@ -16,16 +16,17 @@ require_once('..\Modele\Capteur.php');
     <form method="POST" action="../controller/newcapteur.php">
 
         <select name="type" required>
+            <option value="">Type de capteur</option>
             <option value="temp">Température</option>
             <option value="light">Illumination</option>
             <option value="presence">Présence</option>
             <option value="son">Son</option>
         </select>
         <select name="piece" required>
+            <option value="">Sélectionnez une pièce</option>
             <?php
-
-            foreach ($sql as $row) {
-                echo "<option value=" . $row['ID_pièces'] . ">" . $row['Nom'] . "</option>";
+            foreach ($pieces as $row) {
+                echo "<option value=" . $row['ID_pieces'] . ">" . $row['Nom'] . "</option>";
             }
             ?>
         </select>

@@ -20,7 +20,7 @@ if (isset($_GET['capteur']))
     $dataval = json_encode($Capteur->histo_valeur); $datadate = json_encode($Capteur->histo_date);
     include('../vue/mes_capteurs.php');
 
-} else if ($_GET['actionneur']) {
+} else if (isset($_GET['actionneur'])) {
 
     $actionneur = new Actionneur($_GET['actionneur'], $bdd);
     $titre = $Actionneur->typecapteur[0];

@@ -37,6 +37,7 @@ function getActionneursfromPiece(PDO $dbh, $idpiece)
     return $data;
 }
 
+
 function suppressionPiece(PDO $bdd, $idpiece){
     $query = "DELETE FROM pieces WHERE ID_pieces = :idpiece";
     $sql = $bdd->prepare($query);

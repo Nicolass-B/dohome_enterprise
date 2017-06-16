@@ -46,7 +46,7 @@ if (!isset($_SESSION)) {
                     <td data-title="Nom">
                         <a href="../controller/piece.php?maison=<?php echo $row['id_maison'] ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
-                    <td data-title="Superficie"><?php echo $row['superficie'] ?></td>
+                    <td data-title="Superficie"><?php echo $row['superficie'] ?> m²</td>
                     <td data-title="Supprimer"><a href="../controller/maison.php?suppr=<?php echo $row['Id'] ?>">
                             <img src="../vue/img/img_96165.svg" width="20" height="20">
                         </a></td>

@@ -19,8 +19,8 @@ if (!isset($_SESSION)) {
 <br>
 <div class="connexion-inscription">
     <form method="POST" action="../controller/maison.php">
-        <input type="text" name="nom" placeholder="Nom de la maison" required/>
-        <input type="text" name="superficie" placeholder="superficie" required/>
+        <input id="case" type="text" name="nom" placeholder="Nom de la maison" required/>
+        <input id="case" type="text" name="superficie" placeholder="superficie" required/>
         <input id="bouton4" type="submit" name="envoi" value="Valider"/>
     </form>
 </div>

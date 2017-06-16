@@ -1,15 +1,57 @@
-
-#bouton3 {
+.table-responsive-vertical{
+    border-radius: 20px;
     width: auto;
+    height: auto;
+    border: 2px solid white;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    horizontal-align: middle;
+    overflow: auto;
+    margin-left: 0;
+    margin-right: 0;
     font-family: "PT Sans";
     text-transform: uppercase;
-    letter-spacing: 2px;
-    background-color: #00c555;
-    color: white;
-    border-radius: 10px;
-    border: 2px solid #00c555;
-    font-size: 13px;
 }
+
+#case{
+    border: 1px solid black;
+    padding: 8px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

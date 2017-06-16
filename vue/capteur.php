@@ -37,7 +37,7 @@ require_once('..\Modele\Capteur.php');
 
     </form>
 </div>
-
+<h1>Capteurs</h1>
 <div class="table-responsive-vertical shadow-z-1">
     <table id="table" class="table table-hover table-mc-light-blue">
         <thead>
@@ -65,6 +65,40 @@ require_once('..\Modele\Capteur.php');
                     <?php echo $row['unite'] ?></td>
                 <td data-title="Etat batterie">
                     <?php echo $row['batt'] ?></td>
+
+            </tr>
+
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
+
+
+</div>
+<h1>Actionneurs</h1>
+<div class="table-responsive-vertical shadow-z-1">
+    <table id="table" class="table table-hover table-mc-light-blue">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Activé</th>
+        <tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($actionneur_piece as $row) {
+            ?>
+            <tr>
+                <td data-title="ID">
+                    <?php echo $row['ID_Actionneur'] ?></td>
+                <td data-title="Nom">
+                    <a href="../controller/capteur.php?actionneur=<?php echo $row['ID_Actionneur'] ?>"><?php echo $row['Nom'] ?></a>
+                </td>
+                <td data-title="Activé">
+                    <?php echo $row['is_active'] ?></td>
+
 
             </tr>
 

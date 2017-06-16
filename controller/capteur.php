@@ -30,7 +30,7 @@ if (isset($_GET['capteur']))
 } else {
     // ici le capteur n'est pas précisé dans le formulaire
     // on renvoie tous les capteurs de la pièce séléctionnée
-    $idmaison = 1; //$_SESSION['idmaison']; to add quand on aura les sessions
+    $idmaison = $_GET['maison']; //to add quand on aura les sessions
     $idpiece = $_GET['piece'];
     //TODO ajouter les sessions et remplacer ici.
     $pieces = getPiecesfromMaison($bdd, $idmaison);

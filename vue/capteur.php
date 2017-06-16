@@ -1,6 +1,4 @@
-<head>
-    <link rel="stylesheet" href="../css/tableau.css">
-</head>
+
 <?php
 if (!isset($_SESSION)) {session_start();}
 
@@ -10,10 +8,19 @@ require_once('..\Modele\Capteur.php');
 
 
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes pièces</title>
+    <link rel="stylesheet" href="../css/maison.css"/>
+    <link rel="stylesheet" href="../css/tableau.css"/>
+</head>
 
 <body>
 <div class="connexion-inscription">
     <form method="POST" action="../controller/newcapteur.php">
+
 
         <select name="type" required>
             <option value="">Type de capteur</option>
@@ -32,7 +39,7 @@ require_once('..\Modele\Capteur.php');
         </select>
         <input type="text" name="nom_capteur" placeholder="Nom du Capteur" required/>
         <input type="text" name="ajout" placeholder="1" hidden required/>
-        <input type="submit" name="envoi" value="Valider"/>
+        <input id="bouton3" type="submit" name="envoi" value="Valider"/>
 
 
     </form>

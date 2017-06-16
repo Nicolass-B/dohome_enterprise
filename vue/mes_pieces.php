@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {session_start();}
     <form method="POST" action="../controller/piece.php?maison=<?php echo $idmaison ?>">
         <input type="text" name="nom_piece" placeholder="Nom de la pièce" required/>
         <input type="text" name="superficie" placeholder="Superficie" required/>
-        <input type="submit" name="envoi" value="Valider" />
+        <input id="bouton4" type="submit" name="envoi" value="Valider" />
     </form>
 </div>
 <br>

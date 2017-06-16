@@ -1,3 +1,17 @@
+h1 {
+    color:white;
+}
+#choix{
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color:white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+    padding:8px;
+}
 intro{
     font-family: "PT Sans";
     text-transform: uppercase;
@@ -113,4 +127,5 @@ intro{
     border-radius: 10px;
     border: 2px solid #00c555;
     font-size: 13px;
+    padding:8px;
 }

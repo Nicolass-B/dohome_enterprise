@@ -94,7 +94,6 @@ a:focus {
 .recherche {
     display: flex;
     margin: auto;
-    overflow: scroll;
 }
 
 #searchthis #search-btn {

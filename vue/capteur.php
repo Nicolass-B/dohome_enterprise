@@ -1,6 +1,7 @@
-
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 $titre = 'Mes Capteurs';
 include('haut_de_page.php');
@@ -22,14 +23,14 @@ require_once('..\Modele\Capteur.php');
     <form method="POST" action="../controller/newcapteur.php">
 
 
-        <select name="type" required>
+        <select id="choix" name="type" required>
             <option value="">Type de capteur</option>
             <option value="temp">Température</option>
             <option value="light">Illumination</option>
             <option value="presence">Présence</option>
             <option value="son">Son</option>
         </select>
-        <select name="piece" required>
+        <select id="choix" name="piece" required>
             <option value="">Sélectionnez une pièce</option>
             <?php
             foreach ($pieces as $row) {
@@ -37,7 +38,7 @@ require_once('..\Modele\Capteur.php');
             }
             ?>
         </select>
-        <input type="text" name="nom_capteur" placeholder="Nom du Capteur" required/>
+        <input id="case" type="text" name="nom_capteur" placeholder="Nom du Capteur" required/>
         <input type="text" name="ajout" placeholder="1" hidden required/>
         <input id="bouton3" type="submit" name="envoi" value="Valider"/>
 
@@ -119,6 +120,6 @@ require_once('..\Modele\Capteur.php');
 </div>
 
 
-    </body>
+</body>
 
 <?php include 'bas_de_page.php'; ?>

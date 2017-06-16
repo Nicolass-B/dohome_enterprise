@@ -14,6 +14,7 @@ if (!isset($_SESSION)) {session_start();}
 
 <body>
 <br>
+<div class="connexion-inscription">
 <intro>Ajoutez une pièce</intro>
 </br>
 <div class="">

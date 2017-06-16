@@ -8,6 +8,5 @@
 if (!isset($_SESSION)) {session_start();}
 //include ('../modele/maison.php');
 
-//$affichePieces = getPiecesMaison($bdd,$_SESSION['id_maison']);
 
 include '../vue/dashboard.php';

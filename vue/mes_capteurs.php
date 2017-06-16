@@ -15,7 +15,7 @@ include 'haut_de_page.php';
 
 <body>
 <div class="title">
-    <h1>Historique et mesure instantanée du capteur </h1>
+    <p>Historique et mesure instantanée du capteur </p>
 </div>
 <section class="container">
 

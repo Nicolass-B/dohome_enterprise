@@ -18,7 +18,6 @@ include 'haut_de_page.php';
     <p>Historique et mesure instantanée du capteur </p>
 </div>
 <section class="container">
-
     <div class="one">
         <?php
         /*highlight_string("<?php\n\$data =\n" . var_export($Capteur, true) . ";\n?>");

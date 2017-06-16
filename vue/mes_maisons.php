@@ -17,6 +17,8 @@ if (!isset($_SESSION)) {
 
 <body>
 <br>
+<p>Ajoutez un capteur</p>
+</br>
 <div class="connexion-inscription">
     <form method="POST" action="../controller/maison.php">
         <input id="case" type="text" name="nom" placeholder="Nom de la maison" required/>

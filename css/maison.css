@@ -1,4 +1,9 @@
-
+p{
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+}
 
 .logo2{
     margin: 25%;

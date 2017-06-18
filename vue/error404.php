@@ -6,11 +6,11 @@
  * Time: 01:12
  */
 
-include_once('Haut-de-Page.php');
+include_once('haut_de_page.php');
 ?>
 <h1 class="information" style="font-size: x-large"> Erreur 404, site en construction </h1>
 <?php
-include_once('BasDePage.php');
+include_once('bas_de_page.php');
 
 ?>
 

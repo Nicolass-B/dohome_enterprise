@@ -18,71 +18,81 @@
 
 session_start();
 
-if (isset($_POST['envoi'])) {//envoi du formulaire
+if(isset($_POST['envoi'])){//envoi du formulaire
 
-    if (!empty($_POST['nom'])//vérifie si tout les champs sont bien rempli
-        && !empty($_POST['prenom'])
-        && !empty($_POST['E-mail'])
-        && !empty($_POST['pass'])
-        && !empty($_POST['confirmePasse'])
-        && !empty($_POST['adresse'])
-        && !empty($_POST['tel'])
-        && !empty($_POST['sexe'])
-        && !empty($_POST['jour'])
-        && !empty($_POST['mois'])
-        && !empty($_POST['année'])
-    ) {
+    if(!empty($_POST['nom'])//vérifie si tout les champs sont bien rempli
+        &&!empty($_POST['prenom'])
+        &&!empty($_POST['E-mail'])
+        &&!empty($_POST['pass'])
+        &&!empty($_POST['confirmePasse'])
+        &&!empty($_POST['adresse'])
+        &&!empty($_POST['tel'])
+        &&!empty($_POST['sexe'])
+        &&!empty($_POST['jour'])
+        &&!empty($_POST['mois'])
+        &&!empty($_POST['année'])
+        &&!empty($_POST['questionSecrete'])
+        &&!empty($_POST['repSecrete'])) {
 
         //htmlentities améliore la sécurité(évite les injections xss)
-        $nom = htmlentities($_POST['nom']);
-        $prenom = htmlentities($_POST['prenom']);
-        $mail = htmlentities($_POST['E-mail']);
-        $pass = htmlentities($_POST['pass']);
-        $confirmePasse = htmlentities($_POST['confirmePasse']);
-        $adresse = htmlentities($_POST['adresse']);
-        $tel = htmlentities($_POST['tel']);
+        $nom=htmlentities($_POST['nom']);
+        $prenom=htmlentities($_POST['prenom']);
+        $mail=htmlentities($_POST['E-mail']);
+        $pass=htmlentities($_POST['pass']);
+        $confirmePasse=htmlentities($_POST['confirmePasse']);
+        $adresse=htmlentities($_POST['adresse']);
+        $tel=htmlentities($_POST['tel']);
         $sexe = htmlentities($_POST['sexe']);
         $jour = htmlentities($_POST['jour']);
         $mois = htmlentities($_POST['mois']);
         $année = htmlentities($_POST['année']);
+        $questionSecrete=htmlentities($_POST['questionSecrete']);
+        $repQuestionSecrete=htmlentities($_POST['repSecrete']);
 
-        require('../modele/Inscription.php');
+        require ('../modele/Inscription.php');
 
-        if (verif2MDP($pass, $confirmePasse)) {
-            if (verifMail($bdd, $mail) == false) {
-                if (isset($_POST['memo']) && htmlentities($_POST['memo']) == 'j\'accepte') {
+        if(verif2MDP($pass,$confirmePasse)){
+            $passcrypt = sha1($pass);
+            if(verifMail($bdd,$mail)==false){
+                if(isset($_POST['memo']) && htmlentities($_POST['memo'])=='j\'accepte'){
 
-                    insertUser($bdd, $nom, $prenom, $pass, $tel, $mail, $adresse, $sexe, $année, $mois, $jour);
-                    $error = 'Inscription réussi';
-                    session_unset();
-                    session_destroy();
-                    include('../vue/sign_up.php');
+                insertUser($bdd,$nom,$prenom,$passcrypt,$tel,$mail,$adresse,$sexe,$année,$mois,$jour,$questionSecrete,$repQuestionSecrete);
+                $error= 'Inscription réussi';
+                session_unset();
+                session_destroy();
+                include('../vue/sign_up.php');
 
-                } else {
-                    $_SESSION = $_POST;
-                    $error = 'veuillez accepter les conditions d\'utilisation';
+                }
+                else{
+                    $_SESSION=$_POST;
+                    $error= 'veuillez accepter les conditions d\'utilisation';
                     include('../vue/sign_up.php');
                 }
 
-            } else {
-                $_SESSION = $_POST;
-                $error = 'le mail est déja utilisé';
+            }
+
+            else {
+                $_SESSION=$_POST;
+                $error= 'le mail est déja utilisé';
                 include('../vue/sign_up.php');
             }
-        } else {
-            $_SESSION = $_POST;
-            $error = 'mdp différent';
+        }
+        else{
+            $_SESSION=$_POST;
+            $error= 'mdp différent';
             include('../vue/sign_up.php');
         }
-    } else {
-        $_SESSION = $_POST;
-        $error = 'les champs ne sont pas tous rempli';
+    }
+    else {
+        $_SESSION=$_POST;
+        $error= 'les champs ne sont pas tous rempli';
         include('../vue/sign_up.php');
     }
 
-} else {
-    $_SESSION = $_POST;
-    $error = 'formulaire non envoyé';
+}
+else{
+    $_SESSION=$_POST;
+    $error= 'formulaire non envoyé';
     include('../vue/sign_up.php');
 }
 

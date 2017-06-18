@@ -14,9 +14,8 @@
                 <ul>
                     <div class="menu">
                         <li><a href="../vue/dashboard_backoffice.php">Dashboard</a></li>
-                        <li><a href="../vue/analyse_backoffice.php">Analyse</a></li>
+                        <li><a href="../controller/analyse_backoffice.php">Analyse</a></li>
                         <li><a href="../vue/messagerie_backoffice.php">Messagerie</a></li>
-                        <li><a href="../vue/admin_backoffice.php">BackOffice</a></li>
                     </div>
                 </ul>
             </nav>
@@ -36,3 +35,4 @@
 
     </section1>
 </header>
+

@@ -352,7 +352,7 @@ ALTER TABLE `client_secondaire`
 -- Index pour la table `faq`
 --
 ALTER TABLE `faq`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (id_faq);
 
 --
 -- Index pour la table `historique_capteurs`
@@ -450,7 +450,7 @@ ALTER TABLE `client_secondaire`
 -- AUTO_INCREMENT pour la table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY id_faq int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `historique_capteurs`
 --

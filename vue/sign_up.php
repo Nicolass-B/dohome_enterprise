@@ -11,7 +11,6 @@
 </head>
 
 <header>
-    <section1>
         <div class="container">
             <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
             <nav>
@@ -23,8 +22,6 @@
                 </ul>
             </nav>
         </div>
-    </section1>
-
 </header>
 
 <body>
@@ -158,7 +155,29 @@
                                        echo $_SESSION['tel'];
                                    } ?>" required/>
                         </p>
-                        </br>
+
+                        <p>
+                            <label for="questionSecrete">Choississez votre question secrête</br></label>
+                            <select name="questionSecrete" id="questionSecrete">
+                                <option value="Quel est le nom de la rue où demeurait mon meilleur ami d'enfance ?"
+                                    <?php if(isset($_SESSION['questionSecrete'])&& !empty($_SESSION['questionSecrete']) &&$_SESSION['questionSecrete']=='Quel est le nom de la rue où demeurait mon meilleur ami d\'enfance ?'){echo'selected';} ?>>
+                                    Quel est le nom de la rue où demeurait mon meilleur ami d'enfance ?</option>
+
+                                <option value="Quel est le plus beau cadeau que j'ai reçu ?"
+                                    <?php if(isset($_SESSION['questionSecrete'])&& !empty($_SESSION['questionSecrete']) &&$_SESSION['questionSecrete']=='Quel est le plus beau cadeau que j\'ai reçu ?'){echo'selected';} ?>>
+                                    Quel est le plus beau cadeau que j'ai reçu ?</option>
+
+                                <option value="Quel est votre personnage de série préféré ?"
+                                    <?php if(isset($_SESSION['questionSecrete'])&& !empty($_SESSION['questionSecrete']) &&$_SESSION['questionSecrete']=='Quel est votre personnage de série préféré ?'){echo'selected';} ?>>
+                                    Quel est votre personnage de série préféré ?</option>
+
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="repSecrete">Réponse à la question secrête</br></label>
+                            <input type="text" name="repSecrete" id="repSecrete" placeholder="Entrez votre réponse secrête" value= "<?php if(isset($_SESSION['repSecrete'])&& !empty($_SESSION['repSecrete'])){echo $_SESSION['repSecrete'];} ?>" required/>
+                        </p>
 
                         <p><input value="j'accepte" type="radio" name="memo" id="memo"/>
                             <label for="memo">J'ai lu et j'accepte les conditions d'utilisation</label>

@@ -32,3 +32,39 @@ function deleteSecondaryUser(PDO $bdd,$id_user,$id_secondaire){
     $reponse =$bdd->prepare('DELETE FROM client_secondaire  WHERE ID_Secondaire=\'' . $id_secondaire . '\' and ID_USER=\'' . $id_user . '\'');
     $reponse->execute();
 }
+
+function getnivSecurit(PDO $bdd,$mailUserSec){
+    $reponse = $bdd->prepare('SELECT niveau_securite  FROM client_secondaire WHERE mail=\'' . $mailUserSec . '\'');
+    $reponse->execute();
+    $affiche = $reponse->fetch();
+    $niveauSecurit =$affiche['niveau_securite'];
+    return $niveauSecurit;
+}
+
+function verifmailSecondaryUser(PDO $bdd,$mailUserSec){
+    $reponse = $bdd->prepare('SELECT COUNT(mail) AS nb_ocu FROM client_secondaire WHERE mail=\'' . $mailUserSec . '\'');
+    $reponse->execute();
+    $affiche = $reponse->fetch();
+    if($affiche['nb_ocu']==1){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function takemdpSecondaryUser(PDO $bdd,$mailUserSec){
+    $reponse = $bdd->prepare('SELECT Pass FROM client_secondaire  WHERE Mail=\'' . $mailUserSec . '\'');
+    $reponse->execute();
+    $affiche = $reponse->fetch();
+    $mdpSecondaryUser = $affiche['Pass'];
+    return $mdpSecondaryUser;
+}
+
+function getMailComptePrincipal(PDO $bdd,$mailUserSec){
+    $reponse = $bdd->prepare('SELECT Mail,id_user  FROM  user  WHERE id_user=(SELECT ID_USER FROM client_secondaire WHERE mail=\'' . $mailUserSec . '\' )');
+    $reponse->execute();
+    $affiche = $reponse->fetch();
+    return $affiche;
+}
+

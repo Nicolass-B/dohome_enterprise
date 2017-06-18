@@ -1,10 +1,10 @@
 <?php
 
 
-function getFaq()
+function getFaq($bdd)
 {
-$req = $this->pdo->prepare('SELECT * FROM faq');
+$req = $bdd->prepare('SELECT * FROM faq');
 $req->execute();
-$data = $req->fetchAll();
+$data = $req->fetchAll(PDO::FETCH_ASSOC);
 return $data;
 }

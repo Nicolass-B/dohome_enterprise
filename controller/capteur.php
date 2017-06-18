@@ -1,6 +1,8 @@
 <?php
 
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 $titre = "capteur";
 
@@ -12,12 +14,12 @@ require_once '../modele/piece.php';
 require_once '../modele/actionneur.php';
 
 
-if (isset($_GET['capteur']))
-{
+if (isset($_GET['capteur'])) {
     $Capteur = new Capteur($_GET['capteur'], $bdd);
     $titre = $Capteur->typecapteur[0];
     $Capteur->get_valeur_history();
-    $dataval = json_encode($Capteur->histo_valeur); $datadate = json_encode($Capteur->histo_date);
+    $dataval = json_encode($Capteur->histo_valeur);
+    $datadate = json_encode($Capteur->histo_date);
     include('../vue/mes_capteurs.php');
 
 } else if (isset($_GET['actionneur'])) {
@@ -51,7 +53,7 @@ if (isset($_GET['capteur']))
             }
         }
         echo "<p>DAMN, tu viens d'ajouter un capteur dans la pièce !</p>";
-    } else{
+    } else {
         echo 'pas de POST';
     }
 }

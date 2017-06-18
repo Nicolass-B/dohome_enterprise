@@ -6,10 +6,10 @@
  * Time: 03:02
  */
 
-$header="MIME-Version: 1.0\r\n";
-$header.='From:"test.com"<support@test.com>'."\n";
-$header.='Content-Type:texte/html charset="utf-8"'."\n";
-$header.='Content-Transfer-Encoding: 8bit';
+$header = "MIME-Version: 1.0\r\n";
+$header .= 'From:"test.com"<support@test.com>' . "\n";
+$header .= 'Content-Type:texte/html charset="utf-8"' . "\n";
+$header .= 'Content-Transfer-Encoding: 8bit';
 
 $message = "
 <html>
@@ -22,5 +22,5 @@ $message = "
 </html>
 ";
 
-mail("nicolas.benmennad@gmail.com",'salut test',$message,$header);
+mail("nicolas.benmennad@gmail.com", 'salut test', $message, $header);
 ?>

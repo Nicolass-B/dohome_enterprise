@@ -22,7 +22,7 @@ if (!isset($_SESSION)) {
 
 
         // Si on souhaite un affichage général
-        if(!isset($_POST['id'])){
+        if (!isset($_POST['id'])) {
             //par défaut c'est la boite mail de l'admin qui s'affiche
             $_POST['id'] = $_SESSION['id_user'];
         }

@@ -6,9 +6,11 @@
  * Time: 10:53
  */
 
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 include_once('../modele/utilisateurs_secondaire.php');
 
-$infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);
+$infoUserSec = getSecondaryUser($bdd, $_SESSION['id_user']);
 
-include ('../vue/compte_secondaire.php');
+include('../vue/compte_secondaire.php');

@@ -15,3 +15,7 @@
 ## BUGS ? 
 
 _You Tell me ...``_
+
+# Gitlab Runner Status 
+
+[![build status](http://git.dev.juniorisep.com/apoussot/app_test/badges/master/build.svg)](http://git.dev.juniorisep.com/apoussot/app_test/commits/master)

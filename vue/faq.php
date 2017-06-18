@@ -19,7 +19,7 @@ include_once('haut_de_page.php');
             ?>
             <p>
                 <?php
-                echo $row["question"] . " -------------- " . $row["reponse"] . "<br>";
+                echo $row["question"] . " ----------------- " . $row["reponse"] . "<br>";
                 ?>
             </p>
             <?php

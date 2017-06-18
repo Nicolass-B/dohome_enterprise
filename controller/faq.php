@@ -11,4 +11,4 @@ require_once('../modele/faq.php');
 
 $data = getFaq($bdd);
 //var_dump($data);
-include ('../vue/faq.php');
+include('../vue/faq.php');

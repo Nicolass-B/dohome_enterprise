@@ -1,5 +1,7 @@
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 //database configuration
 $dbHost = 'localhost';
 $dbUsername = 'root';
@@ -7,7 +9,7 @@ $dbPassword = '';
 $dbName = 'dohome';
 
 //connect with the database
-$db = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
 //get search term
 $name = $_GET['term'];

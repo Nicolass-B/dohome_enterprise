@@ -9,8 +9,8 @@ require_once('..\Modele\Capteur.php');
 
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
+    <!DOCTYPE html>
+    <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Mes pièces</title>
@@ -19,8 +19,9 @@ require_once('..\Modele\Capteur.php');
 </head>
 
 <body>
+<h1>Capteurs</h1>
 <div class="connexion-inscription">
-    <form method="POST" action="../controller/newcapteur.php">
+    <form method="POST" action="../controller/capteur.php?piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">>
 
 
         <select id="choix" name="type" required>
@@ -30,28 +31,19 @@ require_once('..\Modele\Capteur.php');
             <option value="presence">Présence</option>
             <option value="son">Son</option>
         </select>
-        <select id="choix" name="piece" required>
-            <option value="">Sélectionnez une pièce</option>
-            <?php
-            foreach ($pieces as $row) {
-                echo "<option value=" . $row['ID_pieces'] . ">" . $row['Nom'] . "</option>";
-            }
-            ?>
-        </select>
         <input id="case" type="text" name="nom_capteur" placeholder="Nom du Capteur" required/>
-        <input type="text" name="ajout" placeholder="1" hidden required/>
-        <input id="bouton3" type="submit" name="envoi" value="Valider"/>
+        <input id="bouton3" type="submit" name="envoi" value="Ajouter"/>
 
 
     </form>
 </div>
-<h1>Capteurs</h1>
 <div class="table-responsive-vertical shadow-z-1">
     <table id="table" class="table table-hover table-mc-light-blue">
         <thead>
         <tr>
             <th>ID</th>
             <th>Nom</th>
+            <th>Type</th>
             <th>Valeur</th>
             <th>Unité</th>
             <th>Etat batterie</th>
@@ -65,14 +57,16 @@ require_once('..\Modele\Capteur.php');
                 <td data-title="ID">
                     <?php echo $row['ID_Capteurs'] ?></td>
                 <td data-title="Nom">
-                    <a href="../controller/capteur.php?capteur=<?php echo $row['ID_Capteurs'] ?>"><?php echo $row['Type'] ?></a>
+                    <a href="../controller/capteur.php?capteur=<?php echo $row['ID_Capteurs'] ?>"><?php echo $row['nom'] ?></a>
                 </td>
+                <td data-title="Type">
+                    <?php echo $row['Type'] ?></td>
                 <td data-title="Valeur">
                     <?php echo $row['Valeur'] ?></td>
                 <td data-title="Unité">
                     <?php echo $row['unite'] ?></td>
                 <td data-title="Etat batterie">
-                    <?php echo $row['batt'] ?></td>
+                    <?php echo $row['Etat_Batterie'] ?></td>
 
             </tr>
 
@@ -85,6 +79,23 @@ require_once('..\Modele\Capteur.php');
 
 </div>
 <h1>Actionneurs</h1>
+<div class="connexion-inscription">
+    <form method="POST" action="../controller/actionneur.php?piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">>
+
+
+        <select id="choix" name="type" required>
+            <option value="">Type d'actionneur</option>
+            <option value="temp">Température</option>
+            <option value="light">Illumination</option>
+            <option value="presence">Présence</option>
+            <option value="son">Son</option>
+        </select>
+        <input id="case" type="text" name="nom_act" placeholder="Nom de l'actionneur" required/>
+        <input id="bouton3" type="submit" name="envoi" value="Ajouter"/>
+
+
+    </form>
+</div>
 <div class="table-responsive-vertical shadow-z-1">
     <table id="table" class="table table-hover table-mc-light-blue">
         <thead>

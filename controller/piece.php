@@ -34,7 +34,7 @@ if (isset($_GET['piece'])) {
 
             }
         }
-    } elseif (isset($_GET['suppr']) && !empty($_GET['suppr']))  {
+    } elseif (isset($_GET['suppr']) && !empty($_GET['suppr'])) {
         suppressionPiece($bdd, $_GET['suppr']);
         ?>
         <script>alert("<?php echo 'la pièce a bien été supprimée', ENT_QUOTES ?>")</script>

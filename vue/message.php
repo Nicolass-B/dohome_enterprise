@@ -7,29 +7,28 @@
  */
 
 
-
 include_once('haut_de_page.php');
 
 ?>
 
-<body>
+    <body>
 
-<div>
-    <h1> <?php echo $message['Titre'] ?> </h1>
-    <h2> <?php echo $message['Date'] ?></h2>
-    <h2> <?php echo $message['Nom'] ?>   </h2>
-</div>
-<div>
-    <p> <?php echo $message['contenu'] ?> </p>
-</div>
-<div>
-    <h2>
-        <a href="../controller/messagerie.php" style="color: white"> Retour </a>
-    </h2>
+    <div>
+        <h1> <?php echo $message['Titre'] ?> </h1>
+        <h2> <?php echo $message['Date'] ?></h2>
+        <h2> <?php echo $message['Nom'] ?>   </h2>
+    </div>
+    <div>
+        <p> <?php echo $message['contenu'] ?> </p>
+    </div>
+    <div>
+        <h2>
+            <a href="../controller/messagerie.php" style="color: white"> Retour </a>
+        </h2>
 
-</div>
+    </div>
 
-</body>
+    </body>
 
 <?php
 include_once('bas_de_page.php');

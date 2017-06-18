@@ -48,8 +48,8 @@
                 </fieldset>
             </form>
 
-        </div>
-    </section>
+    </div>
+</section>
 
 </body>
 

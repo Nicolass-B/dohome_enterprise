@@ -1,10 +1,12 @@
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 
 <!DOCTYPE html>
-<html xmlns:justify xmlns:text-justify="http://www.w3.org/1999/xhtml">
+<html xmlns:justify>
 
 <head>
     <link rel="stylesheet" href="../css/boutique_css.css"/>

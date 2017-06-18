@@ -10,7 +10,7 @@ include ('../modele/init_connexion_bdd.php');
 if (!isset($_SESSION)) {session_start();}
 
 $id_maison=$_GET['q'];
-$noPiece=
+/* $noPiece=*/
 $reponse = $bdd -> query('SELECT Nom,ID_pieces FROM pieces WHERE ID_Maison=\'' . $id_maison . '\'');
 ?>
 <select style="width:auto;" id="température" name="piece"  onchange="showUser2(this.value)">

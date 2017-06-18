@@ -1,16 +1,18 @@
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 
 <!DOCTYPE html>
-<html xmlns:justify xmlns:text-justify="http://www.w3.org/1999/xhtml">
+<html xmlns:justify>
 
 <head>
     <link rel="stylesheet" href="../css/dashboard_css.css"/>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <script  type="text/javascript"  src="../js/dashbord_affiche_capteur.js"></script>
+    <script type="text/javascript" src="../js/dashbord_affiche_capteur.js"></script>
 
 </head>
 
@@ -43,9 +45,9 @@ if (!isset($_SESSION)) {session_start();}
                 <div class="température" id="temperature">
                     <p>Capteur</p>
 
-                    <select id="température" name="maison"  onchange="showUser(this.value)">
+                    <select id="température" name="maison" onchange="showUser(this.value)">
                         <option selected="selected" value="">Choissisez votre maison</option>
-                        <?php include ('../controller/dashbordSelectMaison.php') ?>
+                        <?php include('../controller/dashbordSelectMaison.php') ?>
                     </select>
 
                     <br>
@@ -122,10 +124,12 @@ if (!isset($_SESSION)) {session_start();}
             <div class="information">
                 <div class="video">
                     <p>Vidéosurveillance</p>
-                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
+                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg"
+                           width="200">
                     </video>
                     <p>Salon</p>
-                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg" width="200">
+                    <video src="../vue/video/doubleration.mp4" controls poster="../img/fond-decran-page2.jpg"
+                           width="200">
                     </video>
                     <p>Chambre parents</p>
                 </div>

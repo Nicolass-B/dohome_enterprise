@@ -7,14 +7,16 @@
  */
 
 
-include ('../modele/init_connexion_bdd.php');
-if (!isset($_SESSION)) {session_start();}
+include('../modele/init_connexion_bdd.php');
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-$reponse = $bdd -> query('SELECT Nom,Id_user FROM maison WHERE ID_user=\'' . $_SESSION['id_user'] . '\'');
+$reponse = $bdd->query('SELECT Nom,Id_user FROM maison WHERE ID_user=\'' . $_SESSION['id_user'] . '\'');
 
-while ($donnees=$reponse->fetch()){
-    $donneesID=$donnees['Id_user'];
-    $donneesNOM=$donnees['Nom'];
+while ($donnees = $reponse->fetch()) {
+    $donneesID = $donnees['Id_user'];
+    $donneesNOM = $donnees['Nom'];
 
-    echo "<option  name='.$donneesNOM.' value='.$donneesID.' >".$donnees['Nom']."</option>";
+    echo "<option  name='.$donneesNOM.' value='.$donneesID.' >" . $donnees['Nom'] . "</option>";
 }

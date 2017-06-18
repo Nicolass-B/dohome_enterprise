@@ -11,9 +11,9 @@
 <x>
     <section>
         <div class="guillaume">
-             <img class="img1" src="../vue/img/guigui.png" alt="plus">
-                <p>Guillaume Froger Delapierre</p>
-                <p>Directeur Communication</p>
+            <img class="img1" src="../vue/img/guigui.png" alt="plus">
+            <p>Guillaume Froger Delapierre</p>
+            <p>Directeur Communication</p>
         </div>
 
         <div class="nico">
@@ -30,7 +30,6 @@
             <p>Clément Mosser</p>
             <p>Directeur Marketing</p>
         </div>
-
 
 
         <div class="ali">
@@ -58,7 +57,6 @@
 
 
 </x>
-
 
 
 </body>

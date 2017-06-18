@@ -1,5 +1,7 @@
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,6 @@ if (!isset($_SESSION)) {session_start();}
 <?php include("haut_de_page_backoffice.php"); ?>
 
 <body>
-
 
 
 <body>

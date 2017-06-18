@@ -1,5 +1,7 @@
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +12,8 @@ if (!isset($_SESSION)) {session_start();}
     <title>Messagerie</title>
 </head>
 
-<?php $titre = "Messagerie"; include("haut_de_page.php"); ?>
+<?php $titre = "Messagerie";
+include("haut_de_page.php"); ?>
 <link rel="stylesheet" href="../css/tableau.css">
 <body>
 <div>

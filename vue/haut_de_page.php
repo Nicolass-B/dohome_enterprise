@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:justify xmlns:text-justify="http://www.w3.org/1999/xhtml">
+<html xmlns:justify>
 
 <head>
     <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
     <meta charset="UTF-8">
     <title><?php if (isset($titre)) {
-            echo $titre;} else {
-            echo 'Dohome';}; ?></title>
+            echo $titre;
+        } else {
+            echo 'Dohome';
+        }; ?></title>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/typeahead.min.js"></script>
 </head>
@@ -35,12 +37,14 @@
                 <input id="search-btn" type="submit" value="Rechercher"/>
             </form>
         </div>
-        <a class="LienImage" href="../controller/messagerie.php"><img class="mail" src="../vue/img/icon_email.png" alt="logo de l'email"/></a>
-        <a class="LienImage" href="../controller/deconnexion.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
+        <a class="LienImage" href="../controller/messagerie.php"><img class="mail" src="../vue/img/icon_email.png"
+                                                                      alt="logo de l'email"/></a>
+        <a class="LienImage" href="../controller/deconnexion.php"><img class="deconexion"
+                                                                       src="../vue/img/icon_deconnexion.png"
+                                                                       alt="logo de la deco"/></a>
 
     </section1>
 </header>
-
 
 
 </html>

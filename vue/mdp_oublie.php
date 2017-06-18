@@ -9,11 +9,13 @@
 
 <body>
 
-<form method="post"  action="../controller/traitement_mdp_oubli.php">
+<form method="post" action="../controller/traitement_mdp_oubli.php">
     <input type="email" name="recup_mail" placeholder="Entrez votre mail"/><br/>
     <input type="submit" name="envoi" value="Valider"/>
 </form>
-<?php if(isset($mailError)){ echo '<span style="color:red">'.$mailError.'</span>' ;}  ?>
+<?php if (isset($mailError)) {
+    echo '<span style="color:red">' . $mailError . '</span>';
+} ?>
 
 <body>
 

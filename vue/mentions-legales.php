@@ -9,5 +9,4 @@
 include 'haut_de_page.php';
 
 
-
 include 'bas_de_page.php';

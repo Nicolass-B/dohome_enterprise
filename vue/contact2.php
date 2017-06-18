@@ -10,13 +10,12 @@
 
 <x>
     <div class="contact">
-            <p>CONTACT</p></br>
-            <p> E-mail : dohome@gmail.com</p></br>
-            <p>Téléphone : 01 56 65 75 43</p></br>
+        <p>CONTACT</p></br>
+        <p> E-mail : dohome@gmail.com</p></br>
+        <p>Téléphone : 01 56 65 75 43</p></br>
 
     </div>
 </x>
-
 
 
 </body>

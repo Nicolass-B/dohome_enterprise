@@ -31,7 +31,8 @@
         </div>
     </section1>
     <section1>
-        <a class="LienImage" href="home.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png" alt="logo de la deco"/></a>
+        <a class="LienImage" href="home.php"><img class="deconexion" src="../vue/img/icon_deconnexion.png"
+                                                  alt="logo de la deco"/></a>
 
     </section1>
 </header>

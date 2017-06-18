@@ -19,7 +19,7 @@ if (!isset($_SESSION)) {
 <br>
 <intro>Ajoutez une maison</intro>
 <div class="connexion-inscription">
-</br>
+    </br>
     <form method="POST" action="../controller/maison.php">
         <input id="case" type="text" name="nom" placeholder="Nom de la maison" required/>
         <input id="case" type="text" name="superficie" placeholder="Superficie" required/>

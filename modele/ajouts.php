@@ -9,11 +9,12 @@
 
 include('init_connexion_bdd.php');
 
-function ajoutCapteur(PDO $bdd, $type, $idpiece)
+function ajoutCapteur(PDO $bdd,$nom, $type, $idpiece)
 {
-    $query = $bdd->prepare('INSERT INTO capteurs(ID_Capteurs, Type, Valeur, Date_Installation, Etat_Batterie, ID_piece) VALUES (NULL, :type, -1, NOW(), 100, :idpiece) ');
+    $query = $bdd->prepare('INSERT INTO capteurs(ID_Capteurs, Type, Valeur, Date_Installation, Etat_Batterie, ID_piece, nom) VALUES (NULL, :type, -1, NOW(), 100, :idpiece, :nom) ');
     $query->execute(array(
         'type' => $type,
+        'nom' => $nom,
         'idpiece' => $idpiece
     ));
 }

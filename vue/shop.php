@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:justify xmlns:text-justify="http://www.w3.org/1999/xhtml">
+<html xmlns:justify>
 
 <head>
     <meta charset="utf-8">

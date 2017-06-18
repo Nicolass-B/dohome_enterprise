@@ -1,5 +1,7 @@
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,53 +47,49 @@ if (!isset($_SESSION)) {session_start();}
                             $selected = '';
                             // Parcours du tableau
                             echo '<select name="annee" id="annee">';
-                            for($i=date('Y'); $i>=1900; $i--)
-                            {
+                            for ($i = date('Y'); $i >= 1900; $i--) {
                                 // L'année est-elle l'année courante ?
-                                if($i == $infoUser['years'])
-                                {
+                                if ($i == $infoUser['years']) {
                                     $selected = ' selected="selected"';
                                 }
                                 // Affichage de la ligne
-                                echo '<option value="', $i ,'"', $selected ,'>', $i ,'</option>';
-                                $selected='';
+                                echo '<option value="', $i, '"', $selected, '>', $i, '</option>';
+                                $selected = '';
                             }
                             echo '</select>';
                             ?>
 
                             <?php
-                            $selected='';
+                            $selected = '';
                             echo '<select name="mois" id="mois">';
-                            for($mois=1;$mois <= 12;$mois++){
-                                if ($mois==$infoUser['months']) {
+                            for ($mois = 1; $mois <= 12; $mois++) {
+                                if ($mois == $infoUser['months']) {
                                     $selected = 'selected="selected"';
                                 }
-                                if($mois<10){
-                                    echo '<option value="', '0'.$mois ,'"',$selected,'>',$mois ,'</option>';
+                                if ($mois < 10) {
+                                    echo '<option value="', '0' . $mois, '"', $selected, '>', $mois, '</option>';
+                                } else {
+                                    echo '<option value="', $mois, '"', $selected, '>', $mois, '</option>';
                                 }
-                                else{
-                                    echo '<option value="', $mois ,'"',$selected,'>', $mois ,'</option>';
-                                }
-                                $selected='';
+                                $selected = '';
 
                             }
                             echo '</select>';
                             ?>
 
                             <?php
-                            $selected='';
+                            $selected = '';
                             echo '<select name="jour" id="jour">';
-                            for($jour=1;$jour <= date('t');$jour++){
-                                if ($jour==$infoUser['days']) {
+                            for ($jour = 1; $jour <= date('t'); $jour++) {
+                                if ($jour == $infoUser['days']) {
                                     $selected = 'selected="selected"';
                                 }
-                                if($jour<10){
-                                    echo '<option value="', '0'.$jour ,'"',$selected,'>',$jour ,'</option>';
+                                if ($jour < 10) {
+                                    echo '<option value="', '0' . $jour, '"', $selected, '>', $jour, '</option>';
+                                } else {
+                                    echo '<option value="', $jour, '"', $selected, '>', $jour, '</option>';
                                 }
-                                else{
-                                    echo '<option value="', $jour ,'"',$selected,'>', $jour ,'</option>';
-                                }
-                                $selected='';
+                                $selected = '';
 
                             }
                             echo '</select>';
@@ -119,9 +117,11 @@ if (!isset($_SESSION)) {session_start();}
             </div>
         </div>
 
-    </p>
-</form>
-    <?php if(isset($msg)){ echo $msg;} ?>
+        </p>
+    </form>
+    <?php if (isset($msg)) {
+        echo $msg;
+    } ?>
 
 </section>
 </body>

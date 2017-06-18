@@ -23,7 +23,7 @@
             <?php
 
             foreach ($userList as $row) {
-                echo "<option value=" . $row['id'] . ">" . $row['Nom'] . " ". $row['Prenom'] . "</option>";
+                echo "<option value=" . $row['id'] . ">" . $row['Nom'] . " " . $row['Prenom'] . "</option>";
             }
             ?>
         </select>

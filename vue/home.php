@@ -1,6 +1,7 @@
-
 <?php
-if (!isset($_SESSION)) {session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 ?>
 
@@ -34,7 +35,9 @@ if (!isset($_SESSION)) {session_start();}
 
 
 <div class="corpPage">
-    </br><div class="centre2">Bienvenue sur DoHome Enterprise™</div></br>
+    </br>
+    <div class="centre2">Bienvenue sur DoHome Enterprise™</div>
+    </br>
     <div class="connexion-inscription">
         <form method="POST" action="../controller/traitement_connexion.php">
 
@@ -54,7 +57,7 @@ if (!isset($_SESSION)) {session_start();}
 
         <div class="">
             <?php if (isset($messageErreur)) {
-                echo '<div class="styleMessageErreur">'.$messageErreur.'</div>';
+                echo '<div class="styleMessageErreur">' . $messageErreur . '</div>';
             } ?>
         </div>
     </div>
@@ -63,7 +66,9 @@ if (!isset($_SESSION)) {session_start();}
         <section>
             <div class="element">
                 <img src="../vue/img/one.png" class="photo">
-                <div class="texte">DoHome Enterprise ™ vous propose </br> une solution domotique innovante </br>et intelligente</div>
+                <div class="texte">DoHome Enterprise ™ vous propose </br> une solution domotique innovante </br>et
+                    intelligente
+                </div>
             </div>
             <div class="element">
                 <img src="../vue/img/two.png" class="photo">
@@ -73,7 +78,9 @@ if (!isset($_SESSION)) {session_start();}
         <section>
             <div class="element">
                 <img src="../vue/img/three.png" class="photo">
-                <div class="texte">Contrôlez votre maison </br>où que vous soyez sur votre smartphone </br>ou votre ordinateur</div>
+                <div class="texte">Contrôlez votre maison </br>où que vous soyez sur votre smartphone </br>ou votre
+                    ordinateur
+                </div>
             </div>
             <div class="element">
                 <img src="../vue/img/four.png" class="photo">
@@ -83,10 +90,7 @@ if (!isset($_SESSION)) {session_start();}
     </aside>
 
 
-
-
-
-    <div class="contact" >
+    <div class="contact">
         <div class="contact_bis">
             <div class="centre2">
                 Contact

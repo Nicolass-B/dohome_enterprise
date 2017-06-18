@@ -47,7 +47,7 @@ if (!isset($_SESSION)) {session_start();}
             <label for="memo">Se souvenir de moi</label>
             <p>
                 <a id="t" href="../vue/sign_up.php">S'inscrire</a>
-                <a id="t" href="">Mdp oublié ?</a>
+                <a id="t" href="../vue/mdp_oublie.php">Mdp oublié ?</a>
             </p>
 
         </form>

@@ -17,7 +17,7 @@ if (!isset($_SESSION)) {session_start();}
             <ul>
                 <div class="menusec">
                     <li><a href="mon_profil.php">Mon profil</a></li>
-                    <li class="enCours"><a href="../controller/affichage_compte_secondaire.php">Mes comptes secondaires</a></li>
+                    <li class="enCours"><a href="../controller/compte_secondaire.php">Mes comptes secondaires</a></li>
                 </div>
             </ul>
 
@@ -31,7 +31,7 @@ if (!isset($_SESSION)) {session_start();}
                         <p><?php echo $prenom.' '.$nom ?></p>
 
                         <div class="boutton">
-                            <form method="post" action="../controller/edit_sup_compte_secondaire.php">
+                            <form method="post" action="../controller/compte_secondaire.php">
                                 <?php  $envoiIdSec = $id_sec; ?>
                             <div class="bouton1">
                                 <input type="submit" name="modif" value="Modifier les accès du compte secondaire" id="bouton1"/>
@@ -48,7 +48,7 @@ if (!isset($_SESSION)) {session_start();}
             <?php }?>
 
             <div class="bouton3">
-                <form method="post" action="../controller/edit_sup_compte_secondaire.php">
+                <form method="post" action="../controller/compte_secondaire.php">
                 <input type="submit" name="ajoutUserSec" value="Ajouter un compte secondaire" id="bouton3"/>
                 </form>
             </div>

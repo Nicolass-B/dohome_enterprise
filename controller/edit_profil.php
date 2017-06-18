@@ -7,7 +7,6 @@ if (!isset($_SESSION)) {session_start();}
  * Date: 24/05/2017
  * Time: 14:29
  */
-
 if(isset($_POST['envoiProfil'])){
     include ('../modele/utilisateurs.php');
     $infoUser= takeInfoUser($bdd,$_SESSION['Mail']);

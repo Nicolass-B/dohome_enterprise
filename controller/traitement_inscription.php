@@ -30,7 +30,9 @@ if(isset($_POST['envoi'])){//envoi du formulaire
         &&!empty($_POST['sexe'])
         &&!empty($_POST['jour'])
         &&!empty($_POST['mois'])
-        &&!empty($_POST['année'])) {
+        &&!empty($_POST['année'])
+        &&!empty($_POST['questionSecrete'])
+        &&!empty($_POST['repSecrete'])) {
 
         //htmlentities améliore la sécurité(évite les injections xss)
         $nom=htmlentities($_POST['nom']);
@@ -44,14 +46,17 @@ if(isset($_POST['envoi'])){//envoi du formulaire
         $jour = htmlentities($_POST['jour']);
         $mois = htmlentities($_POST['mois']);
         $année = htmlentities($_POST['année']);
+        $questionSecrete=htmlentities($_POST['questionSecrete']);
+        $repQuestionSecrete=htmlentities($_POST['repSecrete']);
 
         require ('../modele/Inscription.php');
 
         if(verif2MDP($pass,$confirmePasse)){
+            $passcrypt = sha1($pass);
             if(verifMail($bdd,$mail)==false){
                 if(isset($_POST['memo']) && htmlentities($_POST['memo'])=='j\'accepte'){
 
-                insertUser($bdd,$nom,$prenom,$pass,$tel,$mail,$adresse,$sexe,$année,$mois,$jour);
+                insertUser($bdd,$nom,$prenom,$passcrypt,$tel,$mail,$adresse,$sexe,$année,$mois,$jour,$questionSecrete,$repQuestionSecrete);
                 $error= 'Inscription réussi';
                 session_unset();
                 session_destroy();

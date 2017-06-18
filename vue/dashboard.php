@@ -41,7 +41,7 @@ if (!isset($_SESSION)) {session_start();}
                 </div>
 
                 <div class="température" id="temperature">
-                    <p>Température</p>
+                    <p>Capteur</p>
 
                     <select id="température" name="maison"  onchange="showUser(this.value)">
                         <option selected="selected" value="">Choissisez votre maison</option>

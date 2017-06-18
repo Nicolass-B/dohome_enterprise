@@ -17,13 +17,12 @@ if (!isset($_SESSION)) {
 
 <body>
 <br>
-<intro>Ajoutez une maison</intro>
 <div class="connexion-inscription">
 </br>
     <form method="POST" action="../controller/maison.php">
         <input id="case" type="text" name="nom" placeholder="Nom de la maison" required/>
-        <input id="case" type="text" name="superficie" placeholder="Superficie" required/>
-        <input id="bouton4" type="submit" name="envoi" value="Valider"/>
+        <input id="case" type="text" name="superficie" placeholder="Superficie en m²" required/>
+        <input id="bouton4" type="submit" name="envoi" value="Ajoutez une maison"/>
     </form>
 </div>
 <br>
@@ -49,7 +48,7 @@ if (!isset($_SESSION)) {
                         <a href="../controller/piece.php?maison=<?php echo $row['id_maison'] ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
                     <td data-title="Superficie"><?php echo $row['superficie'] ?> m²</td>
-                    <td data-title="Supprimer"><a href="../controller/maison.php?suppr=<?php echo $row['Id'] ?>">
+                    <td data-title="Supprimer"><a href="../controller/maison.php?suppr=<?php echo $row['id_maison'] ?>">
                             <img src="../vue/img/img_96165.svg" width="20" height="20">
                         </a></td>
                 </tr>

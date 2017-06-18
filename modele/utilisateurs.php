@@ -6,15 +6,24 @@ function takeMdp(PDO $dbh, $login)
 {
     $reponse = $dbh->query('SELECT mot_de_passe FROM user  WHERE Mail=\'' . $login . '\'');
     $affiche = $reponse->fetch();
-    return $affiche;
+    $mdp=$affiche['mot_de_passe'];
+    return $mdp;
 }
 // vérif user
-function takeUtilisateurs(PDO $dbh, $login)
+function verifUtilisateurs(PDO $dbh, $login)
 {
     $reponse = $dbh->query('SELECT COUNT(mail) AS nb_ocu FROM user WHERE Mail=\'' . $login . '\'');
     $affiche = $reponse->fetch();
-    return $affiche;
+    if($affiche['nb_ocu']==1){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
+
+
+
 //renvoi l'id d'un utilisateur en fonction de son mail
 function takeIdUser(PDO $bdd,$mail){
    $reponse = $bdd-> prepare('SELECT id_user FROM  user WHERE Mail=\'' . $mail . '\' ');
@@ -39,4 +48,36 @@ function updateAvatarUser(PDO $bdd,$id_user,$extensionUpload){
     ));
 }
 
+//fonction qui return vrai si l'utilisateur est un admin
+function isAdmin(PDO $bdd,$mail){
+    $reponse = $bdd->prepare('SELECT Is_admin FROM user WHERE Mail=\''.$mail.'\'');
+    $reponse->execute();
+    $affiche =$reponse->fetch();
+    if($affiche['Is_admin']==1){
+        return true ;
+    }
+    else{
+        return false;
+    }
+}
 
+
+/*
+ * hash le mdp qui est dans la bdd
+function modifmdp(PDO $bdd,$id_user){
+    $reponse = $bdd-> prepare('SELECT mot_de_passe FROM  user  WHERE id_user=\'' . $id_user . '\' ');
+    $reponse->execute();
+    $pass = $reponse->fetch();
+    $passcrypt=sha1($pass['mot_de_passe']);
+    $updateavatar= $bdd->prepare('UPDATE user SET mot_de_passe= :passcrypt WHERE id_user=:id_user');
+    $updateavatar-> execute(array(
+        'passcrypt'=>$passcrypt,
+        'id_user'=>$id_user
+    ));
+    //var_dump($pass);
+    //var_dump($passcrypt);
+}
+for($i=1;1<10;$i++){
+    modifmdp($bdd,$i);
+}
+*/

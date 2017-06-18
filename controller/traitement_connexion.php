@@ -14,40 +14,68 @@ Une variable est considérée comme vide si elle n'existe pas, ou si sa valeur �
 if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de connexion
 
     if(!empty($_POST['loginMail']) && !empty($_POST['pass'])) { // L'utilisateur a rempli tous les champs du formulaire
-        include ('../modele/utilisateurs.php');
-        include ('../modele/inscription.php');
+        include_once ('../modele/utilisateurs.php');
+        include_once ('../modele/utilisateurs_secondaire.php');
 
         $loginMail=htmlentities($_POST['loginMail']);
-        $pass=htmlentities($_POST['pass']);
+        $passEnter=htmlentities($_POST['pass']);
+        $passcryptEnter = sha1($passEnter);
 
-        $repUtilisateur=takeUtilisateurs($bdd,$loginMail);
-        if($repUtilisateur['nb_ocu']==0){//utilisateur non trouvé dans la base de donnée
-            $messageErreur=  'Login ou mot de passe incorrect';
-            include ('../vue/home.php');
+        //partie client et admin
+        if(verifUtilisateurs($bdd,$loginMail)){//utilisateur ou admin trouvé dans la base de donnée
+
+            if(isAdmin($bdd,$loginMail)){//test si l'utilisateur est un admin
+                $repMdpadmin= takeMdp($bdd,$loginMail);
+                var_dump($repMdpadmin);
+                var_dump($passcryptEnter);
+                if($passcryptEnter==$repMdpadmin){//mot de passe trouvé dans la base de donnée, connexion admin
+                    include('../Vue/dashboard_backoffice.php');
+                }
+                else{
+                    $messageErreur=  'Login ou mot de passe admin incorrect';
+                    include ('../vue/home.php');
+                }
+
+            }
+            else{
+                $repMdpclient= takeMdp($bdd,$loginMail);
+                if($passcryptEnter==$repMdpclient){//mot de passe trouvé dans la base de donnée, connexion client
+                    session_start();
+                    $_SESSION['Mail']=$loginMail;
+                    $idUser=takeIdUser($bdd,$loginMail);
+                    $_SESSION['id_user']=$idUser['id_user'];
+                    include('../Vue/dashboard.php');
+                }
+                else{
+                $messageErreur=  'Login ou mot de passe client incorrect';
+                include ('../vue/home.php');
+                }
+            }
         }
 
-        else{// utilisateur trouvé
-            $repMdp= takeMdp($bdd,$loginMail);
-            //var_dump($repMdp);
-            if($_POST['pass']!=$repMdp['mot_de_passe']){//mot de passe non trouvé dans la base de donnée
-                $messageErreur= 'Login ou mot de passe incorrect';
+        //partie client secondaire
+        elseif (verifmailSecondaryUser($bdd,$loginMail)){//compte secondaire trouvé dans la bdd
+            $repMdpSecondaryUser=takemdpSecondaryUser($bdd,$loginMail);
+
+            if($passcryptEnter==$repMdpSecondaryUser){//mot de passe trouvé dans la base de donnée, connexion client secondaire
+                session_start();
+
+                $mail_id_user=getMailComptePrincipal($bdd,$loginMail);
+
+                $_SESSION['Mail']=$mail_id_user['Mail'];
+                $_SESSION['niveau_securite']=getnivSecurit($bdd,$loginMail);
+                $_SESSION['id_user']=$mail_id_user['id_user'];
+                include('../Vue/dashboard.php');
+            }
+            else{
+                $messageErreur=  'Login ou mot de passe secondaire incorrect ';
                 include ('../vue/home.php');
             }
-            elseif (isAdmin($bdd,$loginMail) && $repUtilisateur['nb_ocu']==1){
-                include('../vue/dashboard_backoffice.php');
-            }
+        }
 
-            else{//mdp OK
-                if(isset($_POST['memo']) && !empty($_POST['memo'])){
-                    setcookie('email',$loginMail,time()*365*24*3600,'/',null,false,true);
-                    setcookie('password',$pass,time()*365*24*3600,'/',null,false,true);
-                }
-                session_start();
-                $_SESSION['Mail']=$loginMail;
-                $idUser=takeIdUser($bdd,$loginMail);
-                $_SESSION['id_user']=$idUser['id_user'];
-              include('../Vue/dashboard.php');
-            }
+        else{
+            $messageErreur= 'Login ou mot de passe incorrect';
+            include ('../vue/home.php');
         }
     }
     else{

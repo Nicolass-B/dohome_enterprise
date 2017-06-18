@@ -27,7 +27,8 @@ if (isset($_GET['capteur']))
     include('../vue/mes_actionneurs.php');
 
 
-} else {
+}
+else {
     // ici le capteur n'est pas précisé dans le formulaire
     // on renvoie tous les capteurs de la pièce séléctionnée
     $idmaison = $_GET['maison']; //to add quand on aura les sessions

@@ -28,8 +28,9 @@ function getPiecesMaison(PDO $bdd, int $idmaison)
 }
 
 
-function suppressionMaison(PDO $bdd, $idmaison){
-    $query = "DELETE FROM maison WHERE Id_user = :idmaison";
+function suppressionMaison(PDO $bdd,int $id_user,int $idmaison){
+    $query = "DELETE FROM maison WHERE ID_user =:id_user  AND  id_maison= :idmaison";
     $sql = $bdd->prepare($query);
-    $sql->execute(['idmaison' => $idmaison]);
+    $sql->execute(array('id_user'=>$id_user,
+        'idmaison' => $idmaison));
 }

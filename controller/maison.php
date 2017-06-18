@@ -9,7 +9,7 @@ require_once '../modele/maison.php';
 require_once '../modele/init_connexion_bdd.php';
 
 $iduser = $_SESSION['id_user'];
-$maison = getMaisons($bdd, $iduser);
+
 
 
 if (isset($_GET['maison'])) {
@@ -29,13 +29,15 @@ if (isset($_GET['maison'])) {
                 <?php
             }
         }
-    } else {
+    }
+    else {
         if(isset($_GET['suppr']) && !empty($_GET['suppr'])) {
-            suppressionMaison($bdd, $_GET['suppr']);
+            suppressionMaison($bdd,$_SESSION['id_user'], $_GET['suppr']);
             ?>
             <script>alert("<?php echo 'la maison a bien été supprimée', ENT_QUOTES; ?>")</script>
             <?php
         }
     }
+    $maison = getMaisons($bdd, $iduser);
     include('../vue/mes_maisons.php');
 }

@@ -19,7 +19,7 @@ if (!isset($_SESSION)) {session_start();}
         <ul>
             <div class="menusec">
                 <li class="enCours"><a href="../controller/mon_profil.php">Mon profil</a></li>
-                <li><a href="../controller/affichage_compte_secondaire.php">Mes comptes secondaires</a></li>
+                <li><a href="../controller/compte_secondaire.php">Mes comptes secondaires</a></li>
             </div>
         </ul>
     </div>
@@ -39,7 +39,48 @@ if (!isset($_SESSION)) {session_start();}
                         <label for="newdateNaissance">Date de naissance</label>
                         <li>
                             <?php
+                            $selected='';
+                            echo '<select name="jour" id="jour">';
+                            for($jour=1;$jour <= date('t');$jour++){
+                                if ($jour==$infoUser['days']) {
+                                    $selected = 'selected="selected"';
+                                }
+                                if($jour<10){
+                                    echo '<option value="', '0'.$jour ,'"',$selected,'>',$jour ,'</option>';
+                                }
+                                else{
+                                    echo '<option value="', $jour ,'"',$selected,'>', $jour ,'</option>';
+                                }
+                                $selected='';
 
+                            }
+                            echo '</select>';
+                            ?>
+
+                            <?php
+                            $moisLettre = array(1=>'Janvier', 2=>'Février', 3=>'Mars',
+                                4=>'Avril', 5=>'Mai', 6=>'Juin',
+                                7=>'Juillet', 8=>'Aout', 9=>'Septembre',
+                                10=>'Octobre', 11=>'Novembre', 12=>'Decembre');
+                            $selected='';
+                            echo '<select name="mois" id="mois">';
+                            for($moisChiffre=1;$moisChiffre <= 12;$moisChiffre++){
+                                if ($moisChiffre==$infoUser['months']) {
+                                    $selected = 'selected="selected"';
+                                }
+                                if($moisChiffre<10){
+                                    echo '<option value="', '0'.$moisChiffre ,'"',$selected,'>',$moisLettre[$moisChiffre] ,'</option>';
+                                }
+                                else{
+                                    echo '<option value="', $moisChiffre ,'"',$selected,'>', $moisLettre[$moisChiffre] ,'</option>';
+                                }
+                                $selected='';
+
+                            }
+                            echo '</select>';
+                            ?>
+
+                            <?php
                             //petit php pour les annnées
                             // Variable qui ajoutera l'attribut selected de la liste déroulante
                             $selected = '';
@@ -55,44 +96,6 @@ if (!isset($_SESSION)) {session_start();}
                                 // Affichage de la ligne
                                 echo '<option value="', $i ,'"', $selected ,'>', $i ,'</option>';
                                 $selected='';
-                            }
-                            echo '</select>';
-                            ?>
-
-                            <?php
-                            $selected='';
-                            echo '<select name="mois" id="mois">';
-                            for($mois=1;$mois <= 12;$mois++){
-                                if ($mois==$infoUser['months']) {
-                                    $selected = 'selected="selected"';
-                                }
-                                if($mois<10){
-                                    echo '<option value="', '0'.$mois ,'"',$selected,'>',$mois ,'</option>';
-                                }
-                                else{
-                                    echo '<option value="', $mois ,'"',$selected,'>', $mois ,'</option>';
-                                }
-                                $selected='';
-
-                            }
-                            echo '</select>';
-                            ?>
-
-                            <?php
-                            $selected='';
-                            echo '<select name="jour" id="jour">';
-                            for($jour=1;$jour <= date('t');$jour++){
-                                if ($jour==$infoUser['days']) {
-                                    $selected = 'selected="selected"';
-                                }
-                                if($jour<10){
-                                    echo '<option value="', '0'.$jour ,'"',$selected,'>',$jour ,'</option>';
-                                }
-                                else{
-                                    echo '<option value="', $jour ,'"',$selected,'>', $jour ,'</option>';
-                                }
-                                $selected='';
-
                             }
                             echo '</select>';
                             ?>

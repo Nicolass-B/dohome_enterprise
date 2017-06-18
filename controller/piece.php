@@ -14,7 +14,6 @@ require_once '../Modele/piece.php';
 require_once '../Modele/ajouts.php';
 
 $idmaison = $_GET['maison']; //TODO MODIFIER CA EN SESSION
-$piece = getPiecesfromMaison($bdd, $idmaison);
 
 
 if (isset($_GET['piece'])) {
@@ -41,5 +40,6 @@ if (isset($_GET['piece'])) {
         <script>alert("<?php echo 'la pièce a bien été supprimée', ENT_QUOTES ?>")</script>
         <?php
     }
+    $piece = getPiecesfromMaison($bdd, $idmaison);
     include('../Vue/mes_pieces.php');
 }

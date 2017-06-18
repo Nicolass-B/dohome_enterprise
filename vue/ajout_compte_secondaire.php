@@ -13,7 +13,7 @@
 <body>
     <section>
         <div class="information">
-            <form method="post" action="../controller/edit_sup_compte_secondaire.php">
+            <form method="post" action="../controller/compte_secondaire.php">
                 <fieldset>
                     <legend>Ajouter un compte secondaire</legend>
                     <div class="test">

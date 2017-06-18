@@ -2,24 +2,41 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href=""/>
+    <link rel="stylesheet" href="../css/mdp_oubli.css"/>
     <title>Mdp oublié</title>
+    <script  type="text/javascript"  src="../js/mdp_oubli.js"></script>
 </head>
-<?php include("haut_de_page.php"); ?>
+
+<header>
+    <section1>
+        <div class="container">
+            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+            <nav>
+                <ul>
+                    <div class="menu">
+                        <li><a href="">FR</a></li>
+                        <li><a href="">EN</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </section1>
+</header>
+
 
 <body>
 
-<form method="post"  action="../controller/traitement_mdp_oubli.php">
-    <input type="email" name="recup_mail" placeholder="Entrez votre mail"/><br/>
-    <input type="submit" name="envoi" value="Valider"/>
-</form>
-<?php if(isset($mailError)){ echo '<span style="color:red">'.$mailError.'</span>' ;}  ?>
 
-<body>
+<div class="ajaxMail">
+    <input type="email" name="recup_mail" id="recup_mail" placeholder="Entrez votre mail" oninput="showUser(this.value)"/><br/>
+    <div id="questionSecrete">
+
+
+    </div>
+</div>
 
 </body>
 
 
 <?php include("bas_de_page.php"); ?>
-
 </html>

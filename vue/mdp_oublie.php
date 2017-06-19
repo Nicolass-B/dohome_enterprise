@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../css/mdp_oubli.css"/>
     <title>Mdp oublié</title>
-    <script  type="text/javascript"  src="../js/mdp_oubli.js"></script>
+    <script type="text/javascript" src="../js/mdp_oubli.js"></script>
 </head>
 
 <header>
@@ -28,7 +28,9 @@
 
 
 <div class="ajaxMail">
-    <input type="email" name="recup_mail" id="recup_mail" placeholder="Entrez votre mail" oninput="showUser(this.value)"/><br/>
+    <p> Veuillez entrer votre mail pour accéder à votre question secrète</p>
+    <input type="email" name="recup_mail" id="recup_mail" placeholder="Entrez votre mail"
+           oninput="showUser(this.value)"/><br/>
     <div id="questionSecrete">
 
 

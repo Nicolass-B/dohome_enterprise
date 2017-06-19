@@ -1,0 +1,54 @@
+.message{
+    font-family: "PT Sans";
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    width: auto;
+    border: 2px solid white;
+    padding: 15px;
+    text-align: center;
+    horizontal-align: middle ;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin:10%;
+}
+
+.message2{
+    font-family: "PT Sans";
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    width: auto;
+    border: 2px solid white;
+    padding: 15px;
+    text-align: center;
+    horizontal-align: middle ;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2%;
+}
+.retour{
+    width:100px;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #00c555;
+    color:white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+    padding: 5px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.milieu{
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}

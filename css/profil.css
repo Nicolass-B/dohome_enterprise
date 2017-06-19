@@ -12,7 +12,6 @@ section {
 
 }
 
-
 .menusec li {
     padding: 6px;
 }
@@ -32,8 +31,11 @@ section {
     color: white;
 }
 
+.boutonDroit {
+    text-align:right;
+    justify-content: flex-end;
 
-
+}
 
 .imagepp {
     margin: 30px 10px;
@@ -86,25 +88,13 @@ section {
     font-size: 13px;
 }
 
-#bouton3 {
-    width: auto;
-    font-family: "PT Sans";
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background-color: #00c555;
-    color: white;
-    border-radius: 10px;
-    border: 2px solid #00c555;
-    font-size: 13px;
-}
+
 
 .placement .boutton {
     flex-direction: column;
-}
-
-.bouton3 {
-    margin-left: 70%;
-    margin-bottom: 30px;
+    justify-content: flex-end;
+    position:absolute;
+    right:200px;
 }
 
 .formulaire li {
@@ -115,9 +105,7 @@ section {
 section input[type=submit] {
     width: auto;
     height: 25px;
-    margin-right: 35px;
-    margin-left: 70%;
-    margin-top: 10px;
+
     font-family: "PT Sans";
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -127,12 +115,14 @@ section input[type=submit] {
     border: 2px solid #00c555;
     font-size: 13px;
 }
+
 .aligne {
-    margin-top:0px;
-    margin-right:350px;
+    margin-top: 0px;
+    margin-right: 350px;
     display: inline-block;
 
 }
+
 .aligne2 {
     display: inline-block;
     Vertical-align: top;

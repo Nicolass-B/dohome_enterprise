@@ -68,3 +68,4 @@ else{
 $infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);
 include ('../vue/compte_secondaire.php');
 }
+$infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);

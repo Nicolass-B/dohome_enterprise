@@ -26,10 +26,10 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
 
             if(isAdmin($bdd,$loginMail)){//test si l'utilisateur est un admin
                 $repMdpadmin= takeMdp($bdd,$loginMail);
-                var_dump($repMdpadmin);
-                var_dump($passcryptEnter);
+               // var_dump($repMdpadmin);
+               // var_dump($passcryptEnter);
                 if($passcryptEnter==$repMdpadmin){//mot de passe trouvé dans la base de donnée, connexion admin
-                    include('../Vue/dashboard_backoffice.php');
+                    include('../vue/dashboard_backoffice.php');
                 }
                 else{
                     $messageErreur=  'Login ou mot de passe admin incorrect';
@@ -44,7 +44,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                     $_SESSION['Mail']=$loginMail;
                     $idUser=takeIdUser($bdd,$loginMail);
                     $_SESSION['id_user']=$idUser['id_user'];
-                    include('../Vue/dashboard.php');
+                    include('../vue/dashboard.php');
                 }
                 else{
                 $messageErreur=  'Login ou mot de passe client incorrect';
@@ -65,7 +65,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 $_SESSION['Mail']=$mail_id_user['Mail'];
                 $_SESSION['niveau_securite']=getnivSecurit($bdd,$loginMail);
                 $_SESSION['id_user']=$mail_id_user['id_user'];
-                include('../Vue/dashboard.php');
+                include('../vue/dashboard.php');
             }
             else{
                 $messageErreur=  'Login ou mot de passe secondaire incorrect ';

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="xampp">
+  <component name="PublishConfigData" autoUpload="Always" serverName="AWS" createEmptyFolders="true">
     <serverData>
       <paths name="AWS">
         <serverdata>
           <mappings>
             <mapping deploy="/var/www/dohome" local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath path="/var/www/dohome/modele/init_connexion_bdd.php" />
-          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="xampp">
@@ -20,5 +17,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

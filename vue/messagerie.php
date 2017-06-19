@@ -16,11 +16,8 @@ if (!isset($_SESSION)) {
 include("haut_de_page.php"); ?>
 <link rel="stylesheet" href="../css/tableau.css">
 <body>
-<div>
-    <h1>
+<div class="rediger">
         <a href="../controller/redigermessage.php" style="color: white"> Rédiger un message</a>
-    </h1>
-
 </div>
 <div>
     <div class="table-responsive-vertical shadow-z-1">

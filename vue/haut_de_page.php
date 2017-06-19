@@ -17,7 +17,7 @@
 <header>
     <section1>
         <div class="container">
-            <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise"/>
+                <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise" href/>
             <nav>
                 <ul>
                     <div class="menu">

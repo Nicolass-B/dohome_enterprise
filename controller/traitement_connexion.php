@@ -26,8 +26,8 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
 
             if(isAdmin($bdd,$loginMail)){//test si l'utilisateur est un admin
                 $repMdpadmin= takeMdp($bdd,$loginMail);
-                var_dump($repMdpadmin);
-                var_dump($passcryptEnter);
+               // var_dump($repMdpadmin);
+               // var_dump($passcryptEnter);
                 if($passcryptEnter==$repMdpadmin){//mot de passe trouvé dans la base de donnée, connexion admin
                     include('../vue/dashboard_backoffice.php');
                 }

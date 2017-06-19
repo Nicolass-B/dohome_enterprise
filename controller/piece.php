@@ -9,9 +9,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $titre = "Mes pièces";
-require_once '../Modele/init_connexion_bdd.php';
-require_once '../Modele/piece.php';
-require_once '../Modele/ajouts.php';
+require_once '../modele/init_connexion_bdd.php';
+require_once '../modele/piece.php';
+require_once '../modele/ajouts.php';
 
 $idmaison = $_GET['maison']; //TODO MODIFIER CA EN SESSION
 
@@ -41,5 +41,5 @@ if (isset($_GET['piece'])) {
         <?php
     }
     $piece = getPiecesfromMaison($bdd, $idmaison);
-    include('../Vue/mes_pieces.php');
+    include('../vue/mes_pieces.php');
 }

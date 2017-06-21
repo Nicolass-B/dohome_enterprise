@@ -2,6 +2,7 @@
 
 if (!isset($_SESSION)) {
     session_start();
+    //header("Location : https://dohome.cf")
 }
 
 $titre = "capteur";

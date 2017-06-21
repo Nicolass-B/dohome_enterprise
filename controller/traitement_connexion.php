@@ -68,7 +68,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 include('../vue/dashboard.php');
             }
             else{
-                $messageErreur=  'Login ou mot de passe secondaire incorrect ';
+                $messageErreur=  'Login ou mot de passe incorrect ';
                 include ('../vue/home.php');
             }
         }
@@ -84,7 +84,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
     }
 }
 else{
-    $messageErreur= 'Formulaire pas validé';
+    //$messageErreur= 'Formulaire pas validé';
     include ('../vue/home.php');
 }
 

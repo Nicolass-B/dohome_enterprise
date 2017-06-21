@@ -45,7 +45,7 @@ if (!isset($_SESSION)) {
                 <tr>
                     <td data-title="ID"><?php echo $row['ID_pieces'] ?></td>
                     <td data-title="Nom">
-                        <a href="../controller/piece.php?piece=<?php echo $row['ID_pieces'] ?>&maison=<?php echo $idmaison ?>"> <?php echo $row['Nom'] ?> </a>
+                        <a href="../controller/capteur.php?piece=<?php echo $row['ID_pieces'] ?>&maison=<?php echo $idmaison ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
                     <td data-title="Superficie"><?php echo $row['superficie'] ?> m²</td>
                     <td data-title="Supprimer"><a href="../controller/piece.php$suppr=<?php echo $row['ID_pieces'] ?>">

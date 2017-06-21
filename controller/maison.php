@@ -14,7 +14,7 @@ $iduser = $_SESSION['id_user'];
 
 if (isset($_GET['maison'])) {
 
-    include('../controller/piece.php');
+    header('Location : ../controller/piece.php?maison='. $_GET['maison']);
 
 } else {
     // ici la piece n'est pas précisé dans le formulaire

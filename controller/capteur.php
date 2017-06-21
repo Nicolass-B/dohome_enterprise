@@ -50,13 +50,13 @@ else {
                 }
             }
         }
-        echo "<p>DAMN, tu viens d'ajouter un capteur dans la pièce !</p>";
-    } else {
-        echo 'pas de POST';
+        //echo "<p>DAMN, tu viens d'ajouter un capteur dans la pièce !</p>";
     }
+
     $pieces = getPiecesfromMaison($bdd, $idmaison);
     $capteur_piece = getCapteursfromPiece($bdd, $idpiece);
     $actionneur_piece = getActionneursfromPiece($bdd, $idpiece);
+
     include('../vue/capteur.php');
 
 }

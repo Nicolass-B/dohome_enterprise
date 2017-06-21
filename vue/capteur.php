@@ -5,9 +5,9 @@ if (!isset($_SESSION)) {
 
 $titre = 'Mes Capteurs';
 include('haut_de_page.php');
-require_once('..\Modele\Capteur.php');
+require_once('..\modele\capteur.php');
 
-
+echo 'blabla';
 ?>
     <!DOCTYPE html>
     <html lang="fr">

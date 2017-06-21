@@ -12,5 +12,5 @@ if (!isset($_SESSION["id_user"])) {
     echo 'pas de session';
 } else {
     echo 'y\'a une session';
-    header("Location: https://dohome.cf/controller/dashboard.php");
+    header("Location: controller/dashboard.php");
 }

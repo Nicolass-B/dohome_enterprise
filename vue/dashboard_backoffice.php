@@ -28,6 +28,6 @@ if (!isset($_SESSION)) {session_start();}
 </div>
 </div>
 </body>
-<?php include("bas_de_page.php"); ?>
+<?php include("bas_de_page_backoffice.php"); ?>
 
 </html>

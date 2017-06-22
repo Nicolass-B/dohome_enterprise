@@ -18,7 +18,8 @@ $idmaison = $_GET['maison']; //TODO MODIFIER CA EN SESSION
 
 if (isset($_GET['piece'])) {
     //on passe au controleur qui gère les capteurs pour une pièce donnée
-    include('../controller/capteur.php');
+    //include('../controller/capteur.php');
+    header('Location : capteur.php?piece='. $_GET['piece'] );
 
 } else {
     // ici la piece n'est pas précisé dans le formulaire

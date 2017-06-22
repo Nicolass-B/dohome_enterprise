@@ -5,9 +5,9 @@ if (!isset($_SESSION)) {
 
 $titre = 'Mes Capteurs';
 include('haut_de_page.php');
-require_once('..\Modele\Capteur.php');
+require_once('../modele/capteur.php');
 
-
+echo 'blabla';
 ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -85,10 +85,10 @@ require_once('..\Modele\Capteur.php');
 
         <select id="choix" name="type" required>
             <option value="">Type d'actionneur</option>
-            <option value="temp">Température</option>
-            <option value="light">Illumination</option>
-            <option value="presence">Présence</option>
-            <option value="son">Son</option>
+            <option value="temp">Moteur</option>
+            <option value="light">Volets</option>
+            <option value="presence">Alarme</option>
+            <option value="son">Climatisation</option>
         </select>
         <input id="case" type="text" name="nom_act" placeholder="Nom de l'actionneur" required/>
         <input id="bouton3" type="submit" name="envoi" value="Ajouter"/>

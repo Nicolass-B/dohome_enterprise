@@ -7,6 +7,9 @@
           <mappings>
             <mapping deploy="/var/www/dohome" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/var/www/dohome/modele/init_connexion_bdd.php" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="xampp">

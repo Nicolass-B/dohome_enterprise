@@ -14,7 +14,7 @@
     <p>
         <a href="../vue/contact.php" class="equipe">L'équipe</a>
         <br>
-        <a href="" class="equipe">Vous avez des questions ?</a>
+        <a href="../controller/faq.php" class="equipe">Vous avez des questions ?</a>
     </p>
 
 

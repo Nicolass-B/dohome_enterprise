@@ -74,6 +74,10 @@ a:focus {
 
 p {
     color:white;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
 }
 label {
     color:white;
@@ -91,5 +95,20 @@ input[type=submit] {
     color: white;
     border-radius: 10px;
     border: 2px solid #00c555;
+    font-size: 13px;
+}
+.erreur {
+    width: auto;
+    height: auto;
+    margin-right: 35px;
+    margin-left: 35px;
+    margin-top: 10px;
+    font-family: "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #c50012;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #c50009;
     font-size: 13px;
 }

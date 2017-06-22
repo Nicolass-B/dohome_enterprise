@@ -52,7 +52,7 @@ if ($affiche['nb_ocu'] == 1 || isset($msg)) {
     </form>
     <?php
 } else {
-    echo '<p>le mail n\'existe pas</p>';
+    echo '<p class="erreur">Le mail n\'existe pas</p>';
 }
 
 ?>

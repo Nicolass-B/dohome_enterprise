@@ -8,28 +8,36 @@
 //Quand tu fais une belle faq des familles
 include_once('haut_de_page.php');
 ?>
+    <!DOCTYPE html>
+    <html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
+    <title>Accueil DoHome enterprise ™</title>
+</head>
 
-    <article>
-        <aside>
-            <h1>FAQ</h1>
-        </aside>
+
+<div class="faq">
+    <section>
+        <h1>FAQ</h1>
 
         <?php
         foreach ($data as $row) {
             ?>
-            <p>
+
+            <table>
                 <?php
-                echo $row["question"] . " ----------------- " . $row["reponse"] . "<br>";
+                echo "<tr>" . "<div class='question'>" . $row["question"] . "</div> </br> <div class='reponse'> " . $row["reponse"] . "</div></tr>" . "</br></br>";
                 ?>
-            </p>
+            </table>
             <?php
         }
 
         ?>
 
 
-    </article>
-
+    </section>
+</div>
 <?php
 include_once('bas_de_page.php');
 

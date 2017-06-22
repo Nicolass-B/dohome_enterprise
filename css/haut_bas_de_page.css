@@ -296,3 +296,29 @@ x{
     display: flex;
     justify-content: center;
 }
+
+.faq h1 {
+    color:white;
+    text-align: center;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+.faq .question {
+    color: #00c555;
+    text-align: center;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: large;
+}
+.faq .reponse {
+    color: white;
+    text-align: center;
+    font-family: PT sans;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: large;
+    margin:auto 200px;
+}

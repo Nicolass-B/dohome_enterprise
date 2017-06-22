@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
-    <link rel="stylesheet" href="../../dohome_enterprise/css/contact.css"/>
+    <link rel="stylesheet" href="../css/contact.css"/>
 </head>
 <?php include("haut_de_page.php"); ?>
 <body>

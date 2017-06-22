@@ -16,7 +16,7 @@
         <a href="../controller/redigermessage.php" class="rediger"> Rédiger un message</a>
     </h1>
 </div>
-<div>
+<div class="centrer">
     <form method="POST" action="../controller/msg_admin.php">
         <select name="id" required>
             <option value=""></option>

@@ -13,7 +13,7 @@
 <body>
 <div>
     <h1>
-        <a href="../controller/redigermessage.php" style="color: white"> Rédiger un message</a>
+        <a href="../controller/redigermessage.php" class="rediger"> Rédiger un message</a>
     </h1>
 </div>
 <div>
@@ -27,7 +27,7 @@
             }
             ?>
         </select>
-        <input type="submit" name="envoi" value="impersonate that person"/>
+        <input class="rediger" type="submit" name="envoi" value="Répondre à cette personne"/>
 
 </div>
 

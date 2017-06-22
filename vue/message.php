@@ -31,9 +31,8 @@ include_once('haut_de_page.php');
         </div>
         <div class="retour">
             <h2>
-                <a href="../controller/messagerie.php" style="color: white"> Retour </a>
+                <a href="../controller/messagerie.php"> Retour </a>
             </h2>
-
         </div>
     </div>
     </body>

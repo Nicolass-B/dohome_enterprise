@@ -102,3 +102,17 @@ x{
    }
 
 
+.retour{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boutonRetour {
+    background-color: #00c555;
+    padding: 5px;
+    color:white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}

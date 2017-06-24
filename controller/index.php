@@ -1,7 +1,7 @@
 <?php
 //TODO S'amuser avec la barre de recherche et des requete mysql LIKE
 session_start();
-require_once("modele/init_connexion_bdd.php");
+require_once("../modele/init_connexion_bdd.php");
 
 
 if (!isset($_SESSION["id_user"])) {

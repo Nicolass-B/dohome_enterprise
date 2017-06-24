@@ -6,13 +6,19 @@
  * Time: 01:12
  */
 //Quand tu fais une belle faq des familles
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+if(isset($_SESSION['id_user'])){
 include_once('haut_de_page.php');
+}
 ?>
     <!DOCTYPE html>
     <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/haut_bas_de_page.css"/>
+    <link rel="stylesheet" href="../css/faq.css"/>
     <title>Accueil DoHome enterprise ™</title>
 </head>
 
@@ -32,13 +38,16 @@ include_once('haut_de_page.php');
             </table>
             <?php
         }
-
         ?>
-
-
     </section>
 </div>
 <?php
+
+if(!isset($_SESSION['id_user'])){
+    echo '<div class="retour">';
+    echo '<a class="boutonRetour" href="../vue/home.php">Retour a l\'accueil </a>';
+    echo '</div>';
+}
 include_once('bas_de_page.php');
 
 ?>

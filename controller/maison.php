@@ -25,7 +25,7 @@ if (isset($_GET['maison'])) {
 
                 ajoutMaison($bdd, $_POST['nom'], $_SESSION['id_user'], $_POST['superficie']);
                 ?>
-                <script>alert("<?php echo 'la maison a bien été ajoutée', ENT_QUOTES; ?>")</script>
+                <script>alert("<?php echo htmlentities('la maison a bien été ajoutée'), ENT_QUOTES; ?>")</script>
                 <?php
             }
         }
@@ -34,7 +34,7 @@ if (isset($_GET['maison'])) {
         if(isset($_GET['suppr']) && !empty($_GET['suppr'])) {
             suppressionMaison($bdd,$_SESSION['id_user'], $_GET['suppr']);
             ?>
-            <script>alert("<?php echo 'la maison a bien été supprimée', ENT_QUOTES; ?>")</script>
+            <script>alert("<?php echo htmlentities('la maison a bien été supprimée'), ENT_QUOTES; ?>")</script>
             <?php
         }
     }

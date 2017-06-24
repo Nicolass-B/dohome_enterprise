@@ -5,7 +5,14 @@
     <title>Contact</title>
     <link rel="stylesheet" href="../css/contact.css"/>
 </head>
-<?php include("haut_de_page.php"); ?>
+
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if(isset($_SESSION['id_user'])){
+    include_once('haut_de_page.php');
+} ?>
 <body>
 
 <x>
@@ -58,6 +65,13 @@
 
 </x>
 
+<div class="retour">
+<?php
+if(!isset($_SESSION['id_user'])){
+    echo '<a class="boutonRetour" href="../vue/home.php">Retour a l\'accueil</a>';
+}
+?>
+</div>
 
 </body>
 <?php include("bas_de_page.php"); ?>

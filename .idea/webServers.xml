@@ -6,7 +6,7 @@
         <fileTransfer port="0" mountedRoot="C:\xampp\htdocs" accessType="MOUNT" />
       </webServer>
       <webServer id="44371563-8501-40ec-a63f-d320358da1a9" name="AWS" url="http://dohome.cf">
-        <fileTransfer host="dohome.cf" port="22" privateKey="C:\Users\Antoine Poussot\Google Drive\SSH_AWS\2170p.ppk" accessType="SFTP" keyPair="true">
+        <fileTransfer host="dohome.cf" port="22" privateKey="C:\xampp\clenico.ppk" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

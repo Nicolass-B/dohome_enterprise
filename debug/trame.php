@@ -64,28 +64,30 @@ function trameToHisto(PDO $bdd, $team)
             sscanf($data_tab[$i],"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 
         $date = $year ."-". $month ."-". $day ." ". $hour .":". $min .":". $sec;
-        $date = new DateTime($date);
+        //$date = new DateTime($date);
         if($c == 1){ // done l'unité en focntion du type de capteur dans la trame
             $unite = 'C';
             $ID_capteur = 3;
-        }else if ($c == 2){ //
+        } else if ($c == 2){ //
             $unite = 'Cm';
             $ID_capteur = 5;
-        }else if ($c == 3){ //illumination
+        } else if ($c == 3){ //illumination
             $unite = 'Lux';
             $ID_capteur = 4;
         }
 
-
-        $sql->execute(array(
-            'datemesure' => $date,
-            'valeur' => $valeur,
-            'unite' => $unite,
-            'idcapteur' => $ID_capteur
-        ));
-
+        try {
+            $sql->execute(array(
+                'datemesure' => $date,
+                'valeur' => hexdec($valeur),
+                'unite' => $unite,
+                'idcapteur' => $ID_capteur
+            ));
+        } catch (PDOException $e){
+            echo '<br> erreur : ' . $e->getMessage(). "          val ". $valeur. "   chaine : ". $data_tab[$i];
+        }
     }
 
 }
 
-//trameToHisto($bdd, "006A");
+trameToHisto($bdd, "006A");

@@ -25,7 +25,7 @@
 
 
 <body>
-
+<a href="../controller/traitement_connexion.php"><h1 style="color: whitesmoke;">Retour</h1></a>
 
 <div class="ajaxMail">
     <p> Veuillez entrer votre mail pour accéder à votre question secrète</p>

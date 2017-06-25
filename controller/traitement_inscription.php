@@ -49,7 +49,7 @@ if(isset($_POST['envoi'])){//envoi du formulaire
         $questionSecrete=htmlentities($_POST['questionSecrete']);
         $repQuestionSecrete=htmlentities($_POST['repSecrete']);
 
-        require ('../modele/Inscription.php');
+        require ('../modele/inscription.php');
 
         if(verif2MDP($pass,$confirmePasse)){
             $passcrypt = sha1($pass);

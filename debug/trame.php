@@ -5,6 +5,8 @@
  * Date: 19/06/2017
  * Time: 19:56
  */
+include('../modele/init_connexion_bdd.php');
+
 $ch = curl_init();
 curl_setopt(
     $ch,
@@ -38,7 +40,7 @@ echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
 
 
 
-function trameToHisto($bdd, $team)
+function trameToHisto(PDO $bdd, $team)
 {
     $ch = curl_init();
     curl_setopt(
@@ -55,29 +57,35 @@ function trameToHisto($bdd, $team)
     $data_tab = str_split($data, 33);
 
     echo "Tabular Data:<br />";
-    $bdd->prepare('INSERT INTO historique_capteurs(Id_mesure, Date_Mesure, Valeur, unite, ID_capteur) VALUES (NULL, :datetime, :valeur, :unite, :idcapteur)');
+    $sql = $bdd->prepare('INSERT INTO historique_capteurs(Id_mesure, Date_Mesure, Valeur, unite, ID_capteur) 
+                            VALUES (NULL, :datemesure, :valeur, :unite, :idcapteur)');
     for ($i = 6683, $size = count($data_tab); $i < $size; $i++) {
         list($t, $o, $r, $c, $n, $valeur, $a, $x, $year, $month, $day, $hour, $min, $sec) =
-            sscanf($data_tab[i],"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+            sscanf($data_tab[$i],"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 
-        $date = $year . $month . $day . $hour . $min . $sec;
-
+        $date = $year ."-". $month ."-". $day ." ". $hour .":". $min .":". $sec;
+        $date = new DateTime($date);
         if($c == 1){ // done l'unité en focntion du type de capteur dans la trame
-
             $unite = 'C';
-        }else if ($c == 2){
+            $ID_capteur = 3;
+        }else if ($c == 2){ //
             $unite = 'Cm';
-        }else if ($c == 3){
-            $unite = 'UA';
+            $ID_capteur = 5;
+        }else if ($c == 3){ //illumination
+            $unite = 'Lux';
+            $ID_capteur = 4;
         }
 
 
-        $bdd->execute(array(
-            'date' => $date,
+        $sql->execute(array(
+            'datemesure' => $date,
             'valeur' => $valeur,
-            'unite' => $unite
+            'unite' => $unite,
+            'idcapteur' => $ID_capteur
         ));
 
     }
 
 }
+
+//trameToHisto($bdd, "006A");

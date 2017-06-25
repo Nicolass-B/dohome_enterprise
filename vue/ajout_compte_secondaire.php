@@ -34,6 +34,9 @@
                             <label for="confirmePasseUserSec">Confirmation du mot de passe </br></label>
                             <input type="password" name="confirmePasseUserSec" id="confirmePasseUserSec" placeholder="Confirmation mot de passe" required/>
                             <br><br>
+                            <label for="ajouterPhoto">Ajoutez une photo de profil</br></label>
+                            <input type="file" name="photo" id="photo" required/><br/>
+
                             <?php
                             if(isset($msg)){
                                 echo $msg;

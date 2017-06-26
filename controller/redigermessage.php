@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (!isset($_SESSION['id_user'])) {
-    $_SESSION['id'];
+    //$_SESSION['id'];
     //TODO : Redirect if not logged in
     ?>
     <script>window.location.replace("../index.php");</script>
@@ -34,6 +34,7 @@ if (isset($_POST['envoi']) && !empty($_POST['envoi'])) {
                     if ($responseData->success) {
                         // if recaptcha check was success
                         $idDestinataire = getIdFromMail($bdd, htmlspecialchars($_POST['destinataire']));
+                        var_dump($_SESSION['id_user']);
                         sendMessageToUser($bdd, $_SESSION['id_user'], $idDestinataire['id'], htmlspecialchars($_POST['Titre']), htmlspecialchars($_POST['contenu']));
 
                         ?>

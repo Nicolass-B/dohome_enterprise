@@ -50,7 +50,7 @@ function updateAvatarUser(PDO $bdd,$id_user,$extensionUpload){
 
 //fonction qui return vrai si l'utilisateur est un admin
 function isAdmin(PDO $bdd,$mail){
-    $reponse = $bdd->prepare('SELECT Is_admin FROM user WHERE Mail=\''.$mail.'\'');
+    $reponse = $bdd->prepare('SELECT Is_admin FROM user WHERE Mail=\''.$mail.'\' OR id_user= \''.$mail.'\'');
     $reponse->execute();
     $affiche =$reponse->fetch();
     if($affiche['Is_admin']==1){

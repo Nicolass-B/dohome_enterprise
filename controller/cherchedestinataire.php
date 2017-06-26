@@ -4,8 +4,8 @@ if (!isset($_SESSION)) {
 }
 //database configuration
 $dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
+$dbUsername = 'dohome';
+$dbPassword = 'dohome';
 $dbName = 'dohome';
 
 //connect with the database

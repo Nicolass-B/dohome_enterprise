@@ -40,6 +40,7 @@ function getIdFromMail (PDO $dbh, string $mail){
     $sql = $dbh->prepare($query);
     $sql->execute(['mail'=> $mail]);
     $data = $sql->fetch();
+    $data = $data[0];
     return $data;
 }
 

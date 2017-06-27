@@ -28,13 +28,19 @@
 
 
 <div class="ajaxMail">
+    <?php
+    if(isset($msgMDPChange) && $msgMDPChange=='Votre mot de passe à bien été changé!!'){
+        echo '<span style="color:red">' . $msgMDPChange . '</span><br> ';
+        echo '<a class="boutonSeConnecter"  href="../vue/home.php">Se connecter</a>';
+    }
+    else{
+    ?>
     <p> Veuillez entrer votre mail pour accéder à votre question secrète</p>
-    <input type="email" name="recup_mail" id="recup_mail" placeholder="Entrez votre mail"
+    <input type="email" name="recup_mail" id="recup_mail"  placeholder="Entrez votre mail"
            oninput="showUser(this.value)"/><br/>
     <div id="questionSecrete">
-
-
     </div>
+<?php }?>
 </div>
 
 </body>

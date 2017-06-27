@@ -14,7 +14,7 @@ require_once '../modele/piece.php';
 require_once '../modele/ajouts.php';
 
 $idmaison = $_GET['maison']; //TODO MODIFIER CA EN SESSION
-
+$nomMaison=$_GET['nom'];
 
 if (isset($_GET['piece'])) {
     //on passe au controleur qui gère les capteurs pour une pièce donnée

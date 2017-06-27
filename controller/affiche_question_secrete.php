@@ -7,17 +7,17 @@
  */
 
 include('../modele/init_connexion_bdd.php');
-$mailEnter = 0;
+$mailEnter=0;
 if (isset($_GET['mail'])) {
     $mailEnter = $_GET['mail'];
 }
 
 
-$reponse = $bdd->query('SELECT COUNT(mail) AS nb_ocu FROM user WHERE Mail=\'' . $mailEnter . '\' AND is_admin=0');
+$reponse = $bdd->query('SELECT COUNT(Mail) AS nb_ocu FROM user  WHERE Mail=\'' . $mailEnter . '\' AND is_admin=0');
 $affiche = $reponse->fetch();
 
-if ($affiche['nb_ocu'] == 1 || isset($msg)) {
-    $reponse2 = $bdd->query('SELECT question_secrete FROM user WHERE Mail= \'' . $mailEnter . '\' ');
+if ($affiche['nb_ocu'] == 1 || isset($mail)) {
+    $reponse2 = $bdd->query('SELECT question_secrete FROM  user WHERE Mail= \'' . $mailEnter . '\' ');
     $affiche2 = $reponse2->fetch();
     ?>
     </br>
@@ -51,7 +51,8 @@ if ($affiche['nb_ocu'] == 1 || isset($msg)) {
         } ?>
     </form>
     <?php
-} else {
+}
+else {
     echo '<p class="erreur">Le mail n\'existe pas</p>';
 }
 

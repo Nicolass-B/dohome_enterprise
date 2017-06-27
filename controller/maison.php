@@ -3,10 +3,10 @@ if (!isset($_SESSION)) {session_start();}
 
 $titre = "Mes Maisons";
 
-
+require_once '../modele/init_connexion_bdd.php';
 require_once '../modele/ajouts.php';
 require_once '../modele/maison.php';
-require_once '../modele/init_connexion_bdd.php';
+
 
 $iduser = $_SESSION['id_user'];
 

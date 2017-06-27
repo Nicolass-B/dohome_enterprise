@@ -10,7 +10,7 @@ if (!isset($_SESSION)) {
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../css/profil.css"/>
     <link rel="stylesheet" href="../css/tableau.css"/>
-    <title> Analyse des comptes </title>
+    <title> FAQ backoffice </title>
 </head>
 <?php include("haut_de_page_backoffice.php"); ?>
 

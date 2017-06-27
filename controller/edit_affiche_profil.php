@@ -7,8 +7,9 @@ if (!isset($_SESSION)) {session_start();}
  * Date: 24/05/2017
  * Time: 14:29
  */
+include_once('../modele/utilisateurs.php');
 if(isset($_POST['envoiProfil'])){
-    include ('../modele/utilisateurs.php');
+
     $infoUser= takeInfoUser($bdd,$_SESSION['Mail']);
 
     if(isset($_POST['newnom']) && !empty($_POST['newnom']) && $_POST['newnom']!=$infoUser['Nom']){
@@ -43,7 +44,7 @@ if(isset($_POST['envoiProfil'])){
         ||isset($_POST['mois'])&&!empty($_POST['mois'])&& !empty($_POST['mois']!= $infoUser['months'])
         ||isset($_POST['jour'])&& !empty($_POST['jour'])&& $_POST['jour']!=$infoUser['days'] ){
 
-        $newDate_naissance = $_POST['annee'].'-'.$_POST['mois'].'-'.$_POST['jour'] ;
+        $newDate_naissance = htmlentities($_POST['annee']).'-'.htmlentities($_POST['mois']).'-'.htmlentities($_POST['jour']) ;
         $insertdatenaissance = $bdd-> prepare("UPDATE user SET date_naissance= ? WHERE Mail= ?" );
         $insertdatenaissance-> execute(array($newDate_naissance,$_SESSION['Mail']));
         //$msg= "Modification prise en compte";
@@ -53,15 +54,18 @@ if(isset($_POST['envoiProfil'])){
 
 
     if(!empty($_POST['entermdpactuel'] && isset($_POST['entermdpactuel']))){
-        $mdpActuel=takeMdp($bdd,$_SESSION['Mail']);
+        $mdpActuelBdd=takeMdp($bdd,$_SESSION['Mail']);
+        //var_dump($mdpActuelBdd);
+        $encryptmdpEnter =sha1(htmlentities($_POST['entermdpactuel']));
+        //var_dump($encryptmdpEnter);
         //verif entermdpactuel = mdp bdd
-        if($mdpActuel['mot_de_passe']==$_POST['entermdpactuel']){
+        if($mdpActuelBdd==$encryptmdpEnter){
             //verif newmdp et newmdpconfirm
             if(isset($_POST['newmdp']) && !empty($_POST['newmdp']) && !empty($_POST['newconfirmeMdp']) && isset($_POST['newconfirmeMdp'])){
-                //pense a crypter ton mdp
                 if($_POST['newmdp'] == $_POST['newconfirmeMdp']){
+                    $newmdpencrypt=sha1(htmlentities($_POST['newmdp']));
                     $insertmdp = $bdd->prepare("UPDATE user SET mot_de_passe = ? WHERE Mail=? ");
-                    $insertmdp->execute(array($_POST['newmdp'],$_SESSION['Mail']));
+                    $insertmdp->execute(array($newmdpencrypt,$_SESSION['Mail']));
                     $msg= "Modification prise en compte";
                 }
 
@@ -80,7 +84,7 @@ if(isset($_POST['envoiProfil'])){
         }
     }
 
-    if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])){
+   /* if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])){
         //var_dump($_FILES['avatar']);
         $tailleMax= 2097152;
         $extensiosValides=array('jpg','jpeg','gif','png');
@@ -108,8 +112,12 @@ if(isset($_POST['envoiProfil'])){
         else{
             $msg='Votre photo de profil ne doit pas dépasser 2Mo';
         }
-    }
+    }*/
+    $infoUser= takeInfoUser($bdd,$_SESSION['Mail']);
+    include('../vue/mon_profil.php');
 
-    include ('../controller/mon_profil.php');
-
+}
+else{
+    $infoUser = takeInfoUser($bdd, $_SESSION['Mail']);
+    include('../vue/mon_profil.php');
 }

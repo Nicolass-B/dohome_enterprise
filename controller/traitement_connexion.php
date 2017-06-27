@@ -26,9 +26,11 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
 
             if(isAdmin($bdd,$loginMail)){//test si l'utilisateur est un admin
                 $repMdpadmin= takeMdp($bdd,$loginMail);
-                var_dump($repMdpadmin);
-                var_dump($passcryptEnter);
+               // var_dump($repMdpadmin);
+               // var_dump($passcryptEnter);
                 if($passcryptEnter==$repMdpadmin){//mot de passe trouvé dans la base de donnée, connexion admin
+                    session_start();
+                    $_SESSION['id_user']=takeIdUser($bdd,$loginMail);
                     include('../vue/dashboard_backoffice.php');
                 }
                 else{
@@ -42,8 +44,7 @@ if(isset($_POST['envoi'])) { // L'utilisateur vient de valider le formulaire de 
                 if($passcryptEnter==$repMdpclient){//mot de passe trouvé dans la base de donnée, connexion client
                     session_start();
                     $_SESSION['Mail']=$loginMail;
-                    $idUser=takeIdUser($bdd,$loginMail);
-                    $_SESSION['id_user']=$idUser['id_user'];
+                    $_SESSION['id_user']=takeIdUser($bdd,$loginMail);
                     include('../vue/dashboard.php');
                 }
                 else{

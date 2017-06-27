@@ -31,7 +31,6 @@ if (!isset($_SESSION)) {
         <table id="table" class="table table-hover table-mc-light-blue">
             <thead>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Superficie</th>
                 <th>Supprimer</th>
@@ -43,9 +42,8 @@ if (!isset($_SESSION)) {
                 //var_dump($row);
                 ?>
                 <tr>
-                    <td data-title="ID"><?php echo $row['id_maison'] ?></td>
                     <td data-title="Nom">
-                        <a href="../controller/piece.php?maison=<?php echo $row['id_maison'] ?>"> <?php echo $row['Nom'] ?> </a>
+                        <a href="../controller/piece.php?maison=<?php echo $row['id_maison'] ?>&nom=<?php echo $row['Nom'] ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>
                     <td data-title="Superficie"><?php echo $row['superficie'] ?> m²</td>
                     <td data-title="Supprimer"><a href="../controller/maison.php?suppr=<?php echo $row['id_maison'] ?>">

@@ -19,7 +19,7 @@ include_once('haut_de_page.php');
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/faq.css"/>
-    <title>Accueil DoHome enterprise ™</title>
+    <title>FAQ DoHome enterprise ™</title>
 </head>
 
 
@@ -46,6 +46,11 @@ include_once('haut_de_page.php');
 if(!isset($_SESSION['id_user'])){
     echo '<div class="retour">';
     echo '<a class="boutonRetour" href="../vue/home.php">Retour a l\'accueil </a>';
+    echo '</div>';
+}
+elseif (isset($signUp) && $signUp=='test'){
+    echo '<div class="retour">';
+    echo '<a class="boutonRetour" href="../vue/sign_up.php">Retour a l\'inscription </a>';
     echo '</div>';
 }
 include_once('bas_de_page.php');

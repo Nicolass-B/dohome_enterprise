@@ -22,12 +22,13 @@ if (!isset($_SESSION)) {session_start();}
         <p> Analyse des comptes</p>
     </section2>
     <section2>
-        <a class="LienImage" href="../vue/messagerie_backoffice.php"><img class="messagerie" src="../vue/img/messagerie.png" alt="logo message"/></a>
+        <a class="LienImage" href="../controller/msg_admin.php"><img class="messagerie" src="../vue/img/messagerie.png" alt="logo message"/></a>
         <p> Messagerie interne</p>
     </section2>
 </div>
 </div>
 </body>
+
 <?php include("bas_de_page_backoffice.php"); ?>
 
 </html>

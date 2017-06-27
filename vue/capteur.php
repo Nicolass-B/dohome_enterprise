@@ -7,7 +7,6 @@ $titre = 'Mes Capteurs';
 include('haut_de_page.php');
 require_once('../modele/capteur.php');
 
-echo 'blabla';
 ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -21,7 +20,7 @@ echo 'blabla';
 <body>
 <h1>Capteurs</h1>
 <div class="connexion-inscription">
-    <form method="POST" action="../controller/capteur.php?piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">>
+    <form method="POST" action="../controller/capteur.php?piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">
 
 
         <select id="choix" name="type" required>
@@ -33,20 +32,22 @@ echo 'blabla';
         </select>
         <input id="case" type="text" name="nom_capteur" placeholder="Nom du Capteur" required/>
         <input id="bouton3" type="submit" name="envoi" value="Ajouter"/>
+        <a id="bouton3" href="../controller/piece.php?maison=<?php echo $idmaison?>">Retour aux pièces</a>
 
 
     </form>
 </div>
+
 <div class="table-responsive-vertical shadow-z-1">
     <table id="table" class="table table-hover table-mc-light-blue">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Nom</th>
             <th>Type</th>
             <th>Valeur</th>
             <th>Unité</th>
             <th>Etat batterie</th>
+            <th>Supprimer</th>
         <tr>
         </thead>
         <tbody>
@@ -54,8 +55,6 @@ echo 'blabla';
         foreach ($capteur_piece as $row) {
             ?>
             <tr>
-                <td data-title="ID">
-                    <?php echo $row['ID_Capteurs'] ?></td>
                 <td data-title="Nom">
                     <a href="../controller/capteur.php?capteur=<?php echo $row['ID_Capteurs'] ?>"><?php echo $row['nom'] ?></a>
                 </td>
@@ -67,6 +66,9 @@ echo 'blabla';
                     <?php echo $row['unite'] ?></td>
                 <td data-title="Etat batterie">
                     <?php echo $row['Etat_Batterie'] ?></td>
+                 <td data-title="Supprimer"><a href="../controller/capteur.php?supprCapteur=<?php echo $row['ID_Capteurs'] ?>&piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">
+                        <img border="0" alt="supprimer" src="../vue/img/img_96165.svg" width="20" height="20">
+                    </a></td>
 
             </tr>
 
@@ -80,7 +82,7 @@ echo 'blabla';
 </div>
 <h1>Actionneurs</h1>
 <div class="connexion-inscription">
-    <form method="POST" action="../controller/actionneur.php?piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">>
+    <form method="POST" action="../controller/actionneur.php?piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">
 
 
         <select id="choix" name="type" required>
@@ -92,6 +94,7 @@ echo 'blabla';
         </select>
         <input id="case" type="text" name="nom_act" placeholder="Nom de l'actionneur" required/>
         <input id="bouton3" type="submit" name="envoi" value="Ajouter"/>
+        <a id="bouton3" href="../controller/piece.php?maison=<?php echo $idmaison?>">Retour aux pièces</a>
 
 
     </form>

@@ -1,6 +1,10 @@
 h1 {
     color:white;
 }
+
+h2{
+    color:white;
+}
 #choix{
     font-family: "PT Sans";
     text-transform: uppercase;
@@ -128,4 +132,8 @@ intro{
     border: 2px solid #00c555;
     font-size: 13px;
     padding:8px;
+}
+
+a{
+    text-decoration:none;
 }

@@ -18,12 +18,12 @@ if (!isset($_SESSION)) {
     <div class="information">
         <ul>
             <div class="menusec">
-                <li><a href="mon_profil.php">Mon profil</a></li>
+                <li><a href="../controller/edit_affiche_profil.php">Mon profil</a></li>
                 <li class="enCours"><a href="../controller/compte_secondaire.php">Mes comptes secondaires</a></li>
             </div>
         </ul>
 
-        <?php foreach ($infoUserSec as list($nom, $prenom, $id_sec)) { ?>
+        <?php foreach ($infoUserSec as list($nom, $prenom, $id_sec,$item)) { ?>
             <div class="placement">
                 <div class="imagepp">
                     <img src="../vue/img/pp%20compte%20sec.png" alt="Photo de profil"/>

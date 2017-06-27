@@ -18,13 +18,13 @@ if (!isset($_SESSION)) {session_start();}
     <div class="information">
         <ul>
             <div class="menusec">
-                <li class="enCours"><a href="../controller/mon_profil.php">Mon profil</a></li>
+                <li class="enCours"><a href="../controller/edit_affiche_profil.php">Mon profil</a></li>
                 <li><a href="../controller/compte_secondaire.php">Mes comptes secondaires</a></li>
             </div>
         </ul>
     </div>
 
-    <form method="POST" action="../controller/edit_profil.php">
+    <form method="POST" action="../controller/edit_affiche_profil.php">
         <div class="formulaire">
             <div class="information">
                 <ul>

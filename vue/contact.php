@@ -70,6 +70,9 @@ if(isset($_SESSION['id_user'])){
 if(!isset($_SESSION['id_user'])){
     echo '<a class="boutonRetour" href="../vue/home.php">Retour a l\'accueil</a>';
 }
+elseif (isset($signUp) && $signUp=='test'){
+    echo '<a class="boutonRetour" href="../vue/sign_up.php">Retour a l\'inscription </a>';
+}
 ?>
 </div>
 

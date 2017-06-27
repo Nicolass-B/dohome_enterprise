@@ -112,3 +112,12 @@ input[type=submit] {
     border: 2px solid #c50009;
     font-size: 13px;
 }
+
+.boutonSeConnecter {
+    background-color: #00c555;
+    padding: 5px;
+    color:white;
+    border-radius: 10px;
+    border: 2px solid #00c555;
+    font-size: 13px;
+}

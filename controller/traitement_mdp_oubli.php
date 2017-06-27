@@ -9,22 +9,25 @@ if (isset($_POST['envoi'])) {
             if (htmlentities($_POST['newpass']) == htmlentities($_POST['newpassconfirm'])) {
                 $passcrypt = sha1($_POST['newpass']);
                 $reponse3 = $bdd->query('UPDATE user SET mot_de_passe="' . $passcrypt . '" WHERE Mail= \'' . $_POST['mail'] . '\' ');
-                $msg = 'c\'est good';
-                include('../controller/affiche_question_secrete.php');
-            } else {
-                $mail = $_POST['mail'];
-                $msg = 'les deux mot de passe sont différents';
+                $msgMDPChange = 'Votre mot de passe à bien été changé!!';
                 include('../vue/mdp_oublie.php');
             }
-        } else {
+            else {
+                $mail = $_POST['mail'];
+                $msg = 'les deux mot de passe sont différents';
+                include('../controller/affiche_question_secrete.php');
+            }
+        }
+        else {
             $mail = $_POST['mail'];
             $msg = 'Réponse secrête invalide';
-            include('../vue/mdp_oublie.php');
+            include('../controller/affiche_question_secrete.php');
         }
-    } else {
+    }
+    else {
         $mail = $_POST['mail'];
         $msg = 'Remplir tous les champs';
-        include('../vue/mdp_oublie.php');
+        include('../controller/affiche_question_secrete.php');
     }
 }
 ?>

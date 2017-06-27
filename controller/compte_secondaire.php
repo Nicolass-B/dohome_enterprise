@@ -14,28 +14,26 @@ if(!empty($_POST['ajoutUserSec'])){
     include ('../vue/ajout_compte_secondaire.php');
 }
 
-elseif (isset($_POST['formulaireAjoutSec']) && !empty($_POST['formulaireAjoutSec'])){
+elseif (isset($_POST['formulaireAjoutSec'])){
 
     if(!empty($_POST['nomUserSec'])
         &&!empty($_POST['prenomUserSec'])
         &&!empty($_POST['E-mailUserSec'])
         &&!empty($_POST['passUserSec'])
-        &&!empty($_POST['confirmePasseUserSec'])
-        &&!empty($_POST['photo'])){
+        &&!empty($_POST['confirmePasseUserSec'])){
 
         $nomUserSec=htmlentities($_POST['nomUserSec']);
         $prenomUserSec=htmlentities($_POST['prenomUserSec']);
         $mailUserSec=htmlentities($_POST['E-mailUserSec']);
         $passUserSec=htmlentities($_POST['passUserSec']);
         $confirmePasseUserSec=htmlentities($_POST['confirmePasseUserSec']);
-        $photo=htmlentities($_POST['photo']);
 
         //var_dump($mailUserSec);
         //var_dump($_SESSION['Mail']);
         if($mailUserSec!=$_SESSION['Mail']){
             if($passUserSec==$confirmePasseUserSec){
                 $passcrypt = sha1($passUserSec);
-                createSecondaryUser($bdd,$nomUserSec,$prenomUserSec,$mailUserSec,$passcrypt,$photo,$_SESSION['id_user']);
+                createSecondaryUser($bdd,$nomUserSec,$prenomUserSec,$mailUserSec,$passcrypt,$_SESSION['id_user']);
                 $infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);
                 include ('../vue/compte_secondaire.php');
             }
@@ -60,8 +58,8 @@ elseif (!empty($_POST['supUserSec'])){
     deleteSecondaryUser($bdd,$_SESSION['id_user'],$_POST['id_secondaire']);
     $infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);
     include ('../vue/compte_secondaire.php');
-
 }
+
 elseif (!empty($_POST['modifUserSec'])){
 
 }
@@ -70,4 +68,3 @@ else{
 $infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);
 include ('../vue/compte_secondaire.php');
 }
-$infoUserSec=getSecondaryUser($bdd,$_SESSION['id_user']);

@@ -54,6 +54,13 @@ else {
         //echo "<p>DAMN, tu viens d'ajouter un capteur dans la pièce !</p>";
     }
 
+    if (isset($_GET['supprCapteur'])){
+                   supCpateur($bdd,$idpiece,$_GET['supprCapteur']);
+                   ?>
+                   <script>alert("<?php echo htmlspecialchars('Un capteur vient d\'être supprimer', ENT_QUOTES); ?>")</script>
+               <?php
+    }
+
     $pieces = getPiecesfromMaison($bdd, $idmaison);
     $capteur_piece = getCapteursfromPiece($bdd, $idpiece);
     $actionneur_piece = getActionneursfromPiece($bdd, $idpiece);

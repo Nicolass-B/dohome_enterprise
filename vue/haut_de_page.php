@@ -17,12 +17,12 @@
 <header>
     <section1>
         <div class="container">
-                <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise" href/>
+                <img class="logo" src="../vue/img/fond_transparent3.png" alt="logo de l'entreprise" />
             <nav>
                 <ul>
                     <div class="menu">
                         <li><a href="../controller/dashboard.php">Dashboard</a></li>
-                        <li><a href="../controller/mon_profil.php">Mon profil</a></li>
+                        <li><a href="../controller/edit_affiche_profil.php">Mon profil</a></li>
                         <li><a href="../controller/maison.php">Ma maison</a></li>
                         <li><a href="../controller/shop.php">Boutique</a></li>
                     </div>

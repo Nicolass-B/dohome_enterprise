@@ -17,13 +17,15 @@ if (!isset($_SESSION)) {
 <body>
 <br>
 
+<h2>Vous êtes dans la maison : <?php echo $nomMaison ;?></h2>
+
 <div class="connexion-inscription">
     </br>
     <form method="POST" action="../controller/piece.php?maison=<?php echo $idmaison ?>">
         <input id="case" type="text" name="nom_piece" placeholder="Nom de la pièce" required/>
         <input id="case" type="text" name="superficie" placeholder="Superficie en m²" required/>
         <input id="bouton4" type="submit" name="envoi" value="Ajoutez une pièce"/>
-        <a  id="bouton4" href="../controller/maison.php">Retour au maison</a>
+        <a  id="bouton4" href="../controller/maison.php">Retour aux maisons</a>
     </form>
 </div>
 <br>
@@ -32,7 +34,6 @@ if (!isset($_SESSION)) {
         <table id="table" class="table table-hover table-mc-light-blue">
             <thead>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Superficie</th>
                 <th>Supprimer</th>
@@ -43,7 +44,6 @@ if (!isset($_SESSION)) {
             foreach ($piece as $row) {
                 ?>
                 <tr>
-                    <td data-title="ID"><?php echo $row['ID_pieces'] ?></td>
                     <td data-title="Nom">
                         <a href="../controller/capteur.php?piece=<?php echo $row['ID_pieces'] ?>&maison=<?php echo $idmaison ?>"> <?php echo $row['Nom'] ?> </a>
                     </td>

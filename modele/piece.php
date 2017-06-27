@@ -27,6 +27,8 @@ function getCapteursfromPiece(PDO $dbh, $idpiece)
     return $data;
 }
 
+
+
 function getActionneursfromPiece(PDO $dbh, $idpiece)
 {
     // permet ded retourner tous les capteurs d'une pièce avec des trucs fu

@@ -19,6 +19,13 @@ function ajoutCapteur(PDO $bdd,$nom, $type, $idpiece)
     ));
 }
 
+
+function supCpateur(PDO $bdd,$idpiece,$idcapteur){
+    $query = $bdd->prepare('DELETE FROM capteurs WHERE ID_piece=\'' . $idpiece . '\' AND ID_Capteurs=\'' . $idcapteur . '\'');
+    $query->execute();
+}
+
+
 /**
  * @param PDO $bdd
  * @param $nom

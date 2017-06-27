@@ -46,13 +46,15 @@ if (!isset($_SESSION)) {
                     <p>Capteur</p>
 
                     <select id="température" name="maison" onchange="showUser(this.value)">
-                        <option selected="selected" value="">Choissisez votre maison</option>
+                        <option selected="selected" value="Choissisez votre maison">Choissisez votre maison</option>
                         <?php include('../controller/dashbordSelectMaison.php') ?>
                     </select>
 
                     <br>
                     <br>
+                    <?php if(!isset($_POST['maison'])&& $_POST['maison']!='Choissisez votre maison'){
 
+                    ?>
                     <div id="piece">
 
                     </div>
@@ -61,6 +63,7 @@ if (!isset($_SESSION)) {
 
                     <div id="capteurTemp">
                     </div>
+                    <?php }?>
 
                 </div>
             </div>

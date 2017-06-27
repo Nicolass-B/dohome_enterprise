@@ -18,6 +18,7 @@ class capteur
     public $valeur_now;
     public $histo_valeur;
     public $histo_date;
+    public $nom;
 
     private $pdo; // pour les acces de l'objet a la base de données
 
@@ -49,6 +50,10 @@ class capteur
         $req->bindParam(':idcapteur', $IDcapteur);
         $req->execute();
         $this->idpiece = $req->fetch();
+        $req = $this->pdo->prepare('SELECT nom FROM capteurs WHERE ID_Capteurs=:idcapteur');
+        $req->bindParam(':idcapteur', $IDcapteur);
+        $req->execute();
+        $this->nom = $req->fetch();
         $req2 = $this->pdo->prepare('SELECT ID_maison FROM pieces WHERE ID_pieces=:idpiece');
         $id = $this->idpiece["ID_piece"];
         $req2->execute(array(

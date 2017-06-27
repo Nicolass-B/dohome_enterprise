@@ -12,9 +12,9 @@ require('init_connexion_bdd.php');
 function insertUser(PDO $bdd,$nom,$prenom,$mot_de_passe,$telephone,$email,$adresse,$sexe,$annees,$mois,$jour,$questionSecrete,$repSecrete){
 
     //met la date au format DATE de sql (format <annees-mois-jours>)
-    $date_naissance = $annees.'-'.$mois.'-'.$jour ;
+    $date = $annees.$mois.$jour ;
 
-    $query=$bdd->prepare('INSERT INTO user(Nom, Prenom, mot_de_passe,telephone, Mail,Adresse,sexe,date_inscription,date_naissance,question_secrete,rep_secrete) VALUES(:nom, :prenom, :mot_de_passe,:telephone, :email ,:adresse, :sexe,NOW(),:date_naissance,:questionSecrete,:repSecrete)');
+    $query=$bdd->prepare('INSERT INTO user(Nom, Prenom, mot_de_passe,telephone, Mail,adresse,sexe,date_inscription,date_naissance,question_secrete,rep_secrete) VALUES(:nom, :prenom, :mot_de_passe,:telephone, :email ,:adresse, :sexe,NOW(),:daten,:questionSecrete,:repSecrete)');
     $query->execute(array(
         'nom' => $nom,
         'prenom' => $prenom,
@@ -23,13 +23,12 @@ function insertUser(PDO $bdd,$nom,$prenom,$mot_de_passe,$telephone,$email,$adres
         'email' => $email,
         'adresse' => $adresse,
         'sexe' =>$sexe,
-        'date_naissance' => $date_naissance,
+        'daten' => $date,
         'questionSecrete' => $questionSecrete,
         'repSecrete' => $repSecrete
     ));
 }
 
-insertUser($bdd,'nico','nico','azerty','0605080908','nico@nico.com','53 bis boul','femme',2015,18,10,'test','azerty');
 //Fonction qui vérifie si le mot de passe et le mot de passe de confirmation son identique
 function verif2MDP($pass,$passConfirme){
     if($pass==$passConfirme){

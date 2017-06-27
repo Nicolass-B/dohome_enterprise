@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
 /**
  * Created by IntelliJ IDEA.
  * User: Antoine
@@ -7,13 +10,11 @@
  */
 require_once '../modele/backoffice.php';
 require_once '../modele/messagerie.php';
-$_SESSION['id_user'] = 3;
-if (!isset($_SESSION)) {
-    session_start();
-} else if (!isAdmin($bdd, $_SESSION['id_user'])) {
+//$_SESSION['id_user'] = 3;
+if (!isAdmin($bdd, $_SESSION['id_user'])) {
     // We don't want any unauthorized ppl
-    header('HTTP/1.0 403 Forbidden');
-    die('You are not allowed to access this file.');
+    header('Location: https://dohome.cf/');
+    //die('You are not allowed to access this file.');
 } else {
     if (isset($_GET['msg']) && !empty($_GET['msg'])) {
         // Si l'utilisateur veut un message individuel

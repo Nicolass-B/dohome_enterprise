@@ -25,7 +25,7 @@
 
 
 <body>
-
+<a href="../controller/traitement_connexion.php"><h1 style="color: whitesmoke;">Retour</h1></a>
 
 <div class="ajaxMail">
     <?php

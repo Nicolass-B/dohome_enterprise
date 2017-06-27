@@ -21,7 +21,7 @@ require_once '../modele/messagerie.php';
 
 if (!isset($_SESSION['id_user'])) {
     try {
-        http_redirect('../index.php');
+        header('Location : ../index.php');
         die("Vous n'êtes pas connecté, retour à la page d'accueil");
     } catch (Exception $e) {
         echo(' bon, y\'a pas ça sur windows c\'est problématique non ?');

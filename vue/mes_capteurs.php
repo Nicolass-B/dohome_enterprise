@@ -86,16 +86,15 @@ include 'haut_de_page.php';
 
 
     </div>
-    <div class="two">
+    <div class="two" style="color: whitesmoke;">
 
         <?php
-        echo "<h2> Nom du capteur : ".$Capteur->nom."</h2>";
-        echo "<h2> Valeur du capteur : ".$Capteur->valeur_now."</h2>";
-        echo "<h2> Type de capteur : " .$Capteur->typecapteur."</h2>";
-
-        //highlight_string("<?php\n\$data =\n" . var_export($Capteur, true) . ";\n?>");
+        echo "<h2> Nom du capteur : ".$Capteur->nom[0]."</h2>";
+        echo "<h2> Valeur du capteur : ".$Capteur->valeur_now[0]."</h2>";
+        echo "<h2> Type de capteur : " .$Capteur->typecapteur[0]."</h2>";
         ?>
-    </div>
+
+        </div>
 
 </section>
 </body>

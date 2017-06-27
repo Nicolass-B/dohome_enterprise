@@ -33,6 +33,7 @@ class capteur
         $this->idcapteur = $idcapteur;
         $this->pdo = $db;
         $this->get_piece_and_maison($this->idcapteur);
+        $this->get_valeur();
     }
 
 

@@ -32,13 +32,16 @@ require_once('../modele/capteur.php');
         </select>
         <input id="case" type="text" name="nom_capteur" placeholder="Nom du Capteur" required/>
         <input id="bouton3" type="submit" name="envoi" value="Ajouter"/>
-        <a id="bouton3" href="../controller/piece.php?maison=<?php echo $idmaison?>">Retour aux pièces</a>
-
-
+        <a id="bouton3" href="../controller/piece.php?maison=<?php echo $idmaison ?>">Retour aux pièces</a>
     </form>
+    <br>
+    <form method="POST" action="../controller/capteur.php?piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">
+        <input id="bouton3" type="submit" name="refresh" value="Rafraichir les capteurs">
+    </form>
+
 </div>
 
-<div class="table-responsive-vertical shadow-z-1">
+<div class=" table-responsive-vertical shadow-z-1">
     <table id="table" class="table table-hover table-mc-light-blue">
         <thead>
         <tr>
@@ -66,7 +69,8 @@ require_once('../modele/capteur.php');
                     <?php echo $row['unite'] ?></td>
                 <td data-title="Etat batterie">
                     <?php echo $row['Etat_Batterie'] ?></td>
-                 <td data-title="Supprimer"><a href="../controller/capteur.php?supprCapteur=<?php echo $row['ID_Capteurs'] ?>&piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">
+                <td data-title="Supprimer"><a
+                            href="../controller/capteur.php?supprCapteur=<?php echo $row['ID_Capteurs'] ?>&piece=<?php echo($idpiece . "&maison=" . $idmaison); ?>">
                         <img border="0" alt="supprimer" src="../vue/img/img_96165.svg" width="20" height="20">
                     </a></td>
 
@@ -94,7 +98,7 @@ require_once('../modele/capteur.php');
         </select>
         <input id="case" type="text" name="nom_act" placeholder="Nom de l'actionneur" required/>
         <input id="bouton3" type="submit" name="envoi" value="Ajouter"/>
-        <a id="bouton3" href="../controller/piece.php?maison=<?php echo $idmaison?>">Retour aux pièces</a>
+        <a id="bouton3" href="../controller/piece.php?maison=<?php echo $idmaison ?>">Retour aux pièces</a>
 
 
     </form>

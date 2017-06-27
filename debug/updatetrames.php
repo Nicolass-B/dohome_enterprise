@@ -27,6 +27,6 @@ function updateCapteurPiece(PDO $dbh){
     }
 }
 
-updateCapteurPiece($bdd);
+//updateCapteurPiece($bdd);
 
 ECHO "SUCCESS";

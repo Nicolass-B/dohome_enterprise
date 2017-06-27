@@ -51,15 +51,16 @@ function trameToHisto(PDO $bdd, $team)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     $data = curl_exec($ch);
     curl_close($ch);
-    echo "Raw Data:<br />";
-    echo("$data");
 
     $data_tab = str_split($data, 33);
 
-    echo "Tabular Data:<br />";
     $sql = $bdd->prepare('INSERT INTO historique_capteurs(Id_mesure, Date_Mesure, Valeur, unite, ID_capteur) 
                             VALUES (NULL, :datemesure, :valeur, :unite, :idcapteur)');
-    for ($i = 6683, $size = count($data_tab); $i < $size; $i++) {
+    $lol = $bdd->query("SELECT * FROM compteurtrame");
+    $lol = $lol->fetch();
+    $compteur = $lol[0];
+
+    for ($i = 6683+$compteur, $size = count($data_tab); $i < $size; $i++) {
         list($t, $o, $r, $c, $n, $valeur, $a, $x, $year, $month, $day, $hour, $min, $sec) =
             sscanf($data_tab[$i],"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 
@@ -87,6 +88,8 @@ function trameToHisto(PDO $bdd, $team)
             echo '<br> erreur : ' . $e->getMessage(). "          val ". $valeur. "   chaine : ". $data_tab[$i];
         }
     }
+    $lol = $bdd->prepare("UPDATE compteurtrame SET compteur =:total");
+    $lol->execute(["total" => $size-6683]);
 
 }
 

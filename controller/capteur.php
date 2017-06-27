@@ -53,6 +53,7 @@ else {
         }
         //echo "<p>DAMN, tu viens d'ajouter un capteur dans la pièce !</p>";
     } else if(isset($_POST["refresh"])){
+        trameToHisto($bdd,"006A");
         updateCapteurPiece($bdd);
     }
 

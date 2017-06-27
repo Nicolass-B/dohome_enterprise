@@ -29,4 +29,8 @@ function updateCapteurPiece(PDO $dbh){
 
 //updateCapteurPiece($bdd);
 
+$lol = $bdd->query("SELECT * FROM compteurtrame");
+$lol = $lol->fetch();
+
+echo $lol[0];
 ECHO "SUCCESS";
